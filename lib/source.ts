@@ -1,9 +1,18 @@
 import { docs } from '@/.source';
 import { type InferPageType, loader } from 'fumadocs-core/source';
 import { lucideIconsPlugin } from 'fumadocs-core/source/lucide-icons';
+import { icons } from 'lucide-react';
+import { createElement } from 'react';
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
+  icon(icon) {
+    if (!icon) {
+      // You may set a default icon
+      return;
+    }
+    if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
+  },
   baseUrl: '/docs',
   source: docs.toFumadocsSource(),
   plugins: [lucideIconsPlugin()],
