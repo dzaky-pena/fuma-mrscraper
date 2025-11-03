@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "pages": [
+    "---Getting Started---",
+    "...getting-started",
+    "---Scrapers---",
+    "...scrapers",
+    "---Connections---",
+    "...connections",
+    "---Account---",
+    "...account",
+    "---Support---",
+    "...support"
+  ]
+}

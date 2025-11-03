@@ -1,0 +1,52 @@
+---
+title: "Email Connections"
+description: "This guide explains how to connect your scraper to your email to receive scraper notifications."
+---
+
+## What Are Email Connections?
+
+Email connections let you receive an email notification when specific events happen in your scraper, such as when a scrape starts, completes, or fails.
+
+## Create an Email Connection
+
+Follow these steps to create an email connection in MrScraper:
+
+1. Open your **MrScraper dashboard**.
+2. Click the **gear icon** on the left panel and select **Email Connection**.
+
+    ![](/images/email-connection/step-1.png)
+
+3. On the **Email Connection page**, click the + icon in the top-right corner.
+
+    ![](/images/email-connection/step-2.png)
+
+4. Fill in the email connection details:
+
+    - **Email Type**: Choose `Result in Email Body`, `Result in JSON/CSV Attachment` or `Result in XLSX Attachment`
+    - **Email Address**: Select the email address to which the notification should be sent
+    - **Configuration Format**: TBA
+
+    ![](/images/email-connection/step-3.png)
+
+5. Click **Submit** to save your email connection.
+
+## Connect Email Notification to Scraper
+
+After creating the email connection, follow these steps to connect it to your scraper:
+
+1. Go to your choosen **Scraper** page.
+2. Click the **Settings** button, choose **Email Notifications**.
+
+    ![](/images/email-connection/connect-1.png)
+
+3. Select the email connection you just created from the dropdown menu.
+
+    ![](/images/email-connection/connect-2.png)
+
+4. Click **Save Email Notifications**.
+
+## Result
+
+Once the scraper finished, you will receive an email notification. Depending on the email type you selected, the email will contain either the result in the email body or as an attachment. Below is example of result in email body:
+
+![](/images/email-connection/result.png)
