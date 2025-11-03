@@ -5,57 +5,37 @@ description: "Step by step guide to using the Manual Scraper in MrScraper"
 
 ## Step 1: Click on 'New Scraper +' on scrapers page
 
-![](/images/ai-mode-scraper/step-1.png)
-
 ## Step 2: Insert the link of the website you want to scrape
 
-![](/images/ai-mode-scraper/step-2.png)
-
 ## Step 3: Select 'Manual Workflow' on top
-
-![](/images/manual-mode-scraper/step-3.png)
 
 ## Step 4: Configure your scraper by adding steps
 
 You can add multiple steps to your scraper by clicking on the "Add Step" button. Each step allows you to define specific actions such as extract, click, delay, etc.
 
-![](/images/manual-mode-scraper/add-step.png)
-
 ### Extract
 
 The Extract step allows you to specify the data you want to scrape from the webpage. You can set `Extraction Name`, select `Extraction Type` to `Text` (ex: Hello World), `Inner HTML` (ex: \<span\>hello world\<\/span\>), `Outer HTML` (ex: \<h1 class="bold">\<span>hello world\<\/span>\<\/h1>), and `Attribute` (ex: "class": bold), and define CSS selectors to target specific elements.
-
-![](/images/manual-mode-scraper/extract.png)
 
 ### Click
 
 The Click step allows you to simulate a click action on a specified element.
 
-![](/images/manual-mode-scraper/click.png)
-
 ### Delay
 
 The Delay step allows you to pause the scraper for a specified amount of time (in milliseconds) before proceeding to the next step.
-
-![](/images/manual-mode-scraper/delay.png)
 
 ### Input
 
 The Input step allows you to enter text into input fields on the webpage.
 
-![](/images/manual-mode-scraper/input.png)
-
 ### Scroll
 
 The Scroll step allows you to scroll until the end, scroll until find a text scroll, or scroll to a specific element (or until the number of a specific element) on the webpage.
 
-![](/images/manual-mode-scraper/scroll.png)
-
 ### Inject Javascript
 
 The Inject Javascript step allows you to run custom JavaScript code on the webpage.
-
-![](/images/manual-mode-scraper/inject.png)
 
 ### Paginate
 
@@ -66,5 +46,3 @@ Set up pagination to navigate through multiple pages automatically.
 | Query pagination | Query Parameter (eg. "?page=2") |
 | Directory pagination (eg. "/list/page/2") | - |
 | Next page link | Next page selector |
-
-![](/images/manual-mode-scraper/paginate.png)
