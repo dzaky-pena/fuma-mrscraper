@@ -5,18 +5,70 @@ description: 'Step-by-step guide to scrape using MrScraper quickly'
 
 This guide will walk you through the essential steps to get started with our scraping platform. Whether you’re new to web scraping or already experienced, you’ll learn how to create and run your first scraper in just a few minutes.
 
-## Step 1: Create an Account
+## Scenario
 
-If you don’t have an account yet, [sign up here](https://v3.app.mrscraper.com/auth/register), then log in to your dashboard.
+You want to collect data on the **top-selling laptops** on Amazon to analyze market trends or compare pricing.
+For this example, you’ll scrape data from the following category page:
+[https://www.amazon.com/s?k=laptops](https://www.amazon.com/s?k=laptops)
 
-## Step 2: Create a New Scraper
+Your goal is to extract:
 
-1. After logging in, go to the **Scraper** page by clicking the **triangle icon** in the left sidebar.  
+* Product name
+* Price
+* Rating
+* Number of reviews
+* Product link
+
+This helps you understand how to gather structured e-commerce data using AI Scraper without writing any code.
+
+## Step 1: Create a New Scraper
+
+1. Log in to MrScraper, go to the **Scraper** page by clicking the **triangle icon** in the left sidebar.  
 2. Click **New Scraper +** at the top to create a new scraper.
+3. Enter the following URL to scrape: `https://www.amazon.com/s?k=laptops`.
+4. Select Super in this case since the URL we want to use require more resource to scrape.
+5. Click **Start Scraping →** to begin.
+6. In the prompt box, enter this instruction:
 
-3. Enter the URL of the website you want to scrape.
+> Scrape the top 3 laptop products on this page and return the following information in JSON format:
+>
+> * product_name
+> * price
+> * rating
+> * number_of_reviews
+> * product_link
 
-## Step 3: View Your Results
+## Step 2: Check the Result
+The AI scraper supports four output formats. In this example, we select the JSON format, which returns the result as shown below:
 
-1. Click **Start Scraping →** to begin.
-2. Once the process completes, you can view or download your results in multiple formats—**HTML**, **JSON**, **Table**, or **Graph**.
+```json Example Output expandable
+{
+  "products": [
+    {
+      "price": "$3,247.00",
+      "rating": "5.0",
+      "product_link": "/sspa/click?ie=UTF8&spc=MTo5ODk0MjE0OTA1ODk4MzI6MTc2MTg5MDEyMTpzcF9hdGY6MzAwODkzMjczNDI4NTAyOjowOjo&url=%2FLG-17-inch-Lightweight-Computer-Processor%2Fdp%2FB0FC34H632%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.jJEpn9kICDeweZBtwYeMCxVRoIoufV9gx2rFBYo-RV49b3p3tiDRtKVeAHpTyxWcJrGA6_RmbC_n_gOcqFgZHgBYfJBjMoGZXm_lq7pMkbvvKFagW1v0o39LV7eYfs_VHrbqzajrK5g8XiCVh5-JAJa69_fQ2BQaqWFtTT1pZENwu3a_AVYavQmL43kF2sU6JRWv3gdqz6BE22tZDrH27bycZ3_CPKxVL9cqqYaj_KM.tv6k2vpaXTWXrh1JJUQswqkb4iGiCzqctibhiggz2XY%26dib_tag%3D",
+      "product_name": "LG gram Pro 17-inch Lightweight Laptop Computer, Intel Evo Edition Powered by Intel Core Ultra9 285H Processor, NVIDIA RTX5050, Windows 11 Home, 32GB RAM, 2TB SSD, Black",
+      "number_of_reviews": "8"
+    },
+    {
+      "price": "$599.99",
+      "rating": "5.0",
+      "product_link": "/Dell-Inspiron-Business-Touchscreen-Professional/dp/B0FR9KVFQQ/ref=sr_1_2?dib=eyJ2IjoiMSJ9.jJEpn9kICDeweZBtwYeMCxVRoIoufV9gx2rFBYo-RV49b3p3tiDRtKVeAHpTyxWcJrGA6_RmbC_n_gOcqFgZHgBYfJBjMoGZXm_lq7pMkbvvKFagW1v0o39LV7eYfs_VHrbqzajrK5g8XiCVh5-JAJa69_fQ2BQaqWFtTT1pZENwu3a_AVYavQmL43kF2sU6JRWv3gdqz6BE22tZDrH27bycZ3_CPKxVL9cqqYaj_KM.tv6k2vpaXTWXrh1JJUQswqkb4iGiCzqctibhiggz2XY&dib_tag=se&keywords=laptops&qid=1761890120&sr=8-2",
+      "product_name": "Dell Inspiron 15 Business Laptop, 15.6\" FHD Touchscreen, Intel 10-Core i5-1334U, 32GB RAM 1TB SSD, Wi-Fi 6, Win 11 Pro, Laptop Computer for Work School Home Office Professional Use",
+      "number_of_reviews": "6"
+    },
+    {
+      "price": "$389.99",
+      "rating": "4.2",
+      "product_link": "/Quad-Core-Processor-Portable-Computer-Business/dp/B0FPLVD27Y/ref=sr_1_3?dib=eyJ2IjoiMSJ9.jJEpn9kICDeweZBtwYeMCxVRoIoufV9gx2rFBYo-RV49b3p3tiDRtKVeAHpTyxWcJrGA6_RmbC_n_gOcqFgZHgBYfJBjMoGZXm_lq7pMkbvvKFagW1v0o39LV7eYfs_VHrbqzajrK5g8XiCVh5-JAJa69_fQ2BQaqWFtTT1pZENwu3a_AVYavQmL43kF2sU6JRWv3gdqz6BE22tZDrH27bycZ3_CPKxVL9cqqYaj_KM.tv6k2vpaXTWXrh1JJUQswqkb4iGiCzqctibhiggz2XY&dib_tag=se&keywords=laptops&qid=1761890120&sr=8-3",
+      "product_name": "2025 Laptop with Windows 11, Intel Quad-Core Processor (up to 3.6GHZ)16GB DDR4 RAM 512GB SSD,15.6 Inch FHD IPS Display, Metal Body,5000mAh Battery,USB3.2,Portable Laptops Computer for Business Office",
+      "number_of_reviews": "32"
+    }
+  ]
+}
+```
+
+<Callout title="Note">
+The actual results may vary depending on the current Amazon listings.
+</Callout>
