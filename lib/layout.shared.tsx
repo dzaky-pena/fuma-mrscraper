@@ -14,5 +14,15 @@ export function baseOptions(): BaseLayoutProps {
         </div>
       ),
     },
+    links: [
+      {
+        text: 'Support',
+        url: '/support',
+      },
+      {
+        text: 'Dashboard',
+        url: '/dashboard',
+      },
+    ],
   };
 }

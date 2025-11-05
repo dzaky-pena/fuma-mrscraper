@@ -1,15 +1,6 @@
 {
-  "root": true,
   "pages": [
-    "---Getting Started---",
-    "...getting-started",
-    "---Features---",
-    "...features",
-    "---Guides---",
-    "...guides",
-    "---Integrations---",
-    "...integrations",
-    "---Support---",
-    "...support"
+    "(documentation)",
+    "api"
   ]
 }
