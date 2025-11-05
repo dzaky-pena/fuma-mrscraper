@@ -4,7 +4,27 @@
         "/api/v1/scrapers-manual-rerun": {
             "post": {
                 "operationId": "ScraperManualRerunController_rerun",
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": ["application/json"]
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ScraperRerunRequest"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "201": {
                         "description": "Scraper rerun completed successfully",
@@ -30,7 +50,27 @@
         "/api/v1/scrapers-ai-rerun": {
             "post": {
                 "operationId": "ScraperAiRerunController_rerun",
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": ["application/json"]
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ScraperRerunRequest"
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "201": {
                         "description": "Scraper rerun completed successfully",
@@ -61,16 +101,37 @@
         "contact": {}
     },
     "tags": [],
-    "servers": [],
+    "servers": [
+        {
+            "url": "https://api.v3.app.mrscraper.com",
+            "description": "Production API Server"
+        }
+    ],
     "components": {
         "securitySchemes": {
             "bearer": {
-                "scheme": "bearer",
-                "bearerFormat": "JWT",
-                "type": "http"
+                "type": "apiKey",
+                "in": "header",
+                "name": "x-api-token"
             }
         },
         "schemas": {
+            "ScraperRerunRequest": {
+                "type": "object",
+                "properties": {
+                    "scraperId": {
+                        "type": "string",
+                        "format": "uuid",
+                        "description": "Unique identifier of the scraper to rerun"
+                    },
+                    "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "URL to scrape"
+                    }
+                },
+                "required": ["scraperId", "url"]
+            },
             "ScraperRerunResponse": {
                 "type": "object",
                 "properties": {
