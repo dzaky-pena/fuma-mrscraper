@@ -3,10 +3,12 @@
   "pages": [
     "---Getting Started---",
     "...getting-started",
-    "---Scrapers---",
-    "...scrapers",
-    "---Connections---",
-    "...connections",
+    "---Features---",
+    "...features",
+    "---Guides---",
+    "...guides",
+    "---Integrations---",
+    "...integrations",
     "---Support---",
     "...support"
   ]
