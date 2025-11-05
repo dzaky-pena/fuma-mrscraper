@@ -3,6 +3,7 @@ import { type InferPageType, loader } from 'fumadocs-core/source';
 import { lucideIconsPlugin } from 'fumadocs-core/source/lucide-icons';
 import { icons } from 'lucide-react';
 import { createElement } from 'react';
+import { openapiPlugin } from 'fumadocs-openapi/server';
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
@@ -15,7 +16,7 @@ export const source = loader({
   },
   baseUrl: '/docs',
   source: docs.toFumadocsSource(),
-  plugins: [lucideIconsPlugin()],
+  plugins: [lucideIconsPlugin(), openapiPlugin()],
 });
 
 export function getPageImage(page: InferPageType<typeof source>) {

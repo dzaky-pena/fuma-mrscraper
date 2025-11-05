@@ -2,6 +2,7 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
+@import 'fumadocs-openapi/css/preset.css';
 
 @theme {
   --color-fd-background: hsl(0, 0%, 100%);
@@ -47,4 +48,29 @@ body {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-attachment: fixed;
+}
+
+#nd-subnav a:nth-child(2) {
+  background: hsl(189, 85%, 52%);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+#nd-subnav a:nth-child(2):hover {
+  background: hsl(189, 85%, 45%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px hsla(189, 85%, 52%, 0.3);
+}
+
+.dark #nd-subnav a:nth-child(2) {
+  background: hsl(189, 85%, 60%);
+  color: hsl(189, 90%, 10%);
+}
+
+.dark #nd-subnav a:nth-child(2):hover {
+  background: hsl(189, 85%, 70%);
+  box-shadow: 0 4px 12px hsla(189, 85%, 60%, 0.4);
 }

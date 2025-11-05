@@ -1,0 +1,117 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/api/v1/scrapers-manual-rerun": {
+            "post": {
+                "operationId": "ScraperManualRerunController_rerun",
+                "parameters": [],
+                "responses": {
+                    "201": {
+                        "description": "Scraper rerun completed successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ScraperRerunResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": [
+                    "/scrapers-manual-rerun"
+                ]
+            }
+        },
+        "/api/v1/scrapers-ai-rerun": {
+            "post": {
+                "operationId": "ScraperAiRerunController_rerun",
+                "parameters": [],
+                "responses": {
+                    "201": {
+                        "description": "Scraper rerun completed successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ScraperRerunResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": [
+                    "/scrapers-ai-rerun"
+                ]
+            }
+        }
+    },
+    "info": {
+        "title": "mrscraper",
+        "description": "",
+        "version": "1.0.0",
+        "contact": {}
+    },
+    "tags": [],
+    "servers": [],
+    "components": {
+        "securitySchemes": {
+            "bearer": {
+                "scheme": "bearer",
+                "bearerFormat": "JWT",
+                "type": "http"
+            }
+        },
+        "schemas": {
+            "ScraperRerunResponse": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "Indicates if the scraping operation was successful"
+                    },
+                    "data": {
+                        "type": "object",
+                        "description": "Scraped data object with dynamic properties based on extraction",
+                        "additionalProperties": true
+                    },
+                    "html_path": {
+                        "type": "string",
+                        "description": "Local path to the saved HTML file"
+                    },
+                    "token_usage": {
+                        "type": "integer",
+                        "description": "Number of tokens used for this scraping operation"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": ["completed", "failed", "pending"],
+                        "description": "Status of the scraping operation"
+                    },
+                    "error": {
+                        "type": "string",
+                        "description": "Error message if the operation failed, empty string if successful"
+                    },
+                    "screenshot_path": {
+                        "type": "string",
+                        "description": "Local path to the saved screenshot"
+                    },
+                    "screenshot_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "Pre-signed URL to access the screenshot"
+                    }
+                },
+                "required": ["success", "status"]
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@
   "icon": "Webhook",
   "root": true,
   "pages": [
-    "index"
+    "ScraperAiRerunController_rerun",
+    "ScraperManualRerunController_rerun"
   ]
 }
