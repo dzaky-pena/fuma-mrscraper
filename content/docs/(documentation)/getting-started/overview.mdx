@@ -4,53 +4,62 @@ description: "Your all-in-one guide to understanding, configuring, and using our
 icon: "TableOfContents"
 ---
 
-import { Bot, ShoppingCart, Briefcase, Star, SlidersHorizontal, Mail, Database, Webhook } from 'lucide-react';
+import { Bot, Workflow, ShoppingCart, Briefcase, Star, SlidersHorizontal, Mail, Database, Webhook, CalendarClock, Network } from 'lucide-react';
 
 # Welcome to the MrScraper Documentation!
 
 Discover how our powerful scraping platform can transform the way you extract data. Whether you're scraping e-commerce product data, collecting job listings, gathering customer reviews for sentiment analysis, or extracting any website content, our AI-powered and manual scrapers are designed to automate and simplify the process, giving you a powerful edge in any project.
 
-## Scrapers
+## Features
 
-Learn how to use our scraper step by step
+Explore MrScraper’s key features and tools designed to make data extraction effortless.
 
 <Cards>
-  <Card title="AI Mode" icon={<Bot />} href="/scrapers/ai-mode" >
-    Get the result without hassle
+  <Card title="AI Scraper" icon={<Bot />} href="/scrapers/ai-mode">
+    Automatically extract data with natural language instructions — no coding required.
   </Card>
-  <Card title="Manual Mode" icon={<SlidersHorizontal />} href="/scrapers/manual-mode" >
-    Make your own scraper step by step
+  <Card title="Manual Scraper" icon={<Workflow />} href="/scrapers/manual-mode">
+    Build and customize your own scraper workflow step by step for full control.
+  </Card>
+  <Card title="Listing View" icon={<Network />} href="/scrapers/listing">
+    Organize and view your scraping results in a clean, structured listing format.
+  </Card>
+  <Card title="Proxy Management" icon={<SlidersHorizontal />} href="/scrapers/proxy">
+    Configure and manage proxy settings for enhanced reliability and anonymity.
+  </Card>
+  <Card title="Scheduling" icon={<CalendarClock />} href="/scrapers/schedule">
+    Automate scraper runs on a schedule to keep your data fresh and up to date.
   </Card>
 </Cards>
 
 ## Use Cases
 
-Explore various use cases for our scrapers:
+Discover how MrScraper can support different real-world scenarios.
 
 <Cards cols={3}>
-  <Card title="E-commerce" icon={<ShoppingCart />} href="/scrapers/use-cases/e-commerce" >
-    Scrape product data from popular e-commerce websites
+  <Card title="E-Commerce" icon={<ShoppingCart />} href="/scrapers/use-cases/e-commerce">
+    Scrape product details, pricing, and availability from major e-commerce sites.
   </Card>
-  <Card title="Job Listings" icon={<Briefcase />} href="/scrapers/use-cases/job-listings" >
-    Collect job listings from popular job boards
+  <Card title="Job Listings" icon={<Briefcase />} href="/scrapers/use-cases/job-listings">
+    Collect job postings and company data for recruitment or market analysis.
   </Card>
-  <Card title="Customer Reviews" icon={<Star />} href="/scrapers/use-cases/customer-reviews" >
-    Extract customer reviews for sentiment analysis
+  <Card title="Customer Reviews" icon={<Star />} href="/scrapers/use-cases/customer-reviews">
+    Extract and analyze customer feedback to gain insights into sentiment and satisfaction.
   </Card>
 </Cards>
 
-## Connections
+## Integrations
 
-Integrate your tools with Mrscraper with these connections:
+Integrate MrScraper with your favorite tools to automate your data flow.
 
 <Cards cols={3}>
-  <Card title="Email" icon={<Mail />} href="/connection/email" >
-    Send email notifications when scraping events occur.
+  <Card title="Email" icon={<Mail />} href="/connection/email">
+    Receive email notifications whenever a scraper finishes or encounters an error.
   </Card>
-  <Card title="Database" icon={<Database />} href="/connection/sql" >
-    Store your scraped data in a database for easy access and analysis.
+  <Card title="Database" icon={<Database />} href="/connection/sql">
+    Automatically store scraped data in your database for querying and analysis.
   </Card>
-  <Card title="Webhook" icon={<Webhook />} href="/connection/webhook" >
-    Connect your scraper to external services via webhooks.
+  <Card title="Webhook" icon={<Webhook />} href="/connection/webhook">
+    Send scraper results directly to external services through webhooks.
   </Card>
 </Cards>

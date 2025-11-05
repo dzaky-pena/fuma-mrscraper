@@ -1,16 +1,19 @@
 ---
 title: 'Quickstart'
-description: 'Step-by-step guide to scrape using MrScraper quickly'
+description: 'A step-by-step guide to help you scrape data quickly using MrScraper.'
 icon: 'Rocket'
 ---
 
-This guide will walk you through the essential steps to get started with our scraping platform. Whether you’re new to web scraping or already experienced, you’ll learn how to create and run your first scraper in just a few minutes.
+This guide walks you through the essential steps to get started with MrScraper.
+Whether you’re new to web scraping or already experienced, you’ll learn how to create and run your first scraper in just a few minutes.
+
 
 ## Scenario
 
-You want to collect data on the **top-selling laptops** on Amazon to analyze market trends or compare pricing.
+Imagine you want to collect data on the **top-selling laptops** on Amazon to analyze market trends or compare pricing.
 For this example, you’ll scrape data from the following category page:
-[https://www.amazon.com/s?k=laptops](https://www.amazon.com/s?k=laptops)
+
+[https://www.walmart.com/search?q=laptop&typeahead=laptop](https://www.walmart.com/search?q=laptop&typeahead=laptop)
 
 Your goal is to extract:
 
@@ -20,16 +23,21 @@ Your goal is to extract:
 * Number of reviews
 * Product link
 
-This helps you understand how to gather structured e-commerce data using AI Scraper without writing any code.
+This example shows how you can gather structured e-commerce data using **AI Scraper** — no coding required.
 
-## Step 1: Create a New Scraper
+## How to Scrape
+### Step 1: Create a New Scraper
 
-1. Log in to MrScraper, go to the **Scraper** page by clicking the **triangle icon** in the left sidebar.  
+1. Log in to **MrScraper**, then click the **Scraper** icon (triangle) in the left sidebar.
 2. Click **New Scraper +** at the top to create a new scraper.
-3. Enter the following URL to scrape: `https://www.amazon.com/s?k=laptops`.
-4. Select Super in this case since the URL we want to use require more resource to scrape.
+3. Enter the following URL to scrape:
+
+   ```
+   https://www.walmart.com/search?q=laptop&typeahead=laptop
+   ```
+4. Select **Super** as the scraper type since this URL requires more resources to process.
 5. Click **Start Scraping →** to begin.
-6. In the prompt box, enter this instruction:
+6. In the prompt box, enter the following instruction:
 
 > Scrape the top 3 laptop products on this page and return the following information in JSON format:
 >
@@ -39,32 +47,35 @@ This helps you understand how to gather structured e-commerce data using AI Scra
 > * number_of_reviews
 > * product_link
 
-## Step 2: Check the Result
-The AI scraper supports four output formats. In this example, we select the JSON format, which returns the result as shown below:
+
+### Step 2: Check the Result
+
+The AI Scraper supports four output formats.
+In this example, we select the **JSON** format, which returns results like the sample below:
 
 ```json Example Output expandable
 {
   "products": [
     {
-      "price": "$3,247.00",
-      "rating": "5.0",
-      "product_link": "/sspa/click?ie=UTF8&spc=MTo5ODk0MjE0OTA1ODk4MzI6MTc2MTg5MDEyMTpzcF9hdGY6MzAwODkzMjczNDI4NTAyOjowOjo&url=%2FLG-17-inch-Lightweight-Computer-Processor%2Fdp%2FB0FC34H632%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.jJEpn9kICDeweZBtwYeMCxVRoIoufV9gx2rFBYo-RV49b3p3tiDRtKVeAHpTyxWcJrGA6_RmbC_n_gOcqFgZHgBYfJBjMoGZXm_lq7pMkbvvKFagW1v0o39LV7eYfs_VHrbqzajrK5g8XiCVh5-JAJa69_fQ2BQaqWFtTT1pZENwu3a_AVYavQmL43kF2sU6JRWv3gdqz6BE22tZDrH27bycZ3_CPKxVL9cqqYaj_KM.tv6k2vpaXTWXrh1JJUQswqkb4iGiCzqctibhiggz2XY%26dib_tag%3D",
-      "product_name": "LG gram Pro 17-inch Lightweight Laptop Computer, Intel Evo Edition Powered by Intel Core Ultra9 285H Processor, NVIDIA RTX5050, Windows 11 Home, 32GB RAM, 2TB SSD, Black",
-      "number_of_reviews": "8"
+      "price": "$325.99",
+      "rating": "4 out of 5 Stars",
+      "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=1&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FLenovo-IdeaPad-2025-15-6-FHD-Laptop-Intel-4-Core-CPU-12GB-RAM-256GB-SSD-Wi-Fi-6-Win11%2F17468167966%3FclassType%3DVARIANT%26adsRedirect%3Dtrue",
+      "product_name": "Lenovo IdeaPad 2025 15.6” FHD Laptop, Intel 4-Core CPU, 12GB RAM, 256GB SSD, Wi-Fi 6, Win11",
+      "number_of_reviews": "1 review"
     },
     {
-      "price": "$599.99",
-      "rating": "5.0",
-      "product_link": "/Dell-Inspiron-Business-Touchscreen-Professional/dp/B0FR9KVFQQ/ref=sr_1_2?dib=eyJ2IjoiMSJ9.jJEpn9kICDeweZBtwYeMCxVRoIoufV9gx2rFBYo-RV49b3p3tiDRtKVeAHpTyxWcJrGA6_RmbC_n_gOcqFgZHgBYfJBjMoGZXm_lq7pMkbvvKFagW1v0o39LV7eYfs_VHrbqzajrK5g8XiCVh5-JAJa69_fQ2BQaqWFtTT1pZENwu3a_AVYavQmL43kF2sU6JRWv3gdqz6BE22tZDrH27bycZ3_CPKxVL9cqqYaj_KM.tv6k2vpaXTWXrh1JJUQswqkb4iGiCzqctibhiggz2XY&dib_tag=se&keywords=laptops&qid=1761890120&sr=8-2",
-      "product_name": "Dell Inspiron 15 Business Laptop, 15.6\" FHD Touchscreen, Intel 10-Core i5-1334U, 32GB RAM 1TB SSD, Wi-Fi 6, Win 11 Pro, Laptop Computer for Work School Home Office Professional Use",
-      "number_of_reviews": "6"
+      "price": "$139.00",
+      "rating": "4.1 out of 5 Stars",
+      "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=2&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FASUS-CX15-Chromebook-Laptop-15-6-FHD-NanoEdge-Display-Intel-Celeron-N4500-Processor-128GB-Storage-4GB-RAM-Pure-Gray%2F13737005799%3FclassType%3DVARIANT%26athbdg%3DL1300%26adsRedirect%3Dtrue",
+      "product_name": "ASUS CX15 15.6 inch FHD IPS Chromebook Laptop Intel Celeron N4500 4GB RAM 128GB eMMC Fabric Blue",
+      "number_of_reviews": "2507 reviews"
     },
     {
-      "price": "$389.99",
-      "rating": "4.2",
-      "product_link": "/Quad-Core-Processor-Portable-Computer-Business/dp/B0FPLVD27Y/ref=sr_1_3?dib=eyJ2IjoiMSJ9.jJEpn9kICDeweZBtwYeMCxVRoIoufV9gx2rFBYo-RV49b3p3tiDRtKVeAHpTyxWcJrGA6_RmbC_n_gOcqFgZHgBYfJBjMoGZXm_lq7pMkbvvKFagW1v0o39LV7eYfs_VHrbqzajrK5g8XiCVh5-JAJa69_fQ2BQaqWFtTT1pZENwu3a_AVYavQmL43kF2sU6JRWv3gdqz6BE22tZDrH27bycZ3_CPKxVL9cqqYaj_KM.tv6k2vpaXTWXrh1JJUQswqkb4iGiCzqctibhiggz2XY&dib_tag=se&keywords=laptops&qid=1761890120&sr=8-3",
-      "product_name": "2025 Laptop with Windows 11, Intel Quad-Core Processor (up to 3.6GHZ)16GB DDR4 RAM 512GB SSD,15.6 Inch FHD IPS Display, Metal Body,5000mAh Battery,USB3.2,Portable Laptops Computer for Business Office",
-      "number_of_reviews": "32"
+      "price": "$599.00",
+      "rating": "4.2 out of 5 Stars",
+      "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=3&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FHP-Victus-15-6-inch-FHD-144Hz-IPS-Windows-Laptop-Intel-Core-i5-13420H-16GB-RAM-512GB-SSD-Mica-Silver%2F13987763030%3FclassType%3DREGULAR%26athbdg%3DL1300%26adsRedirect%3Dtrue",
+      "product_name": "HP Victus 15.6 inch FHD 144Hz IPS Windows Gaming Laptop Intel Core i5-13420H 16GB RAM 512GB SSD RTX 4050 Mica Silver",
+      "number_of_reviews": "208 reviews"
     }
   ]
 }
@@ -73,3 +84,117 @@ The AI scraper supports four output formats. In this example, we select the JSON
 <Callout title="Note">
 The actual results may vary depending on the current Amazon listings.
 </Callout>
+
+### Step 3: Rerun the Scraper Using the API
+
+You can also trigger a rerun of the scraper you’ve created using the API.
+
+1. Ensure that you’ve generated an API Token. If not, follow the steps [here](/docs/getting-started/api-token#generating-an-api-token).
+2. Go to Settings → Enable **AI Scraper API Access**.
+3. Call the following endpoint using Postman or via our [API Reference](/docs/api/ScraperAiRerunController_rerun):
+
+```shell tab="cURL"
+curl -X POST "https://api.v3.app.mrscraper.com/api/v1/scrapers-ai-rerun" \
+  -H "accept: application/json" \
+  -H "x-api-token: atk_01aa6d4628c1770ef8968fb95a39b0095b444e32757f861d6053785df783976c" \
+  -H "content-type: application/json" \
+  -d '{
+  "scraperId": "f9146f33-d01d-4f14-aefa-22c500d7cd19",
+  "url": "https://www.amazon.com/s?k=laptops"
+}' \
+  -k
+```
+```py tab="Python"
+import requests
+
+token = "atk_01aa6d4628c1770ef8968fb95a39b0095b444e32757f861d6053785df783976c"
+
+# You can replace this link with another similar link
+new_link = "https://www.amazon.com/s?k=laptops"
+
+url = "https://api.v3.app.mrscraper.com/api/v1/scrapers-ai-rerun"
+
+headers = {
+    "accept": "application/json",
+    "x-api-token": f"{token}",
+    "content-type": "application/json",
+}
+
+payload = {
+  "scraperId": "f9146f33-d01d-4f14-aefa-22c500d7cd19",
+  "url": "https://www.amazon.com/s?k=laptops"
+}
+
+response = requests.post(url, headers=headers, json=payload, verify=False)
+
+print(response.text)
+```
+```js tab="JavaScript"
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+        
+token = "atk_01aa6d4628c1770ef8968fb95a39b0095b444e32757f861d6053785df783976c"
+
+// You can replace this link with another similar link
+new_link = "https://www.amazon.com/s?k=laptops"
+
+fetch("https://api.v3.app.mrscraper.com/api/v1/scrapers-ai-rerun", {
+  headers: {
+    "accept": "application/json",
+    "x-api-token": `${token}`,
+    "content-type": "application/json",
+  },
+  body: JSON.stringify({
+  "scraperId": "f9146f33-d01d-4f14-aefa-22c500d7cd19",
+  "url": "https://www.amazon.com/s?k=laptops"
+}, null, 2),
+  method: "POST"
+}).then(res => res.json()).then(data => console.dir(data, {depth : null})).catch(e => console.log(e.message));
+```
+4. The endpoint returns a JSON response similar to the example below:
+```json
+{
+    "success": true,
+    "data": {
+        "products": [
+            {
+                "product_name": "Lenovo IdeaPad 2025 15.6” FHD Laptop, Intel 4-Core CPU, 12GB RAM, 256GB SSD, Wi-Fi 6, Win11",
+                "price": "$325.99",
+                "rating": "4 out of 5 Stars",
+                "number_of_reviews": "1 review",
+                "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=1&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FLenovo-IdeaPad-2025-15-6-FHD-Laptop-Intel-4-Core-CPU-12GB-RAM-256GB-SSD-Wi-Fi-6-Win11%2F17468167966%3FclassType%3DVARIANT%26adsRedirect%3Dtrue"
+            },
+            {
+                "product_name": "ASUS CX15 15.6 inch FHD IPS Chromebook Laptop Intel Celeron N4500 4GB RAM 128GB eMMC Fabric Blue",
+                "price": "$139.00",
+                "rating": "4.1 out of 5 Stars",
+                "number_of_reviews": "2507 reviews",
+                "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=2&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FASUS-CX15-Chromebook-Laptop-15-6-FHD-NanoEdge-Display-Intel-Celeron-N4500-Processor-128GB-Storage-4GB-RAM-Pure-Gray%2F13737005799%3FclassType%3DVARIANT%26athbdg%3DL1300%26adsRedirect%3Dtrue"
+            },
+            {
+                "product_name": "HP Victus 15.6 inch FHD 144Hz IPS Windows Gaming Laptop Intel Core i5-13420H 16GB RAM 512GB SSD RTX 4050 Mica Silver",
+                "price": "$599.00",
+                "rating": "4.2 out of 5 Stars",
+                "number_of_reviews": "208 reviews",
+                "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=3&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FHP-Victus-15-6-inch-FHD-144Hz-IPS-Windows-Laptop-Intel-Core-i5-13420H-16GB-RAM-512GB-SSD-Mica-Silver%2F13987763030%3FclassType%3DREGULAR%26athbdg%3DL1300%26adsRedirect%3Dtrue"
+            }
+        ]
+    },
+    "html_path": "results/a6d2135d-8b15-4fdc-936c-57c7ec45f899/rerun/567a8737-c3db-4264-95d7-0f1659930b99.html",
+    "token_usage": 5,
+    "status": "completed",
+    "error": "",
+    "screenshot_path": "results/a6d2135d-8b15-4fdc-936c-57c7ec45f899/rerun/567a8737-c3db-4264-95d7-0f1659930b99.jpg",
+    "screenshot_url": "https://mrscraper-data-local.s3.amazonaws.com/results/a6d2135d-8b15-4fdc-936c-57c7ec45f899/rerun/567a8737-c3db-4264-95d7-0f1659930b99.jpg?AWSAccessKeyId=AKIAZI2LGOGSVT77P4VB&Signature=hMPWN8qXURF1%2FeO%2FR0Wx4pSW8Fw%3D&Expires=1762334505"
+}
+```
+## Next Steps
+
+You’ve successfully created, run, and rerun your first scraper with MrScraper!
+From here, you can explore our in-depth use case guides:
+
+- Scraping E-Commerce Data
+
+- Scraping Job Listings
+
+- Running Sentiment Analysis on Reviews
+
