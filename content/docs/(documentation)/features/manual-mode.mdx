@@ -4,13 +4,29 @@ description: "Step by step guide to using the Manual Scraper in MrScraper"
 icon: "SlidersHorizontal"
 ---
 
-## How to Use Manual Scraper
+The **Manual Scraper** in MrScraper allows you to create custom scraping workflows by defining a series of steps to extract data from web pages. This mode is ideal for users who need full control over the scraping process and want to handle complex scenarios.
+
+## When you Should Use Manual Scraper
+
+Use the Manual Scraper when you need to:
+
+- Extract data from complex or dynamic websites that require specific interactions.  
+- Have precise control over the scraping process and data extraction logic.
+- Handle large-scale or repetitive scraping tasks with consistent structure.  
+- Implement custom workflows that involve multiple steps, such as navigation, data extraction, and pagination.
+
+## Creating a Manual Scraper
+
+Follow these steps to create a Manual Scraper from your dashboard:
+
 1. Click on 'New Scraper +' on scrapers page
 2. Insert the link of the website you want to scrape
 3. Select 'Manual Workflow' on top
 4. Configure your scraper by adding steps
 
 You can add multiple steps to your scraper by clicking on the "Add Step" button. Each step allows you to define specific actions such as extract, click, delay, etc.
+
+## Step Types
 
 ### Extract
 
@@ -45,3 +61,162 @@ Set up pagination to navigate through multiple pages automatically.
 | Query pagination | Query Parameter (eg. "?page=2") |
 | Directory pagination (eg. "/list/page/2") | - |
 | Next page link | Next page selector |
+
+## Usage Example
+
+### Example 1: Extract
+
+Add an Extract step to scrape book titles from a webpage.
+
+- Extraction Name: `Book Title`
+- Extraction Type: `Text`
+- Selector: `h3 a`
+
+This will extract the text content of all elements with the class `h3 a`.
+
+Result :
+
+```json
+{
+  "Book Title": [
+    "A Light in the ...",
+    "Tipping the Velvet",
+    "Soumission",
+    "Sharp Objects",
+    "Sapiens: A Brief History ...",
+    "The Requiem Red",
+    "The Dirty Little Secrets ...",
+    "The Coming Woman: A ...",
+    "The Boys in the ...",
+    "The Black Maria",
+    "Starving Hearts (Triangular Trade ...",
+    "Shakespeare's Sonnets",
+    "Set Me Free",
+    "Scott Pilgrim's Precious Little ...",
+    "Rip it Up and ...",
+    "Our Band Could Be ...",
+    "Olio",
+    "Mesaerion: The Best Science ...",
+    "Libertarianism for Beginners",
+    "It's Only the Himalayas"
+  ]
+}
+```
+
+### Example 2: Paginate
+
+Add a Paginate step to navigate through multiple pages of book listings.
+
+- Pagination Type: `Query pagination`
+- Query Parameter: `?page=`
+
+This will allow the scraper to navigate through pages by appending `?page=` followed by the page number to the URL.
+
+Result :
+
+```json
+{
+  "Book Title": [
+    "A Light in the ...",
+    "Tipping the Velvet",
+    "Soumission",
+    "Sharp Objects",
+    "Sapiens: A Brief History ...",
+    "The Requiem Red",
+    "The Dirty Little Secrets ...",
+    "The Coming Woman: A ...",
+    "The Boys in the ...",
+    "The Black Maria",
+    "Starving Hearts (Triangular Trade ...",
+    "Shakespeare's Sonnets",
+    "Set Me Free",
+    "Scott Pilgrim's Precious Little ...",
+    "Rip it Up and ...",
+    "Our Band Could Be ...",
+    "Olio",
+    "Mesaerion: The Best Science ...",
+    "Libertarianism for Beginners",
+    "It's Only the Himalayas",
+    "A Light in the ...",
+    "Tipping the Velvet",
+    "Soumission",
+    "Sharp Objects",
+    "Sapiens: A Brief History ...",
+    "The Requiem Red",
+    "The Dirty Little Secrets ...",
+    "The Coming Woman: A ...",
+    "The Boys in the ...",
+    "The Black Maria",
+    "Starving Hearts (Triangular Trade ...",
+    "Shakespeare's Sonnets",
+    "Set Me Free",
+    "Scott Pilgrim's Precious Little ...",
+    "Rip it Up and ...",
+    "Our Band Could Be ...",
+    "Olio",
+    "Mesaerion: The Best Science ...",
+    "Libertarianism for Beginners",
+    "It's Only the Himalayas",
+    "A Light in the ...",
+    "Tipping the Velvet",
+    "Soumission",
+    "Sharp Objects",
+    "Sapiens: A Brief History ...",
+    "The Requiem Red",
+    "The Dirty Little Secrets ...",
+    "The Coming Woman: A ...",
+    "The Boys in the ...",
+    "The Black Maria",
+    "Starving Hearts (Triangular Trade ...",
+    "Shakespeare's Sonnets",
+    "Set Me Free",
+    "Scott Pilgrim's Precious Little ...",
+    "Rip it Up and ...",
+    "Our Band Could Be ...",
+    "Olio",
+    "Mesaerion: The Best Science ...",
+    "Libertarianism for Beginners",
+    "It's Only the Himalayas",
+    "A Light in the ...",
+    "Tipping the Velvet",
+    "Soumission",
+    "Sharp Objects",
+    "Sapiens: A Brief History ...",
+    "The Requiem Red",
+    "The Dirty Little Secrets ...",
+    "The Coming Woman: A ...",
+    "The Boys in the ...",
+    "The Black Maria",
+    "Starving Hearts (Triangular Trade ...",
+    "Shakespeare's Sonnets",
+    "Set Me Free",
+    "Scott Pilgrim's Precious Little ...",
+    "Rip it Up and ...",
+    "Our Band Could Be ...",
+    "Olio",
+    "Mesaerion: The Best Science ...",
+    "Libertarianism for Beginners",
+    "It's Only the Himalayas",
+    "A Light in the ...",
+    "Tipping the Velvet",
+    "Soumission",
+    "Sharp Objects",
+    "Sapiens: A Brief History ...",
+    "The Requiem Red",
+    "The Dirty Little Secrets ...",
+    "The Coming Woman: A ...",
+    "The Boys in the ...",
+    "The Black Maria",
+    "Starving Hearts (Triangular Trade ...",
+    "Shakespeare's Sonnets",
+    "Set Me Free",
+    "Scott Pilgrim's Precious Little ...",
+    "Rip it Up and ...",
+    "Our Band Could Be ...",
+    "Olio",
+    "Mesaerion: The Best Science ...",
+    "Libertarianism for Beginners",
+    "It's Only the Himalayas"
+  ]
+}
+```
