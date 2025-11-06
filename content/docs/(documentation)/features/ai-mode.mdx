@@ -1,11 +1,201 @@
 ---
-title: "AI Mode Scraper"
-description: "Step by step guide to using the AI Mode Scraper in MrScraper"
+title: "AI Scraper"
+description: "Learn how to use MrScraper’s AI-powered scraper to extract data effortlessly with prompts."
 icon: "Bot"
 ---
 
-## Step 1: Click on 'New Scraper +' on scrapers page
 
-## Step 2: Insert the link of the website you want to scrape
+MrScraper’s **AI Scraper** lets you extract structured data from any web page by simply describing what you need — no coding or manual setup required.   You provide a **URL** and a **prompt**, and the AI automatically analyzes the page, extracts relevant data, and returns the result in a structured format like JSON or CSV.
 
-## Step 3: Get your result
+<Callout title="Tip" type="success">
+This feature is ideal for users and developers who want fast, flexible, and intelligent web scraping without writing rules or managing selectors.
+</Callout>
+
+## When to Use the AI Scraper
+
+Use the AI Scraper when you want to:
+
+- Quickly extract data from a website without building a scraper manually.  
+- Collect small to medium-sized datasets with natural language instructions.  
+- Automate repetitive data collection tasks where precision is less critical.  
+- Prototype or test scraping ideas before committing to a full custom workflow.  
+
+For large-scale, highly structured, or repetitive tasks that require full control, consider using the **Manual Scraper** instead.
+
+
+## AI Modes
+
+The AI Scraper offers two modes, allowing you to balance between cost efficiency and output quality.
+
+| Mode |  Best For |
+|------|----------|
+| **Cheap Mode** |  Simple pages with clear structure (e.g., e-commerce listings, article summaries). |
+| **Super Mode** |  Complex pages, unstructured content, or when precision matters. |
+
+<Callout title="Note">
+You can switch between modes at any time based on your scraping needs or token budget.
+</Callout>
+
+## How It Works
+
+AI Scraper is powered by large language models that understand both the **page content** and your **prompt instructions**.
+
+Here’s how it works under the hood:
+
+1. You provide a **URL** and a **prompt** describing what you want to extract.  
+2. The AI loads and analyzes the target web page.  
+3. It interprets your prompt, locates relevant data, and generates structured output.  
+
+
+
+## Usage Example
+
+Follow these steps to use the AI Scraper from your dashboard:
+
+1. Go to your **Dashboard** → click **Create Scraper**.   
+2. Enter the **URL** you want to scrape.  
+3. Choose between **Cheap** or **Super** mode.
+4. Wait for the AI to process the provided URL.
+5. Enter your prompt describing the data you want to extract.
+6. The AI will analyze your prompt and extract the requested data.
+7. Once complete, review your results or export them as JSON or CSV.
+
+
+### Example Prompts
+
+You can guide the AI using simple, natural language prompts.  
+Here are a few examples to get you started:
+
+#### Example 1: Scrape E-Commerce Products
+
+**Prompt:**  
+> Extract product name, price, and rating from the page.
+
+**Expected Output (JSON):**
+```json
+{
+  "products": [
+    {
+      "name": "ASUS CX15 15.6 inch FHD IPS Chromebook Laptop Intel Celeron N4500 4GB RAM 128GB eMMC Fabric Blue",
+      "price": "$139.00",
+      "rating": "2571 reviews"
+    },
+    {
+      "name": "Acer Chromebook 315 15.6 inch Laptop Intel Processor N4500 4GB RAM 64GB eMMC Pure Silver, ChromeOS",
+      "price": "$159.00",
+      "rating": "9487 reviews"
+    },
+    {
+      "name": "HYYUO 14inch Laptop Compter, 8GB RAM 512GB ROM Intel Celeron N4000 with 2 Cores, Up to 2.6GHz, With Office 2024 Windows 11 WiFi 5 BT5.0 for Business, Beginners, Student, Dark Gray",
+      "price": "$175.99",
+      "rating": "64 reviews"
+    },
+    {
+      "name": "HP 15.6 inch FHD IPS Windows Laptop Intel Core i3-N305 8GB RAM 256GB PCIe NVMe SSD Natural Silver",
+      "price": "$345.99",
+      "rating": "324 reviews"
+    },
+    {
+      "name": "Dell 16 Laptop, Intel Core 5, 8GB, 512GB, FHD+ Touch, Silver Metal, Backlit Keyboard",
+      "price": "$499.00",
+      "rating": "N/A"
+    },
+    {
+      "name": "Auusda 15.6\" Business Laptop, Intel N95 CPU, 32GB RAM, 1TB SSD, Windows 11 Pro, Pink",
+      "price": "$369.59",
+      "rating": "304 reviews"
+    },
+    {
+      "name": "HP 17.3\" Touchscreen Laptop, Intel Core i3, 32GB RAM, 128GB eMMC + 2TB SSD, Windows 11 P, Silver",
+      "price": "$679.00",
+      "rating": "264 reviews"
+    },
+    {
+      "name": "RNRUO 15.6\" Laptop Computer, 32GB RAM 512GB SSD, Intel Pentium Gold 6500Y with 2 Cores Up to 3.4GHz, FHD Display, Office 2024, WiFi5 BT5.0, Windows 11 Laptop for Business, Student, Office, Dark Gray",
+      "price": "$269.99",
+      "rating": "564 reviews"
+    },
+    {
+      "name": "HP OmniBook 5 16 inch 2K Laptop Next Gen AI PC AMD Ryzen AI 7 350 16GB RAM 512GB SSD Glacier Silver",
+      "price": "$629.00",
+      "rating": "52 reviews"
+    }
+  ]
+}
+````
+
+
+#### Example 2: Extract Blog Articles
+
+**Prompt:**
+
+> Get the article title and publication date from the page.
+
+**Expected Output (JSON):**
+
+```json
+{
+  "articles": [
+    {
+      "date": "Nov 6, 2025",
+      "title": "Why You Should Consider Using Domain by Proxy for Your Website"
+    },
+    {
+      "date": "Nov 6, 2025",
+      "title": "The Complete Guide to Becoming a Business Intelligence Developer"
+    },
+    {
+      "date": "Nov 5, 2025",
+      "title": "Understanding Pricing Intelligence Software and Its Business Impact"
+    },
+    {
+      "date": "Nov 5, 2025",
+      "title": "How Competitor Pricing Helps You Stay Competitive and Profitable"
+    },
+    {
+      "date": "Nov 4, 2025",
+      "title": "What Is Retail Competitor Pricing and Why It Matters"
+    },
+    {
+      "date": "Nov 3, 2025",
+      "title": "How to Use Shuttle Proxy: Features, Configuration, and Best Practices"
+    },
+    {
+      "date": "Oct 31, 2025",
+      "title": "A Complete Guide to Interstellar Proxy and Its Key Benefits"
+    },
+    {
+      "date": "Oct 30, 2025",
+      "title": "AdsPower Proxies Explained: Setup, Benefits, and Best Practices"
+    },
+    {
+      "date": "Oct 30, 2025",
+      "title": "A Complete Guide to Anonymous Proxies and Their Benefits"
+    },
+    {
+      "date": "Oct 29, 2025",
+      "title": "Chrome Proxy Settings: How to Configure & Use Them"
+    },
+    {
+      "date": "Oct 29, 2025",
+      "title": "Everything You Need to Know About hCaptcha and Why It Matters"
+    },
+    {
+      "date": "Oct 28, 2025",
+      "title": "SocksDroid: A Lightweight SOCKS5 Proxy Client for Android"
+    }
+  ]
+}
+```
+
+
+## Tips and Best Practices
+
+* **Be Specific:** The more precise your prompt, the better your results.
+  For example, “Extract product name, price, and availability” works better than “Get product info.”
+* **Use Cheap Mode for Simple Tasks:** When testing or scraping structured pages, Cheap Mode saves tokens.
+* **Switch to Super Mode for Accuracy:** For messy or dynamic pages, Super Mode ensures better parsing and extraction.
+* **Validate Your Output:** Always review your scraped data to confirm accuracy before automating.
+* **Retry When Needed:** If results look incomplete, adjust your prompt and rerun.
+
+
