@@ -15,18 +15,9 @@ Use the Manual Scraper when you need to:
 - Handle large-scale or repetitive scraping tasks with consistent structure.  
 - Implement custom workflows that involve multiple steps, such as navigation, data extraction, and pagination.
 
-## Creating a Manual Scraper
+## Step
 
-Follow these steps to create a Manual Scraper from your dashboard:
-
-1. Click on 'New Scraper +' on scrapers page
-2. Insert the link of the website you want to scrape
-3. Select 'Manual Workflow' on top
-4. Configure your scraper by adding steps
-
-You can add multiple steps to your scraper by clicking on the "Add Step" button. Each step allows you to define specific actions such as extract, click, delay, etc.
-
-## Step Types
+You can add multiple steps to your scraper by clicking on the "Add Step" button. Each step allows you to define specific actions such as extract, click, delay, etc. Here are the available step types:
 
 ### Extract
 
@@ -64,7 +55,18 @@ Set up pagination to navigate through multiple pages automatically.
 
 ## Usage Example
 
-### Example 1: Extract
+Follow these steps to create a Manual Scraper from your dashboard:
+
+1. Click on 'New Scraper +' on scrapers page
+2. Insert the link of the website you want to scrape
+3. Select 'Manual Workflow' on top
+4. Configure your scraper by adding steps
+
+### Example 1: Click, Extract and Delay
+
+Add a Click step to open the book category.
+
+- Element to Click : `div.side_categories ul li ul li a`
 
 Add an Extract step to scrape book titles from a webpage.
 
@@ -73,6 +75,10 @@ Add an Extract step to scrape book titles from a webpage.
 - Selector: `h3 a`
 
 This will extract the text content of all elements with the class `h3 a`.
+
+Add a Delay step to make it more natural.
+
+- Duration (milliseconds): `2000`
 
 Result :
 
@@ -103,7 +109,17 @@ Result :
 }
 ```
 
-### Example 2: Paginate
+### Example 2: Scroll, Input and Paginate
+
+Add a Scroll step to scroll down the page and load more book listings.
+
+- Scroll Type: `Scroll until find a text`
+- Scroll Text: `Load More`
+
+Add an Input step to enter a search query.
+
+- Input Field Selector: `input[name="search"]`
+- Text Input: `Fiction`
 
 Add a Paginate step to navigate through multiple pages of book listings.
 
@@ -119,104 +135,10 @@ Result :
   "Book Title": [
     "A Light in the ...",
     "Tipping the Velvet",
-    "Soumission",
-    "Sharp Objects",
-    "Sapiens: A Brief History ...",
     "The Requiem Red",
-    "The Dirty Little Secrets ...",
-    "The Coming Woman: A ...",
-    "The Boys in the ...",
     "The Black Maria",
-    "Starving Hearts (Triangular Trade ...",
-    "Shakespeare's Sonnets",
     "Set Me Free",
-    "Scott Pilgrim's Precious Little ...",
-    "Rip it Up and ...",
-    "Our Band Could Be ...",
-    "Olio",
-    "Mesaerion: The Best Science ...",
-    "Libertarianism for Beginners",
-    "It's Only the Himalayas",
-    "A Light in the ...",
-    "Tipping the Velvet",
-    "Soumission",
-    "Sharp Objects",
-    "Sapiens: A Brief History ...",
-    "The Requiem Red",
-    "The Dirty Little Secrets ...",
-    "The Coming Woman: A ...",
-    "The Boys in the ...",
-    "The Black Maria",
-    "Starving Hearts (Triangular Trade ...",
-    "Shakespeare's Sonnets",
-    "Set Me Free",
-    "Scott Pilgrim's Precious Little ...",
-    "Rip it Up and ...",
-    "Our Band Could Be ...",
-    "Olio",
-    "Mesaerion: The Best Science ...",
-    "Libertarianism for Beginners",
-    "It's Only the Himalayas",
-    "A Light in the ...",
-    "Tipping the Velvet",
-    "Soumission",
-    "Sharp Objects",
-    "Sapiens: A Brief History ...",
-    "The Requiem Red",
-    "The Dirty Little Secrets ...",
-    "The Coming Woman: A ...",
-    "The Boys in the ...",
-    "The Black Maria",
-    "Starving Hearts (Triangular Trade ...",
-    "Shakespeare's Sonnets",
-    "Set Me Free",
-    "Scott Pilgrim's Precious Little ...",
-    "Rip it Up and ...",
-    "Our Band Could Be ...",
-    "Olio",
-    "Mesaerion: The Best Science ...",
-    "Libertarianism for Beginners",
-    "It's Only the Himalayas",
-    "A Light in the ...",
-    "Tipping the Velvet",
-    "Soumission",
-    "Sharp Objects",
-    "Sapiens: A Brief History ...",
-    "The Requiem Red",
-    "The Dirty Little Secrets ...",
-    "The Coming Woman: A ...",
-    "The Boys in the ...",
-    "The Black Maria",
-    "Starving Hearts (Triangular Trade ...",
-    "Shakespeare's Sonnets",
-    "Set Me Free",
-    "Scott Pilgrim's Precious Little ...",
-    "Rip it Up and ...",
-    "Our Band Could Be ...",
-    "Olio",
-    "Mesaerion: The Best Science ...",
-    "Libertarianism for Beginners",
-    "It's Only the Himalayas",
-    "A Light in the ...",
-    "Tipping the Velvet",
-    "Soumission",
-    "Sharp Objects",
-    "Sapiens: A Brief History ...",
-    "The Requiem Red",
-    "The Dirty Little Secrets ...",
-    "The Coming Woman: A ...",
-    "The Boys in the ...",
-    "The Black Maria",
-    "Starving Hearts (Triangular Trade ...",
-    "Shakespeare's Sonnets",
-    "Set Me Free",
-    "Scott Pilgrim's Precious Little ...",
-    "Rip it Up and ...",
-    "Our Band Could Be ...",
-    "Olio",
-    "Mesaerion: The Best Science ...",
-    "Libertarianism for Beginners",
-    "It's Only the Himalayas"
+    "Olio"
   ]
 }
 ```
