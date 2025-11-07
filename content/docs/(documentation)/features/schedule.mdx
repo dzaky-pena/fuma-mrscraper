@@ -8,6 +8,17 @@ icon: "ClipboardClock"
 
 Scheduling allows you to automate the execution of your scrapers at predefined times or intervals. This ensures that your data is always up-to-date without manual intervention.
 
+## Schedule Modes
+
+When scheduling a scraper, you must choose between two configuration modes:
+
+- **AI Mode:** The scraper will run using AI-powered extraction automatically.
+- **Manual Mode:** The scraper will run using your predefined manual configuration.
+
+<Callout type="info">
+    You can only schedule one mode at a time. If you schedule the scraper to run in Manual mode, the AI mode will not execute during the scheduled runs, and vice versa. Each schedule is tied to a specific mode configuration.
+</Callout>
+
 ## When to Use Scheduling?
 
 Scheduling is particularly useful in scenarios such as:
@@ -23,7 +34,7 @@ Follow these steps to schedule your scraper:
 1. Navigate to your **Scrapers page** by clicking the **triangle icon** on the left sidebar.
 2. Select the scraper you want to schedule.
 3. Click on the **Settings** button, and click **Schedule**.
-4. In the **Schedule Scraper** menu, choose your scraper mode.
+4. In the **Schedule Scraper** menu, choose your scraper mode (**AI Mode** or **Manual Mode**). Remember that only the selected mode will run during scheduled executions.
 5. Choose your preferred scheduling time by choosing in the dropdown menu, you can choose between `Every Hour`, `Daily`, `Weekly`, or `Custom`.
 6. If you select `Custom`, specify the exact interval and unit for your scraper to run. You can set it to run every X minutes, hours, or days.
 7. Click **Save Schedule** to apply your settings.
