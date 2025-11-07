@@ -4,28 +4,22 @@ description: "This guide explains how to schedule your scrapers to run at specif
 icon: "ClipboardClock"
 ---
 
-## What Is Scheduling?
-
-Scheduling allows you to automate the execution of your scrapers at predefined times or intervals. This ensures that your data is always up-to-date without manual intervention.
-
-## Schedule Modes
-
-When scheduling a scraper, you must choose between two configuration modes:
-
-- **AI Mode:** The scraper will run using AI-powered extraction automatically.
-- **Manual Mode:** The scraper will run using your predefined manual configuration.
-
-<Callout type="info">
-    You can only schedule one mode at a time. If you schedule the scraper to run in Manual mode, the AI mode will not execute during the scheduled runs, and vice versa. Each schedule is tied to a specific mode configuration.
-</Callout>
-
-## When to Use Scheduling?
-
-Scheduling is particularly useful in scenarios such as:
+Scheduling allows you to automate the execution of your scrapers at predefined times or intervals. This ensures that your data is always up-to-date without manual intervention. Scheduling is particularly useful in scenarios such as:
 
 - **Regular Data Updates:** If you need to keep your data fresh, such as daily price monitoring or weekly news aggregation.
 - **Time-Sensitive Data:** For data that changes frequently, like stock prices or social media trends.
 - **Resource Management:** To run scrapers during off-peak hours to optimize resource usage and reduce costs.
+
+## Schedule Modes
+
+When scheduling a scraper, you can choose between two configuration modes:
+
+- **AI Mode:** The scraper will run using AI-powered extraction automatically.
+- **Manual Mode:** The scraper will run using your predefined manual configuration.
+
+<Callout type="info" title="Note">
+    You can only schedule one mode at a time. If you schedule the scraper to run in Manual mode, the AI mode will not execute during the scheduled runs, and vice versa. Each schedule is tied to a specific mode configuration.
+</Callout>
 
 ## Usage Example
 
@@ -38,7 +32,5 @@ Follow these steps to schedule your scraper:
 5. Choose your preferred scheduling time by choosing in the dropdown menu, you can choose between `Every Hour`, `Daily`, `Weekly`, or `Custom`.
 6. If you select `Custom`, specify the exact interval and unit for your scraper to run. You can set it to run every X minutes, hours, or days.
 7. Click **Save Schedule** to apply your settings.
-
-### Result
 
 Once scheduled, your scraper will automatically run at the specified intervals, and you can see its results in the **Results** page. You can modify or cancel the schedule at any time by returning to the **Schedule** settings of your scraper.
