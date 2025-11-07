@@ -1,31 +1,101 @@
 ---
-title: Proxy
-description: "This guide explains how to configure proxy settings for your scrapers."
+title: "Proxy"
+description: "Learn how to configure and use proxies in MrScraper to enhance scraping reliability and access restricted content."
 icon: "Waypoints"
 ---
 
-## What Is Proxy?
+A **proxy** acts as an intermediary between your scraper and the target website.  
+It helps you:
 
-A proxy acts as an intermediary between your scraper and the target website. It helps to mask your IP address, allowing you to avoid IP bans and access geo-restricted content.
+- Mask your real IP address  
+- Avoid IP bans during large scraping tasks  
+- Access geo-restricted or localized content
+
+MrScraper provides both **built-in location-based proxies** and **custom proxy support**, giving you full flexibility depending on your scraping needs.
+
+
+## MrScraper Built-in Proxy
+
+MrScraper provides both **built-in location-based proxies** and **custom proxy support**, giving you full flexibility depending on your scraping needs.
+
+Below is the full list of supported countries and regions available for MrScraper’s built-in proxies:
+
+<table>
+<thead>
+<tr>
+<th>Country/Region Name</th>
+<th>Country/Region Name</th>
+<th>Country/Region Name</th>
+<th>Country/Region Name</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Honduras</td><td>Guatemala</td><td>Jamaica</td><td>Mexico</td></tr>
+<tr><td>Panama</td><td>Dominican Republic</td><td>El Salvador</td><td>Costa Rica</td></tr>
+<tr><td>Nicaragua</td><td>Russia</td><td>Albania</td><td>Serbia</td></tr>
+<tr><td>Bosnia & Herzegovina</td><td>Kosovo</td><td>Belarus</td><td>Austria</td></tr>
+<tr><td>Moldova</td><td>Czech Republic</td><td>Greece</td><td>Ukraine</td></tr>
+<tr><td>North Macedonia</td><td>Bulgaria</td><td>Brunei</td><td>Mongolia</td></tr>
+<tr><td>Bangladesh</td><td>Nepal</td><td>Pakistan</td><td>Sri Lanka</td></tr>
+<tr><td>Bahrain</td><td>Kuwait</td><td>Oman</td><td>Qatar</td></tr>
+<tr><td>United Arab Emirates</td><td>Iraq</td><td>Israel</td><td>Lebanon</td></tr>
+<tr><td>Jordan</td><td>Palestine</td><td>Syria</td><td>Armenia</td></tr>
+<tr><td>Azerbaijan</td><td>Iran</td><td>Turkey</td><td>Kazakhstan</td></tr>
+<tr><td>Uzbekistan</td><td>Georgia</td><td>Cambodia</td><td>Bolivia</td></tr>
+<tr><td>Guyana</td><td>Brazil</td><td>Argentina</td><td>Colombia</td></tr>
+<tr><td>Chile</td><td>Venezuela</td><td>Peru</td><td>Ecuador</td></tr>
+<tr><td>Paraguay</td><td>Uruguay</td><td>Morocco</td><td>Tunisia</td></tr>
+<tr><td>Egypt</td><td>Gabon</td><td>Republic of the Congo</td><td>Botswana</td></tr>
+<tr><td>Togo</td><td>South Africa</td><td>Kenya</td><td>Nigeria</td></tr>
+<tr><td>Algeria</td><td>Mali</td><td>Senegal</td><td>Angola</td></tr>
+</tbody>
+</table>
+
+<Callout title="Tip" type="success">
+Use built-in proxies when you need to scrape data from region-locked websites or compare results between countries (for example, e-commerce prices or job listings).
+</Callout>
+
 
 ## How to Configure Proxy Settings
 
+Follow these steps to set up a proxy for your scraper:
 
 ### Step 1: Open Your Scraper Settings
 
-1. Navigate to your **Scrapers page** by clicking the **triangle icon** on the left sidebar.
+1. Go to your **Scrapers** page by clicking the **triangle icon** in the left sidebar.  
+2. Select the scraper you want to configure.  
+3. Click **Settings → Proxy Settings**.
 
-2. Select the scraper you want to configure.
-3. Click on the **Settings** button, and click **Proxy Settings**.
 
-### Step 2: Configure Proxy
+### Step 2: Enable and Configure Proxy
 
-1. In the **Proxy Settings** menu, toggle the **Enable Proxy**.
+In the **Proxy Settings** panel, you can select one of the following options:
 
-2. Enter your proxy URL.
+#### Option 1: Use MrScraper’s Built-in Proxy
 
-    <Callout title="Note">
-        Format: http://username:password@host:port or https://host:port
-    </Callout>
+1. Toggle **Enable Proxy**.  
+2. Under **Proxy Type**, choose **MrScraper Proxy**.  
+3. Select your desired **location/region** from the dropdown list.  
+   - Each region provides a local IP address, ideal for geo-targeted scraping.  
+4. Click **Save Settings**.
 
-3. Click **Save Settings** to use your proxy.
+<Callout title="Note">
+The scraper will now route traffic through the selected country’s proxy network, allowing access to region-specific or restricted content.
+</Callout>
+
+
+#### Option 2: Use Custom Proxy
+<Callout title="Warning" type="warning">
+Only use proxies from trusted providers to ensure your data remains secure.
+</Callout>
+1. Toggle **Enable Proxy**.  
+2. Under **Proxy Type**, choose **Custom Proxy**.  
+3. Enter your proxy URL in one of the following formats: `http://username:password@host:port` or `https://host:port`.
+
+4. Click **Save Settings** to apply your configuration.
+
+<Callout title="Tip" type="success">
+Use your own proxy if you have an existing provider, private IP pool, or dedicated proxy infrastructure.
+</Callout>
+
+
