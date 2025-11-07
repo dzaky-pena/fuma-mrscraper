@@ -8,20 +8,26 @@ icon: "ClipboardClock"
 
 Scheduling allows you to automate the execution of your scrapers at predefined times or intervals. This ensures that your data is always up-to-date without manual intervention.
 
-## How to Schedule a Scraper
+## When to Use Scheduling?
 
-### Step 1: Open your scraper settings
+Scheduling is particularly useful in scenarios such as:
+
+- **Regular Data Updates:** If you need to keep your data fresh, such as daily price monitoring or weekly news aggregation.
+- **Time-Sensitive Data:** For data that changes frequently, like stock prices or social media trends.
+- **Resource Management:** To run scrapers during off-peak hours to optimize resource usage and reduce costs.
+
+## Usage Example
+
+Follow these steps to schedule your scraper:
 
 1. Navigate to your **Scrapers page** by clicking the **triangle icon** on the left sidebar.
-
 2. Select the scraper you want to schedule.
 3. Click on the **Settings** button, and click **Schedule**.
+4. In the **Schedule Scraper** menu, choose your scraper mode.
+5. Choose your preferred scheduling time by choosing in the dropdown menu, you can choose between `Every Hour`, `Daily`, `Weekly`, or `Custom`.
+6. If you select `Custom`, specify the exact interval and unit for your scraper to run. You can set it to run every X minutes, hours, or days.
+7. Click **Save Schedule** to apply your settings.
 
-### Step 2: Configure scheduling options
+### Result
 
-1. In the **Schedule Scraper** menu, choose your scraper mode.
-
-2. Choose your preferred scheduling time by choosing in the dropdown menu, you can choose between `Every Hour`, `Daily`, `Weekly`, or `Custom`.
-3. If you select `Custom`, specify the exact interval and unit for your scraper to run. You can set it to run every X minutes, hours, or days.
-
-4. Click **Save Schedule** to apply your settings.
+Once scheduled, your scraper will automatically run at the specified intervals, and you can see its results in the **Results** page. You can modify or cancel the schedule at any time by returning to the **Schedule** settings of your scraper.
