@@ -1,5 +1,122 @@
 ---
-title: 'Collect Job Listings'
-description: 'Learn how to extract job listings from popular job boards using our scrapers.'
-icon: 'Briefcase'
+title: "Job Listing"
+description: "Learn how to use MrScraper to extract job postings from real websites for analysis, hiring trends, or app development."
+icon: "Briefcase"
 ---
+
+One of the most useful applications of MrScraper is collecting job listings from public job boards or company career pages.  
+Instead of manually copying job titles, companies, and locations, you can use the **AI Scraper** to extract them automatically — with just a URL and a prompt.
+
+Let’s walk through a **real-world example** where a recruitment team uses MrScraper to collect data from a live job board.
+
+
+## Scenario
+
+Imagine you’re an HR specialist at a startup.  
+You want to **monitor remote software engineering jobs** to understand what skills other companies are hiring for.  
+Instead of browsing multiple sites daily, you’ll use MrScraper to extract listings from [Remote OK](https://remoteok.com/remote-dev-jobs), a website that lists remote developer jobs.
+
+
+
+## Step 1: Create a New AI Scraper
+
+1. Go to your **MrScraper Dashboard** → click **Create Scraper**.  
+2. Enter the URL:  
+```
+
+[https://remoteok.com/remote-dev-jobs](https://remoteok.com/remote-dev-jobs)
+
+````
+3. Choose **AI Scraper** as your scraper type.  
+4. Select **Super Mode** to get more accurate and structured extraction for job listings.
+
+
+
+## Step 2: Write Your Prompt
+
+MrScraper’s AI works based on prompts — you simply describe the data you want to extract.  
+Here are two example prompts for this use case:
+
+**Prompt 1 (Simple):**
+> Extract all job listings. Include job title, company name, and location.
+
+**Prompt 2 (Detailed):**
+> Extract all job listings with these fields:  
+> - job_title  
+> - company  
+> - location  
+> - date_posted  
+> - salary (if available)  
+> - job_link
+
+You can test both prompts to see which fits your needs best.
+
+
+
+## Step 3: Run the Scraper
+
+Click **Run Scraper**.  
+MrScraper will process the page and return structured data.
+
+Here’s a sample output:
+
+```json
+[
+{
+ "job_title": "Frontend Engineer (React)",
+ "company": "Toggl",
+ "location": "Remote - Europe",
+ "date_posted": "Nov 4, 2025",
+ "salary": "$60,000 - $80,000",
+ "job_link": "https://remoteok.com/remote-jobs/12345"
+},
+{
+ "job_title": "Backend Engineer (Python)",
+ "company": "Hotjar",
+ "location": "Remote - Worldwide",
+ "date_posted": "Nov 3, 2025",
+ "salary": "Not listed",
+ "job_link": "https://remoteok.com/remote-jobs/12346"
+}
+]
+````
+
+You can export this data to **JSON**, **CSV**, or view it directly in the dashboard.
+
+
+
+## Step 4: Optional — Use Proxy for Region-Based Results
+
+Some job websites show listings based on the visitor’s region.
+If you need to see results for another country, you can use **MrScraper’s built-in proxy**.
+
+1. Open your scraper’s **Settings → Proxy Settings**.
+2. Enable **Use Proxy**.
+3. Choose **MrScraper Proxy** and select a region (e.g., *United States*, *Germany*, or *India*).
+4. Save and re-run your scraper to get region-specific listings.
+
+<Callout title="Tip">
+You can also use your **own proxy** if you have specific network or compliance requirements.
+</Callout>
+
+
+
+## Step 5: Schedule Your Scraper
+
+If you want to keep your job dataset updated:
+
+1. Go to **Schedule Settings** in your scraper.
+2. Set it to run **daily** or **weekly**.
+3. Your scraper will automatically collect new listings each time.
+
+
+
+## Why This Is Useful
+
+By using this setup, you can:
+
+* Track new job openings for specific roles (e.g., “Python Developer”)
+* Analyze what tech stacks or salaries are trending
+* Build a private job aggregation dashboard
+* Save time on manual monitoring for HR or recruiting research
+

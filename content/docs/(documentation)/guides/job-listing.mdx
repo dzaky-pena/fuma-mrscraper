@@ -1,4 +1,229 @@
 ---
 title: "Job Listing"
+description: "Learn how to use MrScraper to extract job postings from real websites for analysis, hiring trends, or app development."
 icon: "Briefcase"
 ---
+
+Extracting job listings manually from job boards can be tedious and time-consuming. With **MrScraper’s AI Scraper**, you can automate this process entirely — providing only a URL and a short prompt describing what to extract.  
+
+In this guide, we’ll walk through a **real-world example** where a recruitment team uses MrScraper to gather and analyze data from a live job board to inform their hiring strategy.
+
+
+## Scenario
+
+Imagine you’re an HR specialist at a growing tech startup planning to hire a **Data Scientist**.  
+Before posting your own job, you want to understand:
+
+- What skills and qualifications are most in-demand  
+- How other companies describe their Data Scientist roles  
+- Which cities or companies are hiring for similar positions  
+
+## Step 1: Create a New AI Scraper
+
+1. Go to your **MrScraper Dashboard** → click **Create Scraper**.  
+2. Enter the URL: `https://www.glassdoor.com/Job/indonesia-data-scientist-jobs-SRCH_IL.0,9_IN113_KO10,25.htm`
+3. Choose **AI Scraper** as your scraper type.  
+4. Select **Super Mode** to get more accurate and structured extraction for job listings.
+
+
+## Step 2: Filter Out
+
+Next, tell the AI exactly what kind of job data you want to capture. The prompt defines both the structure of your results and any filters to apply. For this use case, you can use the following prompt:
+```txt
+Only include job listings where the title clearly contains "Data Scientist" or closely related variations such as "Senior Data Scientist" or "Machine Learning Scientist". Ensure the Required Skills field is explicitly mentioned or can be inferred from the job description.
+```
+Here’s a sample output:
+
+```json
+{
+  "jobs": [
+    {
+      "url": "https://www.glassdoor.com/partner/jobListing.htm?pos=107&ao=1136043&s=58&guid=0000019a6cf5bc56b3d15b3f2af90016&src=GD_JOB_AD&t=SR&vt=w&cs=1_af699026&cb=1762764635496&jobListingId=1006348692408&jrtk=5-pdx1-0-1j9mfbf57j1p0800-7d913145cdf09210",
+      "title": "Data Scientist",
+      "job_id": "1006348692408",
+      "snippet": "Akuisisi dan mengolah data dari berbagai sumber. Membuat model dari data yang dimiliki oleh perusahaan dan / atau klien.&hellip;",
+      "employer": "Mitraplus",
+      "location": "Jakarta",
+      "date_posted": "30d+",
+      "required_skills": [
+        "DATA",
+        "Scientist",
+        "Akuisisi",
+        "DAN",
+        "Mengolah",
+        "DARI",
+        "Berbagai",
+        "Sumber",
+        "Membuat",
+        "Model",
+        "YANG",
+        "Dimiliki",
+        "OLEH",
+        "Perusahaan",
+        "Dan / Atau",
+        "Klien",
+        "Hellip"
+      ]
+    },
+    {
+      "url": "https://www.glassdoor.com/partner/jobListing.htm?pos=108&ao=1136043&s=58&guid=0000019a6cf5bc56b3d15b3f2af90016&src=GD_JOB_AD&t=SR&vt=w&ea=1&cs=1_56e0bab8&cb=1762764635496&jobListingId=1009417433400&jrtk=5-pdx1-0-1j9mfbf57j1p0800-09e2e874161ea755",
+      "title": "Data Scientist - Risk Platform",
+      "job_id": "1009417433400",
+      "snippet": "Help build the variety of data ingredients needed to do modelling effectively. Query, process, cleanse, and verify the integrity of data used for analysis.&hellip;",
+      "employer": "Indodana",
+      "location": "Jakarta",
+      "date_posted": "30d+",
+      "required_skills": [
+        "DATA",
+        "Scientist - Risk",
+        "Platform",
+        "HELP",
+        "Build",
+        "Variety",
+        "Ingredients",
+        "Needed",
+        "DO",
+        "Modelling",
+        "Effectively",
+        "Query",
+        "Process",
+        "Cleanse",
+        "Verify",
+        "Integrity",
+        "USED",
+        "Analysis",
+        "Hellip"
+      ]
+    },
+    {
+      "url": "https://www.glassdoor.com/partner/jobListing.htm?pos=109&ao=1136043&s=58&guid=0000019a6cf5bc56b3d15b3f2af90016&src=GD_JOB_AD&t=SR&vt=w&cs=1_ebad7eac&cb=1762764635496&jobListingId=1009254087337&jrtk=5-pdx1-0-1j9mfbf57j1p0800-6a0e19d2e80b1d04",
+      "title": "Data Engineer/Scientist",
+      "job_id": "1009254087337",
+      "snippet": "Work closely with data scientists and analysts to identify data patterns, trends, and anomalies, translating raw information into actionable insights.&hellip;",
+      "employer": "Durapower Group",
+      "location": "Central Java",
+      "date_posted": "30d+",
+      "required_skills": [
+        "DATA",
+        "Engineer/scientist",
+        "WORK",
+        "Closely",
+        "Scientists",
+        "Analysts",
+        "Identify",
+        "Patterns",
+        "Trends",
+        "Anomalies",
+        "Translating",
+        "RAW",
+        "Information",
+        "INTO",
+        "Actionable",
+        "Insights",
+        "Hellip"
+      ]
+    },
+    {
+      "url": "https://www.glassdoor.com/partner/jobListing.htm?pos=110&ao=1136043&s=58&guid=0000019a6cf5bc56b3d15b3f2af90016&src=GD_JOB_AD&t=SR&vt=w&cs=1_163b998e&cb=1762764635496&jobListingId=1009749251331&jrtk=5-pdx1-0-1j9mfbf57j1p0800-7808b5353b27edee",
+      "title": "Data Scientist",
+      "job_id": "1009749251331",
+      "snippet": "Work with Vendors: Collaborate with external vendors to integrate new data sources into the data ecosystem, ensuring seamless data flow and integration.&hellip;",
+      "employer": "PT PM SAMPOERNA ISC",
+      "location": "Jakarta",
+      "date_posted": "30d+",
+      "required_skills": [
+        "DATA",
+        "Scientist",
+        "WORK",
+        "Vendors",
+        "Collaborate",
+        "External",
+        "Integrate",
+        "NEW",
+        "Sources",
+        "INTO",
+        "Ecosystem",
+        "Ensuring",
+        "Seamless",
+        "FLOW",
+        "Integration",
+        "Hellip"
+      ]
+    },
+    {
+      "url": "https://www.glassdoor.com/partner/jobListing.htm?pos=111&ao=1136043&s=58&guid=0000019a6cf5bc56b3d15b3f2af90016&src=GD_JOB_AD&t=SR&vt=w&cs=1_49ec85f3&cb=1762764635497&jobListingId=1009815781335&jrtk=5-pdx1-0-1j9mfbf57j1p0800-537ba64a0be27e31",
+      "title": "Data Scientist",
+      "job_id": "1009815781335",
+      "snippet": "Collaborate with cross-functional teams to understand business pain points and explore opportunities for data science applications.&hellip;",
+      "employer": "Sun Life",
+      "location": "Jakarta",
+      "date_posted": "30d+",
+      "required_skills": [
+        "DATA",
+        "Scientist",
+        "Collaborate",
+        "Cross-functional",
+        "Teams",
+        "Understand",
+        "Business",
+        "PAIN",
+        "Points",
+        "Explore",
+        "Opportunities",
+        "Science",
+        "Applications",
+        "Hellip"
+      ]
+    },
+    {
+      "url": "https://www.glassdoor.com/partner/jobListing.htm?pos=112&ao=1136043&s=58&guid=0000019a6cf5bc56b3d15b3f2af90016&src=GD_JOB_AD&t=SR&vt=w&cs=1_8e83d6e0&cb=1762764635497&jobListingId=1009914973974&jrtk=5-pdx1-0-1j9mfbf57j1p0800-d4538f22243d8a94",
+      "title": "Associate Data Scientist KG Media",
+      "job_id": "1009914973974",
+      "snippet": "This role bridges data analysis and applied data science, with an emphasis on business impact and scalability. Ability to connect data with business KPIs.&hellip;",
+      "employer": "Kompas Gramedia",
+      "location": "Jakarta",
+      "date_posted": "19d",
+      "required_skills": [
+        "Associate",
+        "DATA",
+        "Scientist",
+        "KG",
+        "Media",
+        "THIS",
+        "ROLE",
+        "Bridges",
+        "Analysis",
+        "Applied",
+        "Science",
+        "AN",
+        "Emphasis",
+        "Business",
+        "Impact",
+        "Scalability",
+        "Ability",
+        "Connect",
+        "KPIS",
+        "Hellip"
+      ]
+    }
+  ],
+  "mode": "direct",
+  "count": 6
+}
+````
+
+<Callout title="Tip" type="success">
+- Some job sites show different listings by region. Use MrScraper’s proxy to view results from other countries, or your own proxy if needed.
+- Schedule your scraper to run daily or weekly to keep your job data up to date.
+</Callout>
+
+## Step 3: Use the Extracted Data
+Once you’ve collected the job listings, you can export and use the data directly from the dashboard in your preferred format.
+
+Here are a few ways to use it:
+
+- **Job posting optimization**: Identify trending keywords or skills that attract top candidates.
+
+- **Competitor analysis**: See how similar companies describe their open roles.
+
+- **Internal reporting**: Share hiring trends or skill gaps with your HR or analytics team.
