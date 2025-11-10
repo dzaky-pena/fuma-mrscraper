@@ -18,17 +18,18 @@ Follow the steps below to use our Listing Scraper to extract Tiktok Shop's produ
 4. In the **Target URL** field, enter the URL of the Tiktok Shop page you want to scrape. For example: `https://shop-id.tokopedia.com/c/phones-electronics/601739?source=ecommerce_mall&enter_method=categories&first_entrance=ecommerce_mall&first_entrance_position=region_redirect_301`.
 5. Click on the **Start Scraping** button to start scraping.
 
-Result :
+**Result :**
 
-```json Title="Scraping Result"
+```json title="Scraping Result"
 {
   "mode": "direct",
   "count": 71,
   "links": [
     "https://www.tiktok.com/shop/pdp/nose-ring-by-oufer-20g-halloween-cz-double-hoop-in-316l-stainless-steel/1729608283143704812",
-    "...",
-    "...",
-    "..."
+    "https://www.tiktok.com/shop/pdp/usb-powered-led-disco-lights-by-unnamed-brand-with-remote-control-strobe-effects/1729483087369179985",
+    "https://www.tiktok.com/shop/pdp/halloween-pumpkin-night-light-mini-led-dimmable-touch-lamp-for-kids/1731541214379741272",
+    "https://www.tiktok.com/shop/pdp/soft-funny-throw-blanket-cozy-fleece-for-home-movie-decor/1731291206388977735",
+    "https://www.tiktok.com/shop/pdp/40oz-sip-sip-hooray-halloween-tumblers-with-lid-straw-durable-glass/1729576207882752721"
   ],
   "products": [
     {
@@ -46,13 +47,273 @@ Result :
       "original_price": 11.82
     },
     {
-      "..."
+      "id":"1729483087369179985"
+      "url":"https://www.tiktok.com/shop/pdp/usb-powered-led-disco-lights-by-unnamed-brand-with-remote-control-strobe-effects/1729483087369179985"
+      "sold":11000
+      "brand":"11.0K sold"
+      "price":16.65
+      "title":"1pc All Aluminum One Body Party Disco Light with Remote Control, USB Powered, for Party Birthday Wedding Holiday Christmas Decoration #TOP PICKS"
+      "rating":4.6
+      "section":"Oufer 20G Halloween CZ Double Hoop Nose Ring 316L Stainless Steel"
+      "currency":"$"
+      "sold_raw":"11.0K"
+      "free_shipping":false
+      "original_price":34.69
     },
     {
-      "..."
+      "id":"1731541214379741272"
+      "url":"https://www.tiktok.com/shop/pdp/halloween-pumpkin-night-light-mini-led-dimmable-touch-lamp-for-kids/1731541214379741272"
+      "sold":1900
+      "brand":"1.9K sold"
+      "price":9.99
+      "title":"Halloween Pumpkin Night Light, Halloween Decorations Outdoor,Mini LED Pumpkin Lamp with 3 Level Dimmable, Nursery Nightlight for Kids, Silicone Rechargeable Bedside Touch Lamp, for Kids TikTokShopBlackFriday"
+      "rating":4.7
+      "section":"1pc All Aluminum One Body Party Disco Light with Remote Control, USB Powered, for Party Birthday Wedding Holiday Christmas Decoration #TOP PICKS"
+      "currency":"$"
+      "sold_raw":"1.9K"
+      "free_shipping":false
+      "original_price":NULL
     },
     {
-      "..."
+      "id":"1731291206388977735"
+      "url":"https://www.tiktok.com/shop/pdp/soft-funny-throw-blanket-cozy-fleece-for-home-movie-decor/1731291206388977735"
+      "sold":3000
+      "brand":"3.0K sold"
+      "price":14.39
+      "title":"Soft Funny Throw Blanket Horror Icons Flannel Fleece - Cozy Fuzzy Plush Comfy All-Season Sofa Bedroom Dorm Couch Office Car Travel Home Bedding,Comfortable Movie Decor Blanket Men Women Boys Girls Halloween Birthday Fan Gifts"
+      "rating":4.8
+      "section":"Halloween Pumpkin Night Light, Halloween Decorations Outdoor,Mini LED Pumpkin Lamp with 3 Level Dimmable, Nursery Nightlight for Kids, Silicone Rechargeable Bedside Touch Lamp, for Kids TikTokShopBlackFriday"
+      "currency":"$"
+      "sold_raw":"3.0K"
+      "free_shipping":true
+      "original_price":23.98
+    },
+    {
+      "id":"1729576207882752721"
+      "url":"https://www.tiktok.com/shop/pdp/40oz-sip-sip-hooray-halloween-tumblers-with-lid-straw-durable-glass/1729576207882752721"
+      "sold":6100
+      "brand":"6.1K sold"
+      "price":18.79
+      "title":"Sip-Sip Hooray! Halloween Tumbler – Cup with Lid & Straw, Spooky Season Iced Coffee Gift, Halloweentok 2024 Reusable Drinkware Insulated Sports Bottle Travel Water Bottle"
+      "rating":4.7
+      "section":"Soft Funny Throw Blanket Horror Icons Flannel Fleece - Cozy Fuzzy Plush Comfy All-Season Sofa Bedroom Dorm Couch Office Car Travel Home Bedding,Comfortable Movie Decor Blanket Men Women Boys Girls Halloween Birthday Fan Gifts"
+      "currency":"$"
+      "sold_raw":"6.1K"
+      "free_shipping":false
+      "original_price":28.56
+    }
+  ]
+}
+```
+
+You can also filter the result by giving prompt in the chat.
+
+**Prompt:**  
+> take only product with rating 4.7 or more.
+
+**Result :**
+
+```json title="Filtered Scraping Result"
+{
+  "mode": "direct",
+  "products": [
+    {
+      "url": "https://www.tiktok.com/shop/pdp/halloween-pumpkin-night-light-mini-led-dimmable-touch-lamp-for-kids/1731541214379741272",
+      "sold": "1.9K sold",
+      "price": 9.99,
+      "title": "Halloween Pumpkin Night Light, Halloween Decorations Outdoor,Mini LED Pumpkin Lamp with 3 Level Dimmable, Nursery Nightlight for Kids, Silicone Rechargeable Bedside Touch Lamp, for Kids TikTokShopBlackFriday",
+      "rating": 4.7,
+      "section": "TikTok Picks",
+      "currency": "$",
+      "free_shipping": false,
+      "original_price": null
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/soft-funny-throw-blanket-cozy-fleece-for-home-movie-decor/1731291206388977735",
+      "sold": "3.0K sold",
+      "price": 14.39,
+      "title": "Soft Funny Throw Blanket Horror Icons Flannel Fleece - Cozy Fuzzy Plush Comfy All-Season Sofa Bedroom Dorm Couch Office Car Travel Home Bedding,Comfortable Movie Decor Blanket Men Women Boys Girls Halloween Birthday Fan Gifts",
+      "rating": 4.8,
+      "section": "TikTok Picks",
+      "currency": "$",
+      "free_shipping": true,
+      "original_price": 23.98
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/40oz-sip-sip-hooray-halloween-tumblers-with-lid-straw-durable-glass/1729576207882752721",
+      "sold": "6.1K sold",
+      "price": 18.79,
+      "title": "Sip-Sip Hooray! Halloween Tumbler – Cup with Lid & Straw, Spooky Season Iced Coffee Gift, Halloweentok 2024 Reusable Drinkware Insulated Sports Bottle Travel Water Bottle",
+      "rating": 4.7,
+      "section": "TikTok Picks",
+      "currency": "$",
+      "free_shipping": false,
+      "original_price": 28.56
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/1729574434882163435",
+      "sold": "4.3K sold",
+      "price": 28.79,
+      "title": "Women's Halloween Themed All Over Hybrid Skull Knit Button Front Cardigan, Casual Drop Shoulder Long Sleeve V Neck Knitwear for Fall, Fashion Ladies' Knit Clothing for Daily Wear",
+      "rating": 4.8,
+      "section": "TikTok Picks",
+      "currency": "$",
+      "free_shipping": false,
+      "original_price": 38.39
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/soft-dragon-pattern-throw-blanket-by-brand-for-home-office-travel/1729625176913449761",
+      "sold": "4.7K sold",
+      "price": 9.15,
+      "title": "Dragon Pattern Blanket, 1/2 Counts Soft Throw Blanket, Halloween Decor Warm Napping Blanket for Home Office Travel Camping Dormitory, Slogan Print Blanket",
+      "rating": 4.9,
+      "section": "TikTok Picks",
+      "currency": "$",
+      "free_shipping": false,
+      "original_price": null
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/diamond-art-roller-2025-dual-pack-for-smooth-pressing-craft-tools/1732001021448392940",
+      "sold": null,
+      "price": 5.3,
+      "title": "1/2PCS Diamond Art Roller, 2025 New Diamond Painting Roller, Diamond Painting Tools, Essential DIY Craft Tool for Rhinestone Embroidery, Press Roller for Smooth Pressing, Crafting and Diamond Painting Projects",
+      "rating": 5,
+      "section": "Savings for you",
+      "currency": "$",
+      "free_shipping": false,
+      "original_price": null
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/kojic-acid-turmeric-toner-fur-gesicht-und-korper-250ml/1731391357821554923",
+      "sold": "11.8K sold",
+      "price": 23,
+      "title": "[NEW] Kojic Acid Turmeric Toner for Face & Body | Daily Toner for Uneven Skin Tone & Texture | Niacinamide, Glycolic Acid for Clear Glass Skin | Korean Skin Care | 250ml",
+      "rating": 4.7,
+      "section": "Savings for you",
+      "currency": "$",
+      "free_shipping": false,
+      "original_price": 27
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/chrleisure-fleece-lined-high-waist-leggings-for-women-1-3pcs/1731711198249390235",
+      "sold": "10.6K sold",
+      "price": 29.99,
+      "title": "【TikTokShopBlackFriday】CHRLEISURE 3PCS Thermal Thick FLeece Lined Leggings for Cold Winter Warm, High Waist Women's Cozy Workout Wear Fleece Pants for Yoga Riding Casual Wear",
+      "rating": 4.7,
+      "section": "Top deals for you",
+      "currency": "$",
+      "free_shipping": true,
+      "original_price": 37.49
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/dynasty-sweats-by-youngla-100-cotton-baggy-fit-unique-design/1731156978383884791",
+      "sold": "1.4K sold",
+      "price": 55,
+      "title": "2116 - Dynasty Sweats",
+      "rating": 4.7,
+      "section": "Top deals for you",
+      "currency": "$",
+      "free_shipping": true,
+      "original_price": null
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/height-adjustable-swivel-chair-by-sweetcrispy-wide-ergonomic-design/1729408738017907174",
+      "sold": "157.1K sold",
+      "price": 66.98,
+      "title": "【Star Furniture】Height Adjustable Criss Cross Chair with No Wheels / with Wheels- Office Wide Swivel Home Office Desk Chairs Reading Chair",
+      "rating": 4.7,
+      "section": "Popular items",
+      "currency": "$",
+      "free_shipping": true,
+      "original_price": 115.99
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/power-bank-10000mah-2-pack-by-asperx-with-22-5w-fast-charge-digital-display/1729568096320852893",
+      "sold": "15.8K sold",
+      "price": 18.99,
+      "title": "AsperX 22.5W Fast Charging Power Bank, 2 pack 10000mAh Portable Charger with Digital Display, Battery Pack for Smartphone, Tablet, Perfect Gifts",
+      "rating": 4.7,
+      "section": "Popular items",
+      "currency": "$",
+      "free_shipping": true,
+      "original_price": 79.99
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/huloo-sleep-ultra-soft-memory-foam-play-mat-1-3-non-slip-velvet/1730123606468825995",
+      "sold": "7.1K sold",
+      "price": 29.39,
+      "title": "Huloo Sleep Ultra Soft Memory Foam Play Mat for Tummy Time, 1.3\" Thick Non-Slip Crawling Mat, Non-Toxic Velvet Nursery Floor Mat",
+      "rating": 4.7,
+      "section": "Popular items",
+      "currency": "$",
+      "free_shipping": true,
+      "original_price": 109.99
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/based-skin-trio-100-pure-hypoclorous-acid-skincare-set/1731806435287666998",
+      "sold": "5.6K sold",
+      "price": 34.5,
+      "title": "BASED Skincare Trio | Daily Skincare Duo + Skin Revival Spray | Facial Cleanser for Breakouts | Daily Moisturizer & Cleanser | For All Skin Types | Non-Toxic, Effective, Safe",
+      "rating": 4.8,
+      "section": "Popular items",
+      "currency": "$",
+      "free_shipping": true,
+      "original_price": 58
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/1731997923791180042",
+      "sold": null,
+      "price": 15.57,
+      "title": "Autumn Winter Sexy Elegant Tight Fit Bodycon Dress, One-Step Skirt, Women's Fashion, Comfortable & Stylish, Perfect for Daily Wear（gift）",
+      "rating": 15,
+      "section": "Popular items",
+      "currency": "$",
+      "free_shipping": false,
+      "original_price": 24.57
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/energy-sticks-by-bloom-nutrition-10ct-180mg-natural-caffeine-zero-sugar/1730722027877602235",
+      "sold": "20.8K sold",
+      "price": 7.59,
+      "title": "Bloom Nutrition Energy Sticks (10 Sticks) – Focus & Metabolism Support – Natural Caffeine & B Vitamins",
+      "rating": 4.7,
+      "section": "International top sellers",
+      "currency": "$",
+      "free_shipping": false,
+      "original_price": 15.99
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/funny-tee-i-hate-my-chungus-life-t-shirt-soft-cotton-fit/1731999740449296622",
+      "sold": null,
+      "price": 7.98,
+      "title": "I hate my chungus life t-shirt (100% cotton), funny tee",
+      "rating": 7,
+      "section": "Best sellers",
+      "currency": "$",
+      "free_shipping": true,
+      "original_price": 20.99
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/hooded-plaid-jacket-for-women-by-asvivid-casual-long-sleeve-coat/1729535208059146968",
+      "sold": "110.6K sold",
+      "price": 37.04,
+      "title": "Women's Plaid / Houndstooth Print Button Front Hooded Coat, Casual Longsleeves Pocket Coat for Fall & Winter, Ladies Outerwear for Daily Wear, Womenswear",
+      "rating": 4.7,
+      "section": "Best sellers",
+      "currency": "$",
+      "free_shipping": false,
+      "original_price": 53.68
+    },
+    {
+      "url": "https://www.tiktok.com/shop/pdp/christmas-themed-set-festive-practical-design/1731817636155789477",
+      "sold": null,
+      "price": 5.03,
+      "title": "10/20/30Pcs Christmas Elements Four Color Pen Black, Blue, Red, Green Four Color Pen Santa Claus Snowman Christmas Tree Snowflake Deer Various Patterns Christmas Party Small Gifts Gift Fillers Smooth and Constant Oil (Mixed)",
+      "rating": 5,
+      "section": "Best sellers",
+      "currency": "$",
+      "free_shipping": false,
+      "original_price": null
     }
   ]
 }
