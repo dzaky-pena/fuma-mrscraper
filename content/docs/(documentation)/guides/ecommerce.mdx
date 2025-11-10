@@ -1,16 +1,18 @@
 ---
 title: "E-commerce"
-description : Example of using Scraper to extract data from an e-commerce website.
+description : "Learn how to scrape product details from e-commerce websites using our Listing Scraper."
 icon: "ShoppingCart"
 ---
 
-In this example, we'll demonstrate how to use our Listing Scraper to extract product's details from an e-commerce.
+E-commerce websites are a rich source of product data that can be invaluable for market analysis, price comparison, inventory management, and more. With MrScraper's **Listing Scraper**, you can easily extract detailed product information from various e-commerce platforms.
 
-## E-commerce Example
+In this guide, we'll demonstrate how to use the Listing Scraper to gather product details such as names, prices, ratings, and availability from an e-commerce website.
 
-In this example, we'll retrieve e-commerce data from Tiktok Shop, returning product details such as name, price, and availability.
+## Scenario
 
-Follow the steps below to use our Listing Scraper to extract Tiktok Shop's product details:
+Imagine you're a market analyst looking to gather data on products listed on Tiktok Shop to analyze pricing trends and customer preferences. You want to extract details like product names, prices, ratings, and the number of items sold.
+
+## Step 1: Create a New AI Listing Scraper
 
 1. Go to the **Scrapers** page by clicking the **triangle icon** on the left sidebar.
 2. Click on the **Create Scraper** button.
@@ -106,10 +108,13 @@ Follow the steps below to use our Listing Scraper to extract Tiktok Shop's produ
 }
 ```
 
-You can also filter the result by giving prompt in the chat.
+## Step 2: Filter Out
 
-**Prompt:**  
-> take only product with rating 4.7 or more.
+Next, tell the AI to filter the scraped results based on specific criteria. For this use case, you can use the following prompt:
+
+```txt
+take only product with rating 4.7 or more.
+```
 
 **Result :**
 
@@ -318,3 +323,12 @@ You can also filter the result by giving prompt in the chat.
   ]
 }
 ```
+
+<Callout title="Tip" type="success">
+  - Some e-commerce sites show different listings by region. Use MrScraper's [proxy](/docs/features/proxy) to view results from other countries, or your own proxy if needed.
+  - Schedule your scraper to run daily or weekly to keep your e-commerce data up to date.
+</Callout>
+
+## Step 3: Use the Extracted Data
+
+Now that you have successfully scraped and filtered the e-commerce product data, you can utilize this information for various purposes such as market analysis, price comparison, inventory management, or even feeding it into your own applications or databases. You can export the data in formats like JSON or CSV for easy integration with other tools.
