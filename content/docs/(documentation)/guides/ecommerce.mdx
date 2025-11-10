@@ -1,4 +1,59 @@
 ---
 title: "E-commerce"
+description : Example of using Scraper to extract data from an e-commerce website.
 icon: "ShoppingCart"
 ---
+
+In this example, we'll demonstrate how to use our Listing Scraper to extract product's details from an e-commerce.
+
+## E-commerce Example
+
+In this example, we'll retrieve e-commerce data from Tiktok Shop, returning product details such as name, price, and availability.
+
+Follow the steps below to use our Listing Scraper to extract Tiktok Shop's product details:
+
+1. Go to the **Scrapers** page by clicking the **triangle icon** on the left sidebar.
+2. Click on the **Create Scraper** button.
+3. Select the **Listing Scraper** option.
+4. In the **Target URL** field, enter the URL of the Tiktok Shop page you want to scrape. For example: `https://shop-id.tokopedia.com/c/phones-electronics/601739?source=ecommerce_mall&enter_method=categories&first_entrance=ecommerce_mall&first_entrance_position=region_redirect_301`.
+5. Click on the **Start Scraping** button to start scraping.
+
+Result :
+
+```json Title="Scraping Result"
+{
+  "mode": "direct",
+  "count": 71,
+  "links": [
+    "https://www.tiktok.com/shop/pdp/nose-ring-by-oufer-20g-halloween-cz-double-hoop-in-316l-stainless-steel/1729608283143704812",
+    "...",
+    "...",
+    "..."
+  ],
+  "products": [
+    {
+      "id": "1729608283143704812",
+      "url": "https://www.tiktok.com/shop/pdp/nose-ring-by-oufer-20g-halloween-cz-double-hoop-in-316l-stainless-steel/1729608283143704812",
+      "sold": 2500,
+      "brand": "Oufer Body Piercing Jewelry",
+      "price": 9.46,
+      "title": "Oufer 20G Halloween CZ Double Hoop Nose Ring 316L Stainless Steel",
+      "rating": 4.6,
+      "section": "TikTok Picks",
+      "currency": "$",
+      "sold_raw": "2.5K",
+      "free_shipping": false,
+      "original_price": 11.82
+    },
+    {
+      "..."
+    },
+    {
+      "..."
+    },
+    {
+      "..."
+    }
+  ]
+}
+```
