@@ -1,4 +1,132 @@
 ---
 title: "Sentiment Analysis"
+description: "A guide to performing sentiment analysis using our scraper."
 icon: "ChartBar"
 ---
+
+Sentiment analysis is a powerful tool for understanding public opinion, customer feedback, and market trends. With **MrScraper's General Scraper**, you can easily extract user reviews from websites and analyze their sentiment to gain valuable insights.
+
+## Scenario
+
+Imagine you are a market researcher looking to analyze user reviews for a recently released movie on Rotten Tomatoes. You want to gather user reviews to determine the overall sentiment and identify common themes in the feedback.
+
+## Step 1: Create a New AI Scraper
+
+1. Go to the **Scrapers** page by clicking the **triangle icon** on the left sidebar.
+2. Click on the **Create Scraper** button.
+3. Select the **General Scraper** option.
+4. In the **Target URL** field, enter the URL of the Rotten Tomatoes' movie review page you want to scrape. For example: `https://www.rottentomatoes.com/m/predator_badlands/reviews?type=user`.
+5. Click on the **Start Scraping** button to start scraping.
+
+**Result :**
+
+```json title="Scraping Result"
+{
+  "user_reviews": [
+    {
+      "date": "Nov 11, 2025",
+      "content": "Started off good and just continued to get better right through till the end. Excellent plot, script, and directing.",
+      "reviewer": "Bob E"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "An absolute blast of an adventure movie, topped off with stellar character writing and top-notch action sequences!",
+      "reviewer": "Jacob"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Very entertaining. Highly recommend. Good for kids too.",
+      "reviewer": "suzana b"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Your enjoyment of this movie is going to be completely based on what you are looking for when you go in. Are you looking for a return to the classic sci-fi/horror action film that started it all? If so, you'll be disappointed. This is a fun, summer action flick that you won't remember this time next year.",
+      "reviewer": "Christian L"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Amazing movie, totally worth it.",
+      "reviewer": "Eduardo G"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "The fact that critics are on both knees kissing the ass of disney and a director who has as much understanding of the lore as an infant has of quantum physics should tell you how bad this is.",
+      "reviewer": "Ryan A"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "I loved it. I am a big predator fan since Arnold and the gang started it 1987.",
+      "reviewer": "William H"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Wow! I was skeptical at first because of that last few predator films but this one was amazing visually & interesting story line.",
+      "reviewer": "Ivan R"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Dan the man does it again! What great surprises and twist along the way.",
+      "reviewer": "SPMac"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Good action flick. Great graphics. The story would never be plausible in the Predator universe.",
+      "reviewer": "Scott S"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Really good movie and I haven’t followed the Predator movie series and with that being said, I felt like it was the beginning and had no issues following.",
+      "reviewer": "Synaca G"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "The movie raised my testosterone a little bit. My daughter also enjoyed the movie.",
+      "reviewer": "Fabian"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Awesome movie. I enjoyed the whole movie. The action and fighting scenes were great!",
+      "reviewer": "Regina C"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Probably my favorite Predator movie behind Prey and the first Predator.",
+      "reviewer": "Mario"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "GREAT MOVIE! Action from beginning to end.",
+      "reviewer": "Andrea"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Not sure where some of the distain for this film is coming from. It is pretty dumb at times, but I was entertained throughout and wanted more.",
+      "reviewer": "T S"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Much better than expected. My son is a very tough critic and he had high praise for the movie.",
+      "reviewer": "Robert L."
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "Great movie!!! Enjoyed from start to finish.",
+      "reviewer": "Miriam Trejo"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "An excellent sci-fi action epic! We need more of these spectacles from this director.",
+      "reviewer": "Weston H"
+    },
+    {
+      "date": "Nov 11, 2025",
+      "content": "This is the predator movie I’ve always wanted.",
+      "reviewer": "John P."
+    }
+  ]
+}
+```
+
+## Step 2: Analyze Sentiment with AI
+
+You can now analyze the sentiment of the extracted user reviews using your preferred AI tool or library. For example, you can use Python's `TextBlob` or `VADER` to classify the sentiment of each review as positive, negative, or neutral.
