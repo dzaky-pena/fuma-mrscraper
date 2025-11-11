@@ -3,4 +3,92 @@ title: "Optimizing Cost"
 icon: "DollarSign"
 ---
 
-## Optimizing Cost
+Running scrapers efficiently helps you get the most value out of MrScraper without unnecessary usage costs.  
+This guide explains how to **optimize scraping costs** through smart configuration, scraper mode selection, scheduling, and output management.
+
+
+## 1. Choose the Right Scraper Mode
+
+MrScraper offers two AI Scraper modes that affect both cost and performance:
+
+| Mode | Description | When to Use | Cost Impact |
+|------|--------------|--------------|--------------|
+| **Cheap Mode** | Fast and lightweight extraction. Suitable for simple, structured pages. | Use for lists or data with consistent structure (e.g., product names, prices). | 💲 Lowest |
+| **Super Mode** | More accurate and intelligent extraction. Ideal for complex layouts or nested content. | Use for unstructured data or multiple data types (e.g., job listings, reviews). | 💲💲 Higher |
+
+<Callout title="Tip" type="success">
+Start with **Cheap Mode** — if your data is inconsistent or incomplete, switch to **Super Mode** only for that page.
+</Callout>
+
+
+## 2. Limit Extraction Scope
+
+The broader your prompt, the more resources are used.  
+Narrowing your extraction target saves cost and improves precision.
+
+| ❌ *Expensive prompt*   | ✅ *Optimized prompt* | 
+|------|--------------|
+| Extract all details from this e-commerce page. | Extract product name, price, and rating from this page. |
+
+<Callout title="Best Practice">
+Focus on the **fields you actually need**. If you only need names and prices, don’t extract full descriptions or metadata.
+</Callout>
+
+
+## 3. Use Pagination and Sampling
+
+Instead of scraping all pages at once, you can:
+
+- Scrape **only the first few pages** to test data quality.  
+- Schedule scraping in **batches** (e.g., 100 pages/day).  
+- Sample data periodically for large websites (weekly or monthly updates).
+
+This reduces both request volume and processing time — lowering overall usage costs.
+
+
+## 4. Reuse and Recycle Results
+
+Each time you run a scraper, you pay for the extraction process.  
+Avoid re-running scrapers unnecessarily by reusing existing results.
+
+**Example Workflow:**
+
+- Store your output in a **Database Connection** or export as **CSV/JSON**.
+- Only re-run the scraper when the target site changes.
+- Use **Scheduling** for incremental updates instead of full refreshes.
+
+
+## 5. Use Scheduling Strategically
+
+Scraping too frequently can increase costs without adding value.  
+Instead, match your schedule to how often the target data changes.
+
+<Callout title="Tip">
+Avoid overlapping schedules. Running multiple scrapers at the same time can spike costs and reduce performance.
+</Callout>
+
+
+## 6. Optimize Proxy Usage
+
+While proxies add flexibility, they can slightly increase scraping overhead.
+
+- Use **MrScraper’s built-in proxy** instead of external providers to save cost and setup time.
+- Only enable proxies for websites that require regional access or IP rotation.
+- For internal or low-risk pages, disable proxy entirely.
+
+
+## 7. Monitor Usage
+
+Keep an eye on your scraper usage and performance using the **Analytics** feature.  
+Regularly review:
+
+- The number of pages or URLs processed  
+- Success rate and data completeness  
+- AI vs. manual mode distribution  
+
+This helps you spot overuse early and plan your scraping strategy efficiently.
+
+
+<Callout title="Pro Tip" type="success">
+Start small. Run initial tests on limited pages using **Cheap Mode**, verify output accuracy, and scale up gradually.
+</Callout>
