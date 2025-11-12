@@ -4,9 +4,25 @@ description: "This guide walks you through how to connect your MrScraper scraper
 icon: "Database"
 ---
 
+import { SquaresUnite, ChartBar, Cog } from 'lucide-react';
+
 ## What Are SQL Connections?
 
 SQL connections allow your MrScraper scrapers to send data directly to an external SQL database. This is useful for storing scraped data in a structured format and enables further analysis and reporting.
+
+## SQL Integration Benefits
+
+<Cards>
+    <Card icon={<SquaresUnite />} title="Centralized Data Storage">
+        Store all your scraped data in one place for easy access and management.
+    </Card>
+    <Card icon={<ChartBar />} title="Data Analysis">
+        Use SQL queries to analyze and manipulate your scraped data.
+    </Card>
+    <Card icon={<Cog />} title="Automation">
+        Automatically insert scraped data into your database without manual intervention.
+    </Card>
+</Cards>
 
 ## Create an SQL Connection
 
@@ -19,7 +35,7 @@ Follow these steps to create an SQL connection in MrScraper:
 
 4. Fill in the SQL connection details:
 
-    - **SQL Driver**: Choose `PostgreSQL`, `MySQL`, `MariaDB`, `SQL Server`, 'SQLite`, or `Oracle`
+    - **SQL Driver**: Choose `PostgreSQL`, `MySQL`, `MariaDB`, `SQL Server`, `SQLite`, or `Oracle`
     - **Host**: Enter the hostname or IP address of your SQL server
     - **Port**: Enter the port number for your SQL server
     - **Username**: Enter your SQL database username
@@ -41,3 +57,7 @@ After creating the SQL connection, follow these steps to connect it to your scra
 4. Select the SQL connection you just created from the dropdown menu.
     
 5. Click **Save Database Settings**.
+
+## Result
+
+Once the scraper finishes, the scraped data will be automatically inserted into the specified table in your SQL database. You can then query and analyze the data using your preferred SQL tools.

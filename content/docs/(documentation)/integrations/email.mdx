@@ -4,9 +4,22 @@ description: "This guide explains how to connect your scraper to your email to r
 icon: "Mail"
 ---
 
+import { Mail, Cog } from 'lucide-react';
+
 ## What Are Email Connections?
 
 Email connections let you receive an email notification when specific events happen in your scraper, such as when a scrape starts, completes, or fails.
+
+## Email Integration Benefits
+
+<Cards>
+    <Card icon={<Mail />} title="Instant Notifications">
+        Get real-time updates on your scraper's status directly in your inbox.
+    </Card>
+    <Card icon={<Cog />} title="Customizable Alerts">
+        Choose which events you want to be notified about, such as completion or errors.
+    </Card>
+</Cards>
 
 ## Create an Email Connection
 
@@ -38,4 +51,4 @@ After creating the email connection, follow these steps to connect it to your sc
 
 ## Result
 
-Once the scraper finished, you will receive an email notification. Depending on the email type you selected, the email will contain either the result in the email body or as an attachment. Below is example of result in email body:
+Once the scraper finished, you will receive an email notification. Depending on the email type you selected, the email will contain either the result in the email body or as an attachment.
