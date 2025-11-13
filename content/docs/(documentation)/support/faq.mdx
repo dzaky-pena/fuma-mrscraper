@@ -3,3 +3,76 @@ title: 'FAQs'
 description: 'Frequently asked questions about MrScraper'
 icon: 'MessageCircleQuestionMark'
 ---
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Accordions type="single">
+
+<Accordion title="How do I get my API Token?">
+You can find it under **Dashboard → API Token**. Keep it private — it authenticates your scraper requests.
+</Accordion>
+
+<Accordion title="Can I use MrScraper without coding?">
+Yes. Use **AI Mode** to describe what you want to extract in plain text (for example: “extract product name, price, and rating”).  
+No coding or CSS selectors are required.
+</Accordion>
+
+<Accordion title="Why is my scrape not returning any data?">
+Check if the target page loads data dynamically (via JavaScript).  
+Try using **Super AI Mode** or using a **proxy** from the correct region to capture all content.
+</Accordion>
+
+<Accordion title="What’s the difference between AI Mode and Manual Mode?">
+- **AI Mode**: Automatically detects and extracts data from the page based on your prompt — fastest for general use.  
+- **Manual Mode**: Lets you define your own selectors or extraction logic — best for consistent, repeatable scrapes.
+</Accordion>
+
+<Accordion title="When should I use a proxy?">
+Use a proxy if:  
+- The website blocks or rate-limits your IP  
+- You need to access geo-restricted or localized content (like job boards or e-commerce sites)
+</Accordion>
+
+<Accordion title="Does MrScraper provide built-in proxies?">
+Yes. MrScraper offers **built-in proxies** for many regions (such as the U.S., Mexico, Brazil, South Africa, and India). You can also **enter your own proxy URL** if you prefer.
+</Accordion>
+
+<Accordion title="Can I schedule scrapers to run automatically?">
+Yes. Use the **Schedule** feature to run scrapers hourly, daily, or weekly — perfect for tracking price changes or job listings.
+</Accordion>
+
+<Accordion title="Can I use MrScraper to track product reviews or sentiment?">
+Yes. For example, you can scrape customer reviews from  [Walmart product reviews](https://www.walmart.com/reviews/product/15843466879?entryPoint=viewAllReviewsTop) and analyze the text for positive or negative sentiment trends.
+</Accordion>
+
+<Accordion title="How can I extract job listings with specific criteria?">
+Use a prompt like:  
+> “Extract job title, company name, location, salary, and job description for Data Scientist roles requiring 2 years of experience.”  
+See the [Job Listing Guide](https://fuma-mrscraper.vercel.app/docs/guides/job-listing) for a complete walkthrough.
+</Accordion>
+
+<Accordion title="How can I lower my scraping costs?">
+- Use **Manual Mode** when the page structure is stable.  
+- Avoid re-scraping unchanged pages.  
+- Schedule scrapers efficiently (e.g., weekly instead of hourly).  
+- Disable proxies if geo-targeting isn’t needed.
+</Accordion>
+
+<Accordion title="Can MrScraper send my data automatically?">
+Yes, MrScraper integrates with:  
+- **Email** (to send results to your inbox)  
+- **SQL Databases** (to store structured data)  
+- **Webhooks** (to send data to your APIs or automation workflows)
+</Accordion>
+
+<Accordion title="Why am I getting blocked or rate-limited?">
+Some sites detect repeated requests. Enable a **proxy**, reduce your scrape frequency, or alternate between multiple proxy locations.
+</Accordion>
+
+<Accordion title="My scheduled scrapes didn’t run — what can I check?">
+Ensure that:  
+- The **schedule** is enabled  
+- The **timezone** is correct  
+- The scraper is **active** and not in draft mode
+</Accordion>
+
+</Accordions>
