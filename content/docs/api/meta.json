@@ -4,8 +4,10 @@
   "icon": "Webhook",
   "root": true,
   "pages": [
+    "---Scraper---",
     "ScraperAiRerunControllerRerun",
     "ScraperManualRerunControllerRerun",
+    "---Results---",
     "Results",
     "ResultDetail"
   ]
