@@ -92,6 +92,146 @@
                     "/scrapers-ai-rerun"
                 ]
             }
+        },
+        "/api/v1/results": {
+            "get": {
+                "operationId": "ResultCrudController_fetch",
+                "parameters": [
+                    {
+                        "name": "sortField",
+                        "required": true,
+                        "in": "query",
+                        "description": "Sort entity by field name",
+                        "schema": {
+                            "example": "updatedAt",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sortOrder",
+                        "required": true,
+                        "in": "query",
+                        "description": "ASC || DESC",
+                        "schema": {
+                            "example": "DESC",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "required": true,
+                        "in": "query",
+                        "description": "Number of entities in one page",
+                        "schema": {
+                            "example": 10,
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "required": true,
+                        "in": "query",
+                        "description": "The page where you are",
+                        "schema": {
+                            "example": 1,
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "required": false,
+                        "in": "query",
+                        "description": "Search all entity column value",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "dateRangeColumn",
+                        "required": false,
+                        "in": "query",
+                        "description": "Column name for filter startAt and endAt",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "startAt",
+                        "required": false,
+                        "in": "query",
+                        "description": "Filter startAt by dateRangeColumn",
+                        "schema": {
+                            "example": "2025-11-13T02:46:49.014Z",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "endAt",
+                        "required": false,
+                        "in": "query",
+                        "description": "Filter endAt by dateRangeColumn",
+                        "schema": {
+                            "example": "2025-11-14T02:46:49.014Z",
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful fetch",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultFetchResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": [
+                    "/results"
+                ]
+            }
+        },
+        "/api/v1/results/{id}": {
+            "get": {
+                "operationId": "ResultCrudController_read",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful fetch",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResultReadResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": [
+                    "/results"
+                ]
+            }
         }
     },
     "info": {
@@ -172,6 +312,263 @@
                     }
                 },
                 "required": ["success", "status"]
+            },
+            "ResultCreateRequest": {
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid"
+                    },
+                    "scraperId": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid"
+                    },
+                    "type": {
+                        "type": "string",
+                        "example": "Manual"
+                    },
+                    "url": {
+                        "type": "string",
+                        "nullable": true,
+                        "example": "https://example.com"
+                    },
+                    "status": {
+                        "type": "string",
+                        "nullable": true,
+                        "example": "completed"
+                    },
+                    "error": {
+                        "type": "object",
+                        "nullable": true,
+                        "example": "Timeout error"
+                    },
+                    "tokenUsage": {
+                        "type": "number",
+                        "nullable": true,
+                        "example": 150
+                    },
+                    "runtime": {
+                        "type": "number",
+                        "nullable": true,
+                        "example": 1.234
+                    },
+                    "data": {
+                        "type": "object",
+                        "nullable": true,
+                        "description": "Arbitrary JSON/text payload",
+                        "example": "{\"result\":\"ok\"}"
+                    },
+                    "htmlPath": {
+                        "type": "object",
+                        "nullable": true,
+                        "example": "/path/to/html/file.html"
+                    },
+                    "recordingPath": {
+                        "type": "object",
+                        "nullable": true,
+                        "example": "/path/to/recording.mp4"
+                    },
+                    "screenshotPath": {
+                        "type": "object",
+                        "nullable": true,
+                        "example": "/path/to/screenshot.png"
+                    },
+                    "dataPath": {
+                        "type": "object",
+                        "nullable": true,
+                        "example": "/path/to/data.json"
+                    }
+                }
+            },
+            "ResultUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid"
+                    },
+                    "scraperId": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uuid"
+                    },
+                    "type": {
+                        "type": "string",
+                        "example": "Manual"
+                    },
+                    "url": {
+                        "type": "string",
+                        "nullable": true,
+                        "example": "https://example.com"
+                    },
+                    "status": {
+                        "type": "string",
+                        "nullable": true,
+                        "example": "completed"
+                    },
+                    "error": {
+                        "type": "object",
+                        "nullable": true,
+                        "example": "Timeout error"
+                    },
+                    "tokenUsage": {
+                        "type": "number",
+                        "nullable": true,
+                        "example": 150
+                    },
+                    "runtime": {
+                        "type": "number",
+                        "nullable": true,
+                        "example": 1.234
+                    },
+                    "data": {
+                        "type": "object",
+                        "nullable": true,
+                        "description": "Arbitrary JSON/text payload",
+                        "example": "{\"result\":\"ok\"}"
+                    },
+                    "htmlPath": {
+                        "type": "object",
+                        "nullable": true,
+                        "example": "/path/to/html/file.html"
+                    },
+                    "recordingPath": {
+                        "type": "object",
+                        "nullable": true,
+                        "example": "/path/to/recording.mp4"
+                    },
+                    "screenshotPath": {
+                        "type": "object",
+                        "nullable": true,
+                        "example": "/path/to/screenshot.png"
+                    },
+                    "dataPath": {
+                        "type": "object",
+                        "nullable": true,
+                        "example": "/path/to/data.json"
+                    }
+                }
+            },
+            "ResultData": {
+                "type": "object",
+                "properties": {
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2025-11-11T09:50:09.722Z"
+                    },
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "userId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "scraperId": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "type": {
+                        "type": "string",
+                        "example": "AI"
+                    },
+                    "url": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "status": {
+                        "type": "string",
+                        "example": "Finished"
+                    },
+                    "error": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "tokenUsage": {
+                        "type": "number",
+                        "example": 5
+                    },
+                    "runtime": {
+                        "type": "number",
+                        "nullable": true
+                    },
+                    "data": {
+                        "type": "string",
+                        "description": "JSON string containing scraped data"
+                    },
+                    "htmlPath": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "recordingPath": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "screenshotPath": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dataPath": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "ResultFetchResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "Successful fetch"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ResultData"
+                        }
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "page": {
+                                "type": "number",
+                                "example": 1
+                            },
+                            "pageSize": {
+                                "type": "number",
+                                "example": 10
+                            },
+                            "total": {
+                                "type": "number",
+                                "example": 1
+                            },
+                            "totalPage": {
+                                "type": "number",
+                                "example": 1
+                            }
+                        }
+                    }
+                }
+            },
+            "ResultReadResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "Successful fetch"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ResultData"
+                        }
+                    }
+                }
             }
         }
     }
