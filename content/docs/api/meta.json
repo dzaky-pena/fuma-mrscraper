@@ -10,8 +10,8 @@
     "pagination",
     "error-handling",
     "---Scraper---",
-    "ScraperAiRerunControllerRerun",
-    "ScraperManualRerunControllerRerun",
+    "ScraperAiRerun",
+    "ScraperManualRerun",
     "---Results---",
     "Results",
     "ResultDetail"
