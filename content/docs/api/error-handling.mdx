@@ -8,6 +8,30 @@ icon : "CircleAlert"
 
 The MrScraper API will return a JSON object containing error details when a request fails. This object includes an error code, message, and additional information to help diagnose the issue.
 
+## Response Message
+
+| Response | Description |
+|----------|-------------|
+| Unauthorized access | The API key provided is invalid or missing. |
+| Could not find any entity of type "Scraper" | The specified scraper could not be found. |
+| Could not find any entity of type "Result" | The specified result could not be found. |
+
+## Error Troubleshooting
+
+When encountering errors, consider the following tips:
+
+### Unauthorized Access
+
+- Ensure that your API key is correct and included in the request headers.
+
+### Could not find any entity of type "Scraper"
+
+- Verify that the scraper ID you are using exists and is correctly spelled.
+
+### Could not find any entity of type "Result"
+
+- Check that the result ID you are referencing is valid and corresponds to an existing result.
+
 ### Common Scraping Errors
 
 | Error | Description | Solution |

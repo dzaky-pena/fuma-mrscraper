@@ -8,19 +8,22 @@ icon : "Key"
 
 The MrScraper API uses API key authentication to secure all endpoints. Every API request must include a valid API key in the request headers.
 
-## Authentication Method
+## Getting Your API Key
 
-### API Key Header
+You can get your API Key by following these [steps](/docs/getting-started/api-token#generating-an-api-token).
 
-All authenticated requests must include the `x-api-token` header with your API key:
+## Make Your First Call
+
+Authentication is handled using HTTP Basic Auth. Include your API Key in the request header when accessing any MrScraper API endpoint.
 
 ```http
 x-api-token: YOUR_API_TOKEN
 ```
 
-## Getting Your API Key
+For example, to [retrieve scraping results](/docs/api/Results), you would make the following cURL request:
 
-1. Log in to your MrScraper dashboard
-2. Navigate to **Profile** → **API Tokens**
-3. Click **New Token**
-4. Copy and securely store your API key
+```bash
+curl -X GET "https://api.v3.app.mrscraper.com/api/v1/results?filters[scraperId]=<SCRAPER_ID>&page=1&pageSize=10&sort=createdAt&sortOrder=DESC" \
+  -H "accept: application/json" \
+  -H "x-api-token: YOUR_API_TOKEN"
+```

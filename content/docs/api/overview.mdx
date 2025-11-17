@@ -4,6 +4,8 @@ description: "Comprehensive documentation for MrScraper's API endpoints, includi
 icon: "Network"
 ---
 
+import { Braces, Key, ListOrdered, CircleAlert, Repeat, Database, FileSearch } from 'lucide-react';
+
 ## Introduction
 
 The MrScraper API provides a powerful and flexible way to programmatically scrape web pages and retrieve structured data. Built on REST principles, our API offers predictable resource-oriented URLs, accepts JSON-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes.
@@ -16,47 +18,43 @@ All API requests should be made to:
 https://api.v3.app.mrscraper.com
 ```
 
+## API Features
+
+<Cards>
+  <Card title="JSON Format" icon={<Braces />}>
+    All requests with a payload require `Content-Type: application/json` header. All responses are returned in JSON format.
+  </Card>
+  <Card title="Authentication" icon={<Key />}>
+    All API endpoints require authentication using an API key passed in the `x-api-token` header. See the [Authentication](/docs/api/authentication) page for details.
+  </Card>
+  <Card title="Pagination" icon={<ListOrdered />}>
+    List endpoints support pagination to handle large datasets efficiently. See the [Pagination](/docs/api/pagination) page for details.
+  </Card>
+  <Card title="Error Handling" icon={<CircleAlert />}>
+    The API uses standard HTTP status codes and returns detailed error messages. See the [Error Handling](/docs/api/error-handling) page for details.
+  </Card>
+</Cards>
+
 ## Available Endpoints
 
 ### Scraper Rerun Endpoints
 
-#### Manual Scraper Rerun
-- **Endpoint:** `POST /api/v1/scrapers-manual-rerun`
-- **Purpose:** Execute a manual scraper configuration with a specific URL
-- **Authentication:** Required (API Key)
-
-#### AI Scraper Rerun
-- **Endpoint:** `POST /api/v1/scrapers-ai-rerun`
-- **Purpose:** Execute an AI-powered scraper configuration with a specific URL
-- **Authentication:** Required (API Key)
+<Cards>
+  <Card title="AI Scraper Rerun" icon={<Repeat />} href="/docs/api/ScraperAIRerun">
+    Execute an AI-powered scraper configuration with a specific URL.
+  </Card>
+  <Card title="Manual Scraper Rerun" icon={<Repeat />} href="/docs/api/ScraperManualRerun">
+    Execute a manual scraper configuration with a specific URL.
+  </Card>
+</Cards>
 
 ### Results Endpoints
 
-#### Get Results
-- **Endpoint:** `GET /api/v1/results`
-- **Purpose:** Retrieve a paginated list of scraping results
-- **Authentication:** Required (API Key)
-- **Features:** Sorting, filtering, date range filtering, and search
-
-#### Get Result Details
-- **Endpoint:** `GET /api/v1/results/{id}`
-- **Purpose:** Retrieve detailed information about a specific scraping result
-- **Authentication:** Required (API Key)
-
-## API Features
-
-### JSON Format
-
-All requests with a payload require `Content-Type: application/json` header. All responses are returned in JSON format.
-
-### Security
-
-All API endpoints require authentication using an API key passed in the `x-api-token` header. See the [Authentication](/docs/api/authentication) page for details.
-
-### Pagination
-
-List endpoints support pagination to handle large datasets efficiently. See the [Pagination](/docs/api/pagination) page for details.
-
-### Error Handling
-
-The API uses standard HTTP status codes and returns detailed error messages. See the [Error Handling](/docs/api/error-handling) page for details.
+<Cards>
+  <Card title="Get Results" icon={<Database />} href="/docs/api/Results">
+    Retrieve a paginated list of scraping results with sorting and filtering options.
+  </Card>
+  <Card title="Get Result Details" icon={<FileSearch />} href="/docs/api/ResultDetails">
+    Retrieve detailed information about a specific scraping result.
+  </Card>
+</Cards>
