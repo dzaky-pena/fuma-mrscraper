@@ -21,6 +21,14 @@ The `/api/v1/results` endpoint supports the following pagination parameters:
 | `sortField` | string | Field name to sort by | `updatedAt` |
 | `sortOrder` | string | Sort direction (`ASC` or `DESC`) | `DESC` |
 
+<Callout title="Page Size Selection" type="success">
+
+- **Small datasets (< 100 items):** Use `pageSize=50` or `pageSize=100`
+- **Large datasets:** Use `pageSize=10` or `pageSize=25` for faster responses
+- **Maximum recommended:** `pageSize=100` to avoid timeouts
+
+</Callout>
+
 ### Optional Parameters
 
 | Parameter | Type | Description | Example |
@@ -97,18 +105,3 @@ The `meta` object provides pagination information:
 | `pageSize` | number | Items per page |
 | `total` | number | Total number of items across all pages |
 | `totalPage` | number | Total number of pages available |
-
-## Best Practices
-
-### Page Size Selection
-
-- **Small datasets (< 100 items):** Use `pageSize=50` or `pageSize=100`
-- **Large datasets:** Use `pageSize=10` or `pageSize=25` for faster responses
-- **Maximum recommended:** `pageSize=100` to avoid timeouts
-
-### Performance Optimization
-
-1. **Request only what you need:** Use appropriate page sizes
-2. **Cache results:** Store frequently accessed pages
-3. **Use search and filters:** Narrow down results before pagination
-4. **Sort consistently:** Always use the same sort order for predictable results
