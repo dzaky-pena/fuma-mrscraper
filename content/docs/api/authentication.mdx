@@ -1,0 +1,26 @@
+---
+title : Authentication
+description : "Learn how to authenticate your requests to the MrScraper API using API keys, including best practices for security and usage."
+icon : "Key"
+---
+
+## Overview
+
+The MrScraper API uses API key authentication to secure all endpoints. Every API request must include a valid API key in the request headers.
+
+## Authentication Method
+
+### API Key Header
+
+All authenticated requests must include the `x-api-token` header with your API key:
+
+```http
+x-api-token: YOUR_API_TOKEN
+```
+
+## Getting Your API Key
+
+1. Log in to your MrScraper dashboard
+2. Navigate to **Profile** → **API Tokens**
+3. Click **New Token**
+4. Copy and securely store your API key

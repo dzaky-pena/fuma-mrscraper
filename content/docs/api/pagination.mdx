@@ -1,0 +1,114 @@
+---
+title : Pagination
+description : "Understand how pagination works in the MrScraper API, including parameters for controlling page size and navigating through large datasets."
+icon : "ListOrdered"
+---
+
+## Overview
+
+The MrScraper API uses cursor-based pagination for endpoints that return lists of resources. This approach ensures consistent results even when data is being added or modified.
+
+## Pagination Parameters
+
+The `/api/v1/results` endpoint supports the following pagination parameters:
+
+### Required Parameters
+
+| Parameter | Type | Description | Example |
+|-----------|------|-------------|---------|
+| `page` | number | The page number to retrieve (1-indexed) | `1` |
+| `pageSize` | number | Number of items per page | `10` |
+| `sortField` | string | Field name to sort by | `updatedAt` |
+| `sortOrder` | string | Sort direction (`ASC` or `DESC`) | `DESC` |
+
+### Optional Parameters
+
+| Parameter | Type | Description | Example |
+|-----------|------|-------------|---------|
+| `search` | string | Search across all entity columns | `example.com` |
+| `dateRangeColumn` | string | Column name for date filtering | `createdAt` |
+| `startAt` | string | Start date for filtering (ISO 8601) | `2025-11-13T02:46:49.014Z` |
+| `endAt` | string | End date for filtering (ISO 8601) | `2025-11-14T02:46:49.014Z` |
+
+## Making Paginated Requests
+
+### Basic Example
+
+```bash
+curl -X GET "https://api.v3.app.mrscraper.com/api/v1/results?page=1&pageSize=10&sortField=updatedAt&sortOrder=DESC" \
+  -H "x-api-token: YOUR_API_TOKEN" \
+  -H "accept: application/json"
+```
+
+### With Search
+
+```bash
+curl -X GET "https://api.v3.app.mrscraper.com/api/v1/results?page=1&pageSize=10&sortField=updatedAt&sortOrder=DESC&search=example.com" \
+  -H "x-api-token: YOUR_API_TOKEN" \
+  -H "accept: application/json"
+```
+
+### With Date Range Filtering
+
+```bash
+curl -X GET "https://api.v3.app.mrscraper.com/api/v1/results?page=1&pageSize=10&sortField=updatedAt&sortOrder=DESC&dateRangeColumn=createdAt&startAt=2025-11-13T00:00:00.000Z&endAt=2025-11-14T23:59:59.999Z" \
+  -H "x-api-token: YOUR_API_TOKEN" \
+  -H "accept: application/json"
+```
+
+## Response Format
+
+### Successful Response
+
+```json
+{
+  "message": "Successful fetch",
+  "data": [
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "userId": "660e8400-e29b-41d4-a716-446655440000",
+      "scraperId": "770e8400-e29b-41d4-a716-446655440000",
+      "type": "AI",
+      "url": "https://example.com",
+      "status": "Finished",
+      "error": null,
+      "tokenUsage": 5,
+      "runtime": 2.5,
+      "data": "{\"title\":\"Example Page\"}",
+      "createdAt": "2025-11-11T09:50:09.722Z"
+    }
+  ],
+  "meta": {
+    "page": 1,
+    "pageSize": 10,
+    "total": 100,
+    "totalPage": 10
+  }
+}
+```
+
+### Response Metadata
+
+The `meta` object provides pagination information:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `page` | number | Current page number |
+| `pageSize` | number | Items per page |
+| `total` | number | Total number of items across all pages |
+| `totalPage` | number | Total number of pages available |
+
+## Best Practices
+
+### Page Size Selection
+
+- **Small datasets (< 100 items):** Use `pageSize=50` or `pageSize=100`
+- **Large datasets:** Use `pageSize=10` or `pageSize=25` for faster responses
+- **Maximum recommended:** `pageSize=100` to avoid timeouts
+
+### Performance Optimization
+
+1. **Request only what you need:** Use appropriate page sizes
+2. **Cache results:** Store frequently accessed pages
+3. **Use search and filters:** Narrow down results before pagination
+4. **Sort consistently:** Always use the same sort order for predictable results

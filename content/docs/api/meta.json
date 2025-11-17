@@ -4,6 +4,11 @@
   "icon": "Webhook",
   "root": true,
   "pages": [
+    "---Introduction---",
+    "overview",
+    "authentication",
+    "pagination",
+    "error-handling",
     "---Scraper---",
     "ScraperAiRerunControllerRerun",
     "ScraperManualRerunControllerRerun",

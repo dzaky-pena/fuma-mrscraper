@@ -1,0 +1,19 @@
+---
+title : Error Handling
+description : "Learn about the error handling mechanisms in the MrScraper API, including common error codes, response formats, and best practices for managing errors in your applications."
+icon : "CircleAlert"
+---
+
+## Overview
+
+The MrScraper API will return a JSON object containing error details when a request fails. This object includes an error code, message, and additional information to help diagnose the issue.
+
+### Common Scraping Errors
+
+| Error | Description | Solution |
+|-------|-------------|----------|
+| Timeout | Page took too long to load | Increase timeout or check target site availability |
+| Invalid selector | CSS/XPath selector not found | Verify selectors match the target page structure |
+| Access denied | Website blocks automated access | Use rotating proxies or adjust scraper settings |
+| Invalid URL | URL is malformed or unreachable | Check URL format and accessibility |
+| Token limit exceeded | Insufficient tokens | Upgrade plan or wait for token refresh |
