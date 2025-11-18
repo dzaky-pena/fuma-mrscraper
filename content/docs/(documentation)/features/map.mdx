@@ -1,0 +1,58 @@
+---
+title: Map
+description: "Discover and extract every URL from a website in seconds using the Map Scraper feature."
+icon: Map
+---
+
+
+The **Map Scraper** lets you input a single website URL and instantly retrieve **all URLs found on that domain**.  
+This is the fastest way to understand a website’s structure, map out pages, or prepare for large-scale scraping tasks.
+
+
+## When to Use the Map Scraper
+
+Use the Map Scraper when you need to:
+
+- Get all URLs from a website quickly
+
+- Find hidden pages that are not linked from navigation but appear in the HTML
+
+- Audit a website’s structure for SEO, content planning, or data coverage checks
+
+- Collect links for further processing such as job postings, blog articles, or category pages
+
+
+
+## Example Usage
+1. Go to your **Dashboard** → click **Create Scraper** → select **Map**.   
+2. Enter the **URL** (for example: `https://penateam.com`) you want to scrape.  
+<Callout title="Note">
+The Map Scraper only supports **Cheap Mode**.
+</Callout>
+3. Wait for the system to process the URL. The Map Scraper automatically extracts:
+   - Internal links
+   - Subpage URLs
+   - Category links
+   - Pagination links
+4. Once completed, you’ll receive a clean, structured list of URLs in JSON format:
+
+```json
+{
+  "urls": [
+    "https://penateam.com",
+    "https://penateam.com/blog",
+    "https://penateam.com/blog/Conten_Lifecycle_Management",
+    "https://penateam.com/blog/Effective_Release_Notes",
+    "https://penateam.com/blog/Procedural_Writing",
+    "https://penateam.com/blog/Structured_Authoring",
+    "https://penateam.com/work",
+    "https://www.penateam.com",
+    "https://www.penateam.com/blog/Effective_Release_Notes",
+    "https://www.penateam.com/work"
+  ],
+  "count": 10
+}
+```
+<Callout title="Note">
+No prompts, no selectors, no configuration needed.
+</Callout>
