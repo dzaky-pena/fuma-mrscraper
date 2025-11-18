@@ -1,4 +1,22 @@
 ---
 title: "Listing"
+description: "Scraper mode used for pages with repeating items that link to detail views."
 icon: "TextSearch"
 ---
+
+import { ShoppingCart } from 'lucide-react';
+
+Listing mode is used when a page contains a repeating set of items (for example an ecommerce product list, job listings, or search results) where each visible item links to a details page or opens a detail panel that must be visited to collect the full data for that item.
+
+## When to use the Listing mode
+
+- Use Listing when items on a page provide only summary data and you need to open each item to retrieve full details (specs, full description, images, variants, etc.).
+- Use Listing for paginated result pages, infinite-scroll feeds, or any list-like layout where the full record is available only from the item's detail view.
+
+## Example use-cases
+
+<Cards>
+  <Card title="E-Commerce" icon={<ShoppingCart />} href="/scrapers/use-cases/e-commerce">
+    Scrape product details, pricing, and availability from major e-commerce sites.
+  </Card>
+</Cards>
