@@ -13,10 +13,253 @@ Listing mode is used when a page contains a repeating set of items (for example 
 - Use Listing when items on a page provide only summary data and you need to open each item to retrieve full details (specs, full description, images, variants, etc.).
 - Use Listing for paginated result pages, infinite-scroll feeds, or any list-like layout where the full record is available only from the item's detail view.
 
-## Example use-cases
+## Example Usage
+
+1. Go to your **Dashboard** → click **Create Scraper** → select **Listing**.   
+2. Enter the **URL** (for example: `https://books.toscrape.com/`) you want to scrape.
+3. Once scraped, you'll receive a structured list of items with links to their detail pages, which the scraper will visit to extract the full data for each item. Below is an example of the difference in the scraping result between Listing mode and General mode.
+
+<Tabs items={['Listing Mode', 'General Mode']}>
+  <Tab id="listing" value="Listing Mode">
+    ```json
+    {
+        "mode": "direct",
+        "links": [
+            "catalogue/a-light-in-the-attic_1000/index.html",
+            "catalogue/tipping-the-velvet_999/index.html",
+            "catalogue/soumission_998/index.html",
+            "catalogue/sharp-objects_997/index.html",
+            "catalogue/sapiens-a-brief-history-of-humankind_996/index.html",
+            "catalogue/the-requiem-red_995/index.html",
+            "catalogue/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html",
+            "catalogue/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html",
+            "catalogue/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html",
+            "catalogue/the-black-maria_991/index.html"
+        ],
+        "products": [
+            {
+            "url": "catalogue/a-light-in-the-attic_1000/index.html",
+            "price": 51.77,
+            "title": "A Light in the ...",
+            "rating": 3,
+            "full_title": "A Light in the Attic",
+            "price_text": "£51.77",
+            "availability": "In stock"
+            },
+            {
+            "url": "catalogue/tipping-the-velvet_999/index.html",
+            "price": 53.74,
+            "title": "Tipping the Velvet",
+            "rating": 1,
+            "full_title": "Tipping the Velvet",
+            "price_text": "£53.74",
+            "availability": "In stock"
+            },
+            {
+            "url": "catalogue/soumission_998/index.html",
+            "price": 50.1,
+            "title": "Soumission",
+            "rating": 1,
+            "full_title": "Soumission",
+            "price_text": "£50.10",
+            "availability": "In stock"
+            },
+            {
+            "url": "catalogue/sharp-objects_997/index.html",
+            "price": 47.82,
+            "title": "Sharp Objects",
+            "rating": 4,
+            "full_title": "Sharp Objects",
+            "price_text": "£47.82",
+            "availability": "In stock"
+            },
+            {
+            "url": "catalogue/sapiens-a-brief-history-of-humankind_996/index.html",
+            "price": 54.23,
+            "title": "Sapiens: A Brief History ...",
+            "rating": 5,
+            "full_title": "Sapiens: A Brief History of Humankind",
+            "price_text": "£54.23",
+            "availability": "In stock"
+            },
+            {
+            "url": "catalogue/the-requiem-red_995/index.html",
+            "price": 22.65,
+            "title": "The Requiem Red",
+            "rating": 1,
+            "full_title": "The Requiem Red",
+            "price_text": "£22.65",
+            "availability": "In stock"
+            },
+            {
+            "url": "catalogue/the-dirty-little-secrets-of-getting-your-dream-job_994/index.html",
+            "price": 33.34,
+            "title": "The Dirty Little Secrets ...",
+            "rating": 4,
+            "full_title": "The Dirty Little Secrets of Getting Your Dream Job",
+            "price_text": "£33.34",
+            "availability": "In stock"
+            },
+            {
+            "url": "catalogue/the-coming-woman-a-novel-based-on-the-life-of-the-infamous-feminist-victoria-woodhull_993/index.html",
+            "price": 17.93,
+            "title": "The Coming Woman: A ...",
+            "rating": 3,
+            "full_title": "The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull",
+            "price_text": "£17.93",
+            "availability": "In stock"
+            },
+            {
+            "url": "catalogue/the-boys-in-the-boat-nine-americans-and-their-epic-quest-for-gold-at-the-1936-berlin-olympics_992/index.html",
+            "price": 22.6,
+            "title": "The Boys in the ...",
+            "rating": 4,
+            "full_title": "The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics",
+            "price_text": "£22.60",
+            "availability": "In stock"
+            },
+            {
+            "url": "catalogue/the-black-maria_991/index.html",
+            "price": 52.15,
+            "title": "The Black Maria",
+            "rating": 1,
+            "full_title": "The Black Maria",
+            "price_text": "£52.15",
+            "availability": "In stock"
+            }
+        ],
+        "total_products": 10
+    }
+    ```
+  </Tab>
+  <Tab id="general" value="General Mode">
+    ```json
+    {
+        "1": {
+            "id": "1",
+            "name": "All products",
+            "rows": [
+            [
+                "A Light in the Attic",
+                "£51.77",
+                "In stock"
+            ],
+            [
+                "Tipping the Velvet",
+                "£53.74",
+                "In stock"
+            ],
+            [
+                "Soumission",
+                "£50.10",
+                "In stock"
+            ],
+            [
+                "Sharp Objects",
+                "£47.82",
+                "In stock"
+            ],
+            [
+                "Sapiens: A Brief History of Humankind",
+                "£54.23",
+                "In stock"
+            ],
+            [
+                "The Requiem Red",
+                "£22.65",
+                "In stock"
+            ],
+            [
+                "The Dirty Little Secrets of Getting Your Dream Job",
+                "£33.34",
+                "In stock"
+            ],
+            [
+                "The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull",
+                "£17.93",
+                "In stock"
+            ],
+            [
+                "The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics",
+                "£22.60",
+                "In stock"
+            ],
+            [
+                "The Black Maria",
+                "£52.15",
+                "In stock"
+            ],
+            [
+                "Starving Hearts (Triangular Trade Trilogy, #1)",
+                "£13.99",
+                "In stock"
+            ],
+            [
+                "Shakespeare's Sonnets",
+                "£20.66",
+                "In stock"
+            ],
+            [
+                "Set Me Free",
+                "£17.46",
+                "In stock"
+            ],
+            [
+                "Scott Pilgrim's Precious Little Life (Scott Pilgrim #1)",
+                "£52.29",
+                "In stock"
+            ],
+            [
+                "Rip it Up and Start Again",
+                "£35.02",
+                "In stock"
+            ],
+            [
+                "Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991",
+                "£57.25",
+                "In stock"
+            ],
+            [
+                "Olio",
+                "£23.88",
+                "In stock"
+            ],
+            [
+                "Mesaerion: The Best Science Fiction Stories 1800-1849",
+                "£37.59",
+                "In stock"
+            ],
+            [
+                "Libertarianism for Beginners",
+                "£51.33",
+                "In stock"
+            ],
+            [
+                "It's Only the Himalayas",
+                "£45.17",
+                "In stock"
+            ]
+            ],
+            "source": "table",
+            "headers": [
+            "Title",
+            "Price",
+            "Availability"
+            ]
+        }
+    }
+    ```
+  </Tab>
+</Tabs>
+
+### Scraping mode VS General mode
+
+As shown in the examples above, Listing mode provides detailed data by visiting each item's detail page, while General mode only captures the summary information available on the listing page itself. Choose the mode that best fits your data extraction needs.
+
+## Real Life Example Usage
 
 <Cards>
-  <Card title="E-Commerce" icon={<ShoppingCart />} href="/scrapers/use-cases/e-commerce">
+  <Card title="E-Commerce" icon={<ShoppingCart />} href="/guides/ecommerce">
     Scrape product details, pricing, and availability from major e-commerce sites.
   </Card>
 </Cards>
