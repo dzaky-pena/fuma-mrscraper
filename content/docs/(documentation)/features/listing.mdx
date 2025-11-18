@@ -6,8 +6,15 @@ icon: "TextSearch"
 
 import { ShoppingCart } from 'lucide-react';
 
-Listing mode is used when a page contains a repeating set of items (for example an ecommerce product list, job listings, or search results) where each visible item links to a details page or opens a detail panel that must be visited to collect the full data for that item.
+Listing mode is best for pages with a repeating list of items, such as product grids, job listings, or search results. The scraper automatically visits each item’s detail page to collect the full information.
+## General vs Listing
 
+- **General Mode** extracts only what is visible on the listing page.  
+- **Listing Mode** goes deeper by visiting each item’s detail page to obtain full information such as specifications, long descriptions, images, and variants.
+
+<Callout title="Tip" type="success">
+Use Listing mode when you need richer, more complete data.
+</Callout>
 ## When to use the Listing mode
 
 - Use Listing when items on a page provide only summary data and you need to open each item to retrieve full details (specs, full description, images, variants, etc.).
@@ -17,7 +24,8 @@ Listing mode is used when a page contains a repeating set of items (for example 
 
 1. Go to your **Dashboard** → click **Create Scraper** → select **Listing**.   
 2. Enter the **URL** (for example: `https://books.toscrape.com/`) you want to scrape.
-3. Once scraped, you'll receive a structured list of items with links to their detail pages, which the scraper will visit to extract the full data for each item. Below is an example of the difference in the scraping result between Listing mode and General mode.
+3. MrScraper will extract all items, visit their detail pages, and return a complete dataset.
+4. Below is an example showing the difference between **Listing mode** and **General mode** when scraping the same page.
 
 <Tabs items={['Listing Mode', 'General Mode']}>
   <Tab id="listing" value="Listing Mode">
@@ -251,13 +259,7 @@ Listing mode is used when a page contains a repeating set of items (for example 
     ```
   </Tab>
 </Tabs>
-
-### Scraping mode VS General mode
-
-As shown in the examples above, Listing mode provides detailed data by visiting each item's detail page, while General mode only captures the summary information available on the listing page itself. Choose the mode that best fits your data extraction needs.
-
-## Real Life Example Usage
-
+5. To see an example real-world use case, see here:
 <Cards>
   <Card title="E-Commerce" icon={<ShoppingCart />} href="/guides/ecommerce">
     Scrape product details, pricing, and availability from major e-commerce sites.
