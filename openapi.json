@@ -41,7 +41,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error401Response"
                                 }
                             }
                         }
@@ -51,7 +51,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error403Response"
                                 }
                             }
                         }
@@ -61,7 +61,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error404Response"
                                 }
                             }
                         }
@@ -71,7 +71,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error422Response"
                                 }
                             }
                         }
@@ -81,7 +81,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error500Response"
                                 }
                             }
                         }
@@ -137,7 +137,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error401Response"
                                 }
                             }
                         }
@@ -147,7 +147,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error403Response"
                                 }
                             }
                         }
@@ -157,7 +157,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error404Response"
                                 }
                             }
                         }
@@ -167,7 +167,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error422Response"
                                 }
                             }
                         }
@@ -177,7 +177,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error500Response"
                                 }
                             }
                         }
@@ -292,7 +292,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error401Response"
                                 }
                             }
                         }
@@ -302,7 +302,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error403Response"
                                 }
                             }
                         }
@@ -312,7 +312,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error422Response"
                                 }
                             }
                         }
@@ -322,7 +322,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error500Response"
                                 }
                             }
                         }
@@ -367,7 +367,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error401Response"
                                 }
                             }
                         }
@@ -377,7 +377,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error403Response"
                                 }
                             }
                         }
@@ -387,7 +387,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error404Response"
                                 }
                             }
                         }
@@ -397,7 +397,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
+                                    "$ref": "#/components/schemas/Error500Response"
                                 }
                             }
                         }
@@ -755,18 +755,106 @@
                 "properties": {
                     "message": {
                         "type": "string",
-                        "description": "Error message describing what went wrong"
+                        "description": "Error message describing what went wrong",
+                        "example": "Error message here"
                     },
                     "error": {
                         "type": "string",
-                        "description": "Error type or code"
+                        "description": "Error type or code",
+                        "example": "SomeErrorType"
                     },
                     "statusCode": {
                         "type": "number",
-                        "description": "HTTP status code"
+                        "description": "HTTP status code",
+                        "example": 400
                     }
                 },
                 "required": ["message", "statusCode"]
+            },
+            "Error401Response": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "Invalid or missing API token"
+                    },
+                    "error": {
+                        "type": "string",
+                        "example": "Unauthorized"
+                    },
+                    "statusCode": {
+                        "type": "number",
+                        "example": 401
+                    }
+                }
+            },
+            "Error403Response": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "You do not have permission to access this resource"
+                    },
+                    "error": {
+                        "type": "string",
+                        "example": "Forbidden"
+                    },
+                    "statusCode": {
+                        "type": "number",
+                        "example": 403
+                    }
+                }
+            },
+            "Error404Response": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "Resource not found"
+                    },
+                    "error": {
+                        "type": "string",
+                        "example": "Not Found"
+                    },
+                    "statusCode": {
+                        "type": "number",
+                        "example": 404
+                    }
+                }
+            },
+            "Error422Response": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "Validation failed"
+                    },
+                    "error": {
+                        "type": "string",
+                        "example": "Unprocessable Entity"
+                    },
+                    "statusCode": {
+                        "type": "number",
+                        "example": 422
+                    }
+                }
+            },
+            "Error500Response": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "example": "An unexpected error occurred"
+                    },
+                    "error": {
+                        "type": "string",
+                        "example": "Internal Server Error"
+                    },
+                    "statusCode": {
+                        "type": "number",
+                        "example": 500
+                    }
+                }
             }
         }
     }
