@@ -1,0 +1,906 @@
+---
+title: "Real Estate Property Listings"
+description: "Learn how to use MrScraper to extract property listings from real estate websites for market analysis, investment research, or property aggregation."
+icon: "House"
+---
+
+Real estate professionals, investors, and data analysts can leverage MrScraper to collect property listings from public real estate websites.  
+Instead of manually browsing through hundreds of listings, you can use the **AI Scraper** to extract property details automatically — with just a URL and a prompt.
+
+Let's walk through a **real-world example** where a real estate investor uses MrScraper to collect data from a live property listing site.
+
+
+## Scenario
+
+Imagine you're considering buying property in Michigan and want to analyze the market across different cities.  
+You want to **compare property prices, sizes, and features** across Michigan to find the best value for your budget.  
+Instead of checking multiple listings sites daily, you'll use MrScraper to extract property data from [Redfin](https://www.redfin.com), one of the largest real estate platforms.
+
+## Step 1: Create a New AI Scraper
+
+1. Go to the **Scrapers** page by clicking the **triangle icon** on the left sidebar.
+2. Click on the **Create Scraper** button.
+3. Select the **Listing Scraper** option.
+4. In the **URL** field, enter the URL of the Michigan property listings page: `https://www.redfin.com/state/Michigan`.
+5. Click on the **Start Scraping** button to start scraping.
+
+**Result :**
+
+```json title="Scraping Result"
+{
+  "mode": "direct",
+  "properties": [
+    {
+      "address": "319 Saint Lawrence Blvd, Northville, MI 48168",
+      "url": "/MI/Northville/319-Saint-Lawrence-Blvd-48168/home/98741962",
+      "price": "$510,000",
+      "beds": "3 beds",
+      "baths": "3.5 baths",
+      "sqft": "3,246",
+      "status": "NEW 10 HRS AGO"
+    },
+    {
+      "address": "20137 W Whipple Dr, Northville, MI 48167",
+      "url": "/MI/Northville/20137-W-Whipple-Dr-48167/home/75119625",
+      "price": "$799,900",
+      "beds": "— beds",
+      "baths": "— baths",
+      "sqft": "—",
+      "status": "NEW 10 HRS AGO"
+    },
+    {
+      "address": "49776 Parkside Dr, Northville, MI 48168",
+      "url": "/MI/Northville/49776-Parkside-Dr-48168/home/98891697",
+      "price": "$699,900",
+      "beds": "4 beds",
+      "baths": "3.5 baths",
+      "sqft": "4,492",
+      "status": "NEW 14 HRS AGO"
+    },
+    {
+      "address": "58543 Navarra Dr, South Lyon, MI 48178",
+      "url": "/MI/South-Lyon/58543-Navarra-Dr-48178/home/191274082",
+      "price": "$619,990",
+      "beds": "5 beds",
+      "baths": "3 baths",
+      "sqft": "3,011",
+      "status": "OPEN SAT, 11:30AM TO 2PM"
+    },
+    {
+      "address": "15943 Morningside, Northville, MI 48168",
+      "url": "/MI/Northville/15943-Morningside-48168/home/98892034",
+      "price": "$273,000",
+      "beds": "2 beds",
+      "baths": "2 baths",
+      "sqft": "1,653"
+    },
+    {
+      "address": "17200 Lake View Cir #37, Northville, MI 48168",
+      "url": "/MI/Northville/17200-Lake-View-Cir-48168/unit-37/home/199063786",
+      "price": "$650,000",
+      "beds": "3 beds",
+      "baths": "3.5 baths",
+      "sqft": "3,708"
+    },
+    {
+      "address": "9824 Hathaway Dr, Northville, MI 48167",
+      "url": "/MI/Northville/9824-Hathaway-Dr-48167/home/99341712",
+      "price": "$55,000",
+      "beds": "3 beds",
+      "baths": "2 baths",
+      "sqft": "1,000"
+    },
+    {
+      "address": "21008 Campolina Dr, South Lyon, MI 48178",
+      "url": "/MI/South-Lyon/21008-Campolina-Dr-48178/home/191274226",
+      "price": "$561,990",
+      "beds": "4 beds",
+      "baths": "2.5 baths",
+      "sqft": "2,725",
+      "status": "NEW CONSTRUCTION"
+    },
+    {
+      "address": "42432 Corlina Dr, Northville, MI 48167",
+      "url": "/MI/Northville/42432-Corlina-Dr-48167/home/98883824",
+      "price": "$350,000",
+      "beds": "2 beds",
+      "baths": "2.5 baths",
+      "sqft": "1,800"
+    },
+    {
+      "address": "1002 Coldspring Dr, Northville, MI 48167",
+      "url": "/MI/Northville/1002-Coldspring-Dr-48167/home/99226217",
+      "price": "$780,000",
+      "beds": "4 beds",
+      "baths": "3.5 baths",
+      "sqft": "5,228",
+      "status": "LISTED BY REDFIN"
+    },
+    {
+      "address": "49944 Blackberry Trl #55, Novi, MI 48374",
+      "url": "/MI/Novi/49944-Blackberry-Trl-48374/unit-55/home/181918254",
+      "price": "$475,000",
+      "beds": "3 beds",
+      "baths": "2.5 baths",
+      "sqft": "2,331"
+    },
+    {
+      "address": "39928 Crosswinds, Novi, MI 48375 5004",
+      "url": "/MI/Novi/39928-Crosswinds-48375/home/61133922",
+      "price": "$210,000",
+      "beds": "2 beds",
+      "baths": "1.5 baths",
+      "sqft": "1,100",
+      "status": "COMING SOON"
+    },
+    {
+      "address": "22415 Cranbrooke Dr, Novi, MI 48375 4502",
+      "url": "/MI/Novi/22415-Cranbrooke-Dr-48375/home/199166800",
+      "price": "$249,999",
+      "beds": "3 beds",
+      "baths": "1.5 baths",
+      "sqft": "1,304",
+      "status": "COMING SOON"
+    },
+    {
+      "address": "41820 Independence Dr, Novi, MI 48377 1587",
+      "url": "/MI/Novi/41820-Independence-Dr-48377/home/99220815",
+      "price": "$300,000",
+      "beds": "3 beds",
+      "baths": "3 baths",
+      "sqft": "1,500",
+      "status": "COMING SOON"
+    },
+    {
+      "address": "27106 Ladbroke St, Novi, MI 48374",
+      "url": "/MI/Novi/27106-Ladbroke-St-48374/home/99098260",
+      "price": "$470,000",
+      "beds": "3 beds",
+      "baths": "2.5 baths",
+      "sqft": "2,156"
+    },
+    {
+      "address": "21043 Maybury Park Dr, Northville, MI 48167",
+      "url": "/MI/Northville/21043-Maybury-Park-Dr-48167/home/99095660",
+      "price": "$1,795,000",
+      "beds": "5 beds",
+      "baths": "5.5 baths",
+      "sqft": "6,180"
+    },
+    {
+      "address": "43716 Galway Dr, Northville, MI 48167",
+      "url": "/MI/Northville/43716-Galway-Dr-48167/home/99042074",
+      "price": "$458,000",
+      "beds": "3 beds",
+      "baths": "2.5 baths",
+      "sqft": "2,683"
+    },
+    {
+      "address": "40600 8 Mile Rd, Novi, MI 48167 2200",
+      "url": "/MI/Novi/40600-Eight-Mile-Rd-48375/home/199018703",
+      "price": "$1,875,000",
+      "beds": "7 beds",
+      "baths": "6 baths",
+      "sqft": "5,900",
+      "status": "VIDEO TOUR"
+    },
+    {
+      "address": "40600 8 Mile Rd, Northville, MI 48167",
+      "url": "/MI/Northville/40600-8-Mile-Rd-48167/home/99228068",
+      "price": "$1,875,000",
+      "beds": "7 beds",
+      "baths": "6 baths",
+      "sqft": "8,200",
+      "status": "3D WALKTHROUGH"
+    },
+    {
+      "address": "43080 Emerson Way, Novi, MI 48377",
+      "url": "/MI/Novi/43080-Emerson-Way-48377/home/99222082",
+      "price": "$525,000",
+      "beds": "3 beds",
+      "baths": "3.5 baths",
+      "sqft": "4,294",
+      "status": "LISTED BY REDFIN"
+    },
+    {
+      "address": "13611 Livernois Ave, Detroit, MI 48238 2555",
+      "url": "/MI/Detroit/13611-Livernois-48238/home/145571152",
+      "price": "$599,999",
+      "beds": "— beds",
+      "baths": "— baths",
+      "sqft": "4,374"
+    },
+    {
+      "address": "18244 W 7 Mile Rd, Detroit, MI 48219 2960",
+      "url": "/MI/Detroit/18244-Seven-Mile-W-48219/home/197643592",
+      "price": "$150,000",
+      "beds": "— beds",
+      "baths": "— baths",
+      "sqft": "1,890"
+    },
+    {
+      "address": "5061 Lakewood, Detroit, MI 48213",
+      "url": "/MI/Detroit/5061-Lakewood-St-48213/home/102072027",
+      "price": "$600,000",
+      "beds": "— beds",
+      "baths": "— baths",
+      "sqft": "25,000"
+    },
+    {
+      "address": "18978 Prairie St, Detroit, MI 48221",
+      "url": "/MI/Detroit/18978-Prairie-St-48221/home/98474051",
+      "price": "$199,000",
+      "beds": "3 beds",
+      "baths": "2 baths",
+      "sqft": "1,500",
+      "status": "LISTED BY REDFIN"
+    },
+    {
+      "address": "16533 Parkside St, Detroit, MI 48221",
+      "url": "/MI/Detroit/16533-Parkside-St-48221/home/168673093",
+      "price": "$205,000",
+      "beds": "3 beds",
+      "baths": "2 baths",
+      "sqft": "1,500",
+      "status": "LISTED BY REDFIN"
+    },
+    {
+      "address": "17216 Chapel St, Detroit, MI 48219",
+      "url": "/MI/Detroit/17216-Chapel-St-48219/home/98571460",
+      "price": "$160,000",
+      "beds": "4 beds",
+      "baths": "2 baths",
+      "sqft": "1,367",
+      "status": "LISTED BY REDFIN"
+    },
+    {
+      "address": "17743 Trinity St, Detroit, MI 48219",
+      "url": "/MI/Detroit/17743-Trinity-St-48219/home/98569108",
+      "price": "$85,000",
+      "beds": "2 beds",
+      "baths": "1 bath",
+      "sqft": "662",
+      "status": "LISTED BY REDFIN"
+    },
+    {
+      "address": "14907 Mayfield St, Detroit, MI 48205",
+      "url": "/MI/Detroit/14907-Mayfield-St-48205/home/60972207",
+      "price": "$85,000",
+      "beds": "3 beds",
+      "baths": "1 bath",
+      "sqft": "1,000",
+      "status": "LISTED BY REDFIN"
+    },
+    {
+      "address": "13587 Monica St, Detroit, MI 48238",
+      "url": "/MI/Detroit/13587-Monica-St-48238/home/98473723",
+      "price": "$125,000",
+      "beds": "3 beds",
+      "baths": "1 bath",
+      "sqft": "1,484",
+      "status": "LISTED BY REDFIN"
+    },
+    {
+      "address": "1566 E George Ave, Hazel Park, MI 48030",
+      "url": "/MI/Hazel-Park/1566-E-George-Ave-48030/home/99284963",
+      "price": "$344,900",
+      "beds": "4 beds",
+      "baths": "3 baths",
+      "sqft": "2,522",
+      "status": "LISTED BY REDFIN"
+    },
+    {
+      "address": "533 5th St, Ann Arbor, MI 48103",
+      "url": "/MI/Ann-Arbor/533-5th-St-48103/home/99308472",
+      "price": "$525,000",
+      "beds": "2 beds",
+      "baths": "2 baths",
+      "sqft": "1,135",
+      "status": "OPEN SUN, 1PM TO 4PM"
+    },
+    {
+      "address": "3250 Brackley Dr, Ann Arbor, MI 48105",
+      "url": "/MI/Ann-Arbor/3250-Brackley-Dr-48105/home/143963798",
+      "price": "$829,000",
+      "beds": "3 beds",
+      "baths": "3.5 baths",
+      "sqft": "2,663"
+    },
+    {
+      "address": "1702 Hill St, Ann Arbor, MI 48104",
+      "url": "/MI/Ann-Arbor/1702-Hill-St-48104/home/99308587",
+      "price": "$1,950,000",
+      "beds": "8 beds",
+      "baths": "6 baths",
+      "sqft": "—",
+      "status": "OPEN SUN, 12PM TO 2PM"
+    },
+    {
+      "address": "3341 Roseford Blvd, Ann Arbor, MI 48105",
+      "url": "/MI/Ann-Arbor/3341-Roseford-Blvd-48105/home/143963723",
+      "price": "$660,000",
+      "beds": "3 beds",
+      "baths": "2.5 baths",
+      "sqft": "2,427",
+      "status": "COMING SOON"
+    },
+    {
+      "address": "1670 W Ellsworth Rd, Ann Arbor, MI 48108",
+      "url": "/MI/Ann-Arbor/1670-W-Ellsworth-Rd-48108/home/99335852",
+      "price": "$429,900",
+      "beds": "3 beds",
+      "baths": "3 baths",
+      "sqft": "3,244",
+      "status": "NEW 17 HRS AGO"
+    },
+    {
+      "address": "2134 Overlook Ct, Ann Arbor, MI 48103",
+      "url": "/MI/Ann-Arbor/2134-Overlook-Ct-48103/home/99356641",
+      "price": "$379,900",
+      "beds": "2 beds",
+      "baths": "2.5 baths",
+      "sqft": "1,548",
+      "status": "NEW 18 HRS AGO"
+    },
+    {
+      "address": "9338 Colorado St, Livonia, MI 48150 3756",
+      "url": "/MI/Livonia/9338-Colorado-St-48150/home/98732674",
+      "price": "$1,200,000",
+      "beds": "3 beds",
+      "baths": "2 baths",
+      "sqft": "1,074",
+      "status": "NEW 18 HRS AGO"
+    },
+    {
+      "address": "35435 W Chicago St, Livonia, MI 48150",
+      "url": "/MI/Livonia/35435-W-Chicago-St-48150/home/98729627",
+      "price": "$299,900",
+      "beds": "3 beds",
+      "baths": "1.5 baths",
+      "sqft": "1,992"
+    },
+    {
+      "address": "14196 Stonehouse Ave, Livonia, MI 48154 5910",
+      "url": "/MI/Livonia/14196-Stonehouse-Ave-48154/home/98720964",
+      "price": "$324,900",
+      "beds": "3 beds",
+      "baths": "1.5 baths",
+      "sqft": "1,310",
+      "status": "COMING SOON"
+    },
+    {
+      "address": "27516 Long St, Livonia, MI 48152",
+      "url": "/MI/Livonia/27516-Long-St-48152/home/98702609",
+      "price": "$199,000",
+      "beds": "3 beds",
+      "baths": "1 bath",
+      "sqft": "954"
+    },
+    {
+      "address": "30634 Munger Dr, Livonia, MI 48154",
+      "url": "/MI/Livonia/30634-Munger-Dr-48154/home/98715019",
+      "price": "$599,900",
+      "beds": "3 beds",
+      "baths": "2.5 baths",
+      "sqft": "3,229"
+    },
+    {
+      "address": "15454 Golfview St, Livonia, MI 48154 2307",
+      "url": "/MI/Livonia/15454-Golfview-St-48154/home/98718696",
+      "price": "$340,000",
+      "beds": "3 beds",
+      "baths": "2.5 baths",
+      "sqft": "1,429",
+      "status": "COMING SOON"
+    },
+    {
+      "address": "14488 Summerside St, Livonia, MI 48154",
+      "url": "/MI/Livonia/14488-Summerside-St-48154/home/98727093",
+      "price": "$300,000",
+      "beds": "3 beds",
+      "baths": "2 baths",
+      "sqft": "2,036"
+    },
+    {
+      "address": "199 Lyons Dr, Troy, MI 48083",
+      "url": "/MI/Troy/199-Lyons-Dr-48083/home/99035065",
+      "price": "$324,000",
+      "beds": "3 beds",
+      "baths": "2 baths",
+      "sqft": "2,016",
+      "status": "OPEN SUN, 10AM TO 12PM"
+    },
+    {
+      "address": "2030 Orpington Dr, Troy, MI 48083 5671",
+      "url": "/MI/Troy/2030-Orpington-Dr-48083/home/99031882",
+      "price": "$289,000",
+      "beds": "3 beds",
+      "baths": "2 baths",
+      "sqft": "1,363",
+      "status": "COMING SOON"
+    },
+    {
+      "address": "1459 Leafgreen Dr, Troy, MI 48083",
+      "url": "/MI/Troy/1459-Leafgreen-Dr-48083/home/61080635",
+      "price": "$349,500",
+      "beds": "3 beds",
+      "baths": "2.5 baths",
+      "sqft": "2,720"
+    },
+    {
+      "address": "1105 Kirts Blvd, Troy, MI 48084",
+      "url": "/MI/Troy/1105-Kirts-Blvd-48084/home/181932773",
+      "price": "$264,400",
+      "beds": "2 beds",
+      "baths": "2.5 baths",
+      "sqft": "1,700"
+    },
+    {
+      "address": "1105 Kirts Blvd Unit C, Troy, MI 48084",
+      "url": "/MI/Troy/1105-Kirts-Blvd-48084/unit-C/home/99213272",
+      "price": "$264,400",
+      "beds": "2 beds",
+      "baths": "2.5 baths",
+      "sqft": "1,200"
+    },
+    {
+      "address": "2573 Cottonwood Dr, Troy, MI 48083",
+      "url": "/MI/Troy/2573-Cottonwood-Dr-48083/home/180166763",
+      "price": "$749,000",
+      "beds": "4 beds",
+      "baths": "3 baths",
+      "sqft": "4,278",
+      "status": "OPEN SAT, 1PM TO 4PM"
+    },
+    {
+      "address": "4728 Walden Dr, Troy, MI 48098 4641",
+      "url": "/MI/Troy/4728-Walden-Dr-48098/home/99211031",
+      "price": "$575,000",
+      "beds": "4 beds",
+      "baths": "3 baths",
+      "sqft": "2,555",
+      "status": "COMING SOON"
+    },
+    {
+      "address": "4423 Reilly Ct, Troy, MI 48085",
+      "url": "/MI/Troy/4423-Reilly-Ct-48085/home/99028641",
+      "price": "$439,000",
+      "beds": "4 beds",
+      "baths": "2.5 baths",
+      "sqft": "3,167",
+      "status": "OPEN SAT, 12PM TO 2PM"
+    },
+    {
+      "address": "3285 Newbury Pl, Troy, MI 48084",
+      "url": "/MI/Troy/3285-Newbury-Pl-48084/home/99292275",
+      "price": "$415,000",
+      "beds": "2 beds",
+      "baths": "2.5 baths",
+      "sqft": "1,969",
+      "status": "OPEN SAT, 11:30AM TO 2PM"
+    },
+    {
+      "address": "83 Arthur Dr, Troy, MI 48083",
+      "url": "/MI/Troy/83-Arthur-Dr-48083/home/99033183",
+      "price": "$440,000",
+      "beds": "3 beds",
+      "baths": "2.5 baths",
+      "sqft": "3,142"
+    },
+    {
+      "address": "34006 Glouster Cir, Farmington Hills, MI 48331",
+      "url": "/MI/Farmington-Hills/34006-Glouster-Cir-48331/home/99229700",
+      "price": "$484,900",
+      "beds": "4 beds",
+      "baths": "3.5 baths",
+      "sqft": "3,042",
+      "status": "COMING SOON"
+    },
+    {
+      "address": "21662 Flanders St, Farmington, MI 48335 5340",
+      "url": "/MI/Farmington/21662-Flanders-St-48335/home/99244597",
+      "price": "$349,900",
+      "beds": "3 beds",
+      "baths": "2.5 baths",
+      "sqft": "1,492",
+      "status": "COMING SOON"
+    },
+    {
+      "address": "21370 Purdue Ave, Farmington, MI 48336",
+      "url": "/MI/Farmington/21370-Purdue-Ave-48336/home/99245703",
+      "price": "$249,999",
+      "beds": "3 beds",
+      "baths": "2 baths",
+      "sqft": "1,201",
+      "status": "OPEN SAT, 11AM TO 1PM"
+    },
+    {
+      "address": "28045 W GREENMEADOW Cir, Farmington, MI 48334 5159",
+      "url": "/MI/Farmington/28045-W-Greenmeadow-Cir-48334/home/99235457",
+      "price": "$294,900",
+      "beds": "3 beds",
+      "baths": "1 bath",
+      "sqft": "1,450",
+      "status": "NEW 17 HRS AGO"
+    },
+    {
+      "address": "22253 Sheffield Ct, Farmington Hills, MI 48335",
+      "url": "/MI/Farmington-Hills/22253-Sheffield-Ct-48335/home/99047056",
+      "price": "$609,900",
+      "beds": "4 beds",
+      "baths": "2.5 baths",
+      "sqft": "3,980",
+      "status": "OPEN FRI, 11AM TO 1PM"
+    },
+    {
+      "address": "34730 Bunker Hill Dr, Farmington, MI 48331",
+      "url": "/MI/Farmington/34730-Bunker-Hill-Dr-48331/home/99233588",
+      "price": "$449,000",
+      "beds": "4 beds",
+      "baths": "2.5 baths",
+      "sqft": "2,650"
+    },
+    {
+      "address": "30145 Green Acres, Farmington Hills, MI 48334",
+      "url": "/MI/Farmington-Hills/30145-Green-Acres-48334/home/99229245",
+      "price": "$438,000",
+      "beds": "4 beds",
+      "baths": "2.5 baths",
+      "sqft": "2,403",
+      "status": "OPEN SAT, 1PM TO 3PM"
+    },
+    {
+      "address": "26528 Farmington Dr Ave, Farmington, MI 48334",
+      "url": "/MI/Farmington/26528-Farmington-Rd-48334/home/99236334",
+      "price": "$420,000",
+      "beds": "3 beds",
+      "baths": "2.5 baths",
+      "sqft": "1,887"
+    },
+    {
+      "address": "35518 Woodfield Dr, Farmington Hills, MI 48331",
+      "url": "/MI/Farmington-Hills/35518-Woodfield-Dr-48331/home/99232648",
+      "price": "$520,000",
+      "beds": "3 beds",
+      "baths": "3 baths",
+      "sqft": "4,246"
+    },
+    {
+      "address": "26557 Old Homestead Dr, Farmington, MI 48331",
+      "url": "/MI/Farmington/26557-Old-Homestead-Dr-48331/home/99044733",
+      "price": "$458,000",
+      "beds": "4 beds",
+      "baths": "3 baths",
+      "sqft": "2,160",
+      "status": "LISTED BY REDFIN"
+    }
+  ],
+  "total_count": 63,
+  "links": [
+    "/MI/Ann-Arbor/1670-W-Ellsworth-Rd-48108/home/99335852",
+    "/MI/Ann-Arbor/1702-Hill-St-48104/home/99308587",
+    "/MI/Ann-Arbor/2134-Overlook-Ct-48103/home/99356641",
+    "/MI/Ann-Arbor/3250-Brackley-Dr-48105/home/143963798",
+    "/MI/Ann-Arbor/3341-Roseford-Blvd-48105/home/143963723",
+    "/MI/Ann-Arbor/533-5th-St-48103/home/99308472",
+    "/MI/Detroit/13587-Monica-St-48238/home/98473723",
+    "/MI/Detroit/13611-Livernois-48238/home/145571152",
+    "/MI/Detroit/14907-Mayfield-St-48205/home/60972207",
+    "/MI/Detroit/16533-Parkside-St-48221/home/168673093",
+    "/MI/Detroit/17216-Chapel-St-48219/home/98571460",
+    "/MI/Detroit/17743-Trinity-St-48219/home/98569108",
+    "/MI/Detroit/18244-Seven-Mile-W-48219/home/197643592",
+    "/MI/Detroit/18978-Prairie-St-48221/home/98474051",
+    "/MI/Detroit/5061-Lakewood-St-48213/home/102072027",
+    "/MI/Farmington-Hills/22253-Sheffield-Ct-48335/home/99047056",
+    "/MI/Farmington-Hills/30145-Green-Acres-48334/home/99229245",
+    "/MI/Farmington-Hills/34006-Glouster-Cir-48331/home/99229700",
+    "/MI/Farmington-Hills/35518-Woodfield-Dr-48331/home/99232648",
+    "/MI/Farmington/21370-Purdue-Ave-48336/home/99245703",
+    "/MI/Farmington/21662-Flanders-St-48335/home/99244597",
+    "/MI/Farmington/26528-Farmington-Rd-48334/home/99236334",
+    "/MI/Farmington/26557-Old-Homestead-Dr-48331/home/99044733",
+    "/MI/Farmington/28045-W-Greenmeadow-Cir-48334/home/99235457",
+    "/MI/Farmington/34730-Bunker-Hill-Dr-48331/home/99233588",
+    "/MI/Hazel-Park/1566-E-George-Ave-48030/home/99284963",
+    "/MI/Livonia/14196-Stonehouse-Ave-48154/home/98720964",
+    "/MI/Livonia/14488-Summerside-St-48154/home/98727093",
+    "/MI/Livonia/15454-Golfview-St-48154/home/98718696",
+    "/MI/Livonia/27516-Long-St-48152/home/98702609",
+    "/MI/Livonia/30634-Munger-Dr-48154/home/98715019",
+    "/MI/Livonia/35435-W-Chicago-St-48150/home/98729627",
+    "/MI/Livonia/9338-Colorado-St-48150/home/98732674",
+    "/MI/Northville/1002-Coldspring-Dr-48167/home/99226217",
+    "/MI/Northville/15943-Morningside-48168/home/98892034",
+    "/MI/Northville/17200-Lake-View-Cir-48168/unit-37/home/199063786",
+    "/MI/Northville/20137-W-Whipple-Dr-48167/home/75119625",
+    "/MI/Northville/21043-Maybury-Park-Dr-48167/home/99095660",
+    "/MI/Northville/319-Saint-Lawrence-Blvd-48168/home/98741962",
+    "/MI/Northville/40600-8-Mile-Rd-48167/home/99228068",
+    "/MI/Northville/42432-Corlina-Dr-48167/home/98883824",
+    "/MI/Northville/43716-Galway-Dr-48167/home/99042074",
+    "/MI/Northville/49776-Parkside-Dr-48168/home/98891697",
+    "/MI/Northville/9824-Hathaway-Dr-48167/home/99341712",
+    "/MI/Novi/22415-Cranbrooke-Dr-48375/home/199166800",
+    "/MI/Novi/27106-Ladbroke-St-48374/home/99098260",
+    "/MI/Novi/39928-Crosswinds-48375/home/61133922",
+    "/MI/Novi/40600-Eight-Mile-Rd-48375/home/199018703",
+    "/MI/Novi/41820-Independence-Dr-48377/home/99220815",
+    "/MI/Novi/43080-Emerson-Way-48377/home/99222082",
+    "/MI/Novi/49944-Blackberry-Trl-48374/unit-55/home/181918254",
+    "/MI/South-Lyon/21008-Campolina-Dr-48178/home/191274226",
+    "/MI/South-Lyon/58543-Navarra-Dr-48178/home/191274082",
+    "/MI/Troy/1105-Kirts-Blvd-48084/home/181932773",
+    "/MI/Troy/1105-Kirts-Blvd-48084/unit-C/home/99213272",
+    "/MI/Troy/1459-Leafgreen-Dr-48083/home/61080635",
+    "/MI/Troy/199-Lyons-Dr-48083/home/99035065",
+    "/MI/Troy/2030-Orpington-Dr-48083/home/99031882",
+    "/MI/Troy/2573-Cottonwood-Dr-48083/home/180166763",
+    "/MI/Troy/3285-Newbury-Pl-48084/home/99292275",
+    "/MI/Troy/4423-Reilly-Ct-48085/home/99028641",
+    "/MI/Troy/4728-Walden-Dr-48098/home/99211031",
+    "/MI/Troy/83-Arthur-Dr-48083/home/99033183"
+  ]
+}
+```
+
+## Step 2: Filter Out
+
+Next, tell the AI to filter the scraped results based on specific criteria. For this example, let's filter for smaller, more affordable properties under 2,000 square feet. You can use the following prompt:
+
+```txt
+Get only properties with less than 2000 square feet
+```
+
+**Result :**
+
+```json title="Filtered Scraping Result"
+{
+  "mode": "direct",
+  "count": 28,
+  "properties": [
+    {
+      "beds": "2 beds",
+      "link": "/MI/Northville/15943-Morningside-48168/home/98892034",
+      "sqft": 1653,
+      "baths": "2 baths",
+      "price": "$273,000",
+      "address": "15943 Morningside, Northville, MI 48168"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Northville/9824-Hathaway-Dr-48167/home/99341712",
+      "sqft": 1000,
+      "baths": "2 baths",
+      "price": "$55,000",
+      "address": "9824 Hathaway Dr, Northville, MI 48167"
+    },
+    {
+      "beds": "2 beds",
+      "link": "/MI/Northville/42432-Corlina-Dr-48167/home/98883824",
+      "sqft": 1800,
+      "baths": "2.5 baths",
+      "price": "$350,000",
+      "address": "42432 Corlina Dr, Northville, MI 48167"
+    },
+    {
+      "beds": "2 beds",
+      "link": "/MI/Novi/39928-Crosswinds-48375/home/61133922",
+      "sqft": 1100,
+      "baths": "1.5 baths",
+      "price": "$210,000",
+      "address": "39928 Crosswinds, Novi, MI 48375 5004"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Novi/22415-Cranbrooke-Dr-48375/home/199166800",
+      "sqft": 1304,
+      "baths": "1.5 baths",
+      "price": "$249,999",
+      "address": "22415 Cranbrooke Dr, Novi, MI 48375 4502"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Novi/41820-Independence-Dr-48377/home/99220815",
+      "sqft": 1500,
+      "baths": "3 baths",
+      "price": "$300,000",
+      "address": "41820 Independence Dr, Novi, MI 48377 1587"
+    },
+    {
+      "beds": "— beds",
+      "link": "/MI/Detroit/18244-Seven-Mile-W-48219/home/197643592",
+      "sqft": 1890,
+      "baths": "— baths",
+      "price": "$150,000",
+      "address": "18244 W 7 Mile Rd, Detroit, MI 48219 2960"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Detroit/18978-Prairie-St-48221/home/98474051",
+      "sqft": 1500,
+      "baths": "2 baths",
+      "price": "$199,000",
+      "address": "18978 Prairie St, Detroit, MI 48221"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Detroit/16533-Parkside-St-48221/home/168673093",
+      "sqft": 1500,
+      "baths": "2 baths",
+      "price": "$205,000",
+      "address": "16533 Parkside St, Detroit, MI 48221"
+    },
+    {
+      "beds": "4 beds",
+      "link": "/MI/Detroit/17216-Chapel-St-48219/home/98571460",
+      "sqft": 1367,
+      "baths": "2 baths",
+      "price": "$160,000",
+      "address": "17216 Chapel St, Detroit, MI 48219"
+    },
+    {
+      "beds": "2 beds",
+      "link": "/MI/Detroit/17743-Trinity-St-48219/home/98569108",
+      "sqft": 662,
+      "baths": "1 bath",
+      "price": "$85,000",
+      "address": "17743 Trinity St, Detroit, MI 48219"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Detroit/14907-Mayfield-St-48205/home/60972207",
+      "sqft": 1000,
+      "baths": "1 bath",
+      "price": "$85,000",
+      "address": "14907 Mayfield St, Detroit, MI 48205"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Detroit/13587-Monica-St-48238/home/98473723",
+      "sqft": 1484,
+      "baths": "1 bath",
+      "price": "$125,000",
+      "address": "13587 Monica St, Detroit, MI 48238"
+    },
+    {
+      "beds": "2 beds",
+      "link": "/MI/Ann-Arbor/533-5th-St-48103/home/99308472",
+      "sqft": 1135,
+      "baths": "2 baths",
+      "price": "$525,000",
+      "address": "533 5th St, Ann Arbor, MI 48103"
+    },
+    {
+      "beds": "2 beds",
+      "link": "/MI/Ann-Arbor/2134-Overlook-Ct-48103/home/99356641",
+      "sqft": 1548,
+      "baths": "2.5 baths",
+      "price": "$379,900",
+      "address": "2134 Overlook Ct, Ann Arbor, MI 48103"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Livonia/9338-Colorado-St-48150/home/98732674",
+      "sqft": 1074,
+      "baths": "2 baths",
+      "price": "$1,200,000",
+      "address": "9338 Colorado St, Livonia, MI 48150 3756"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Livonia/35435-W-Chicago-St-48150/home/98729627",
+      "sqft": 1992,
+      "baths": "1.5 baths",
+      "price": "$299,900",
+      "address": "35435 W Chicago St, Livonia, MI 48150"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Livonia/14196-Stonehouse-Ave-48154/home/98720964",
+      "sqft": 1310,
+      "baths": "1.5 baths",
+      "price": "$324,900",
+      "address": "14196 Stonehouse Ave, Livonia, MI 48154 5910"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Livonia/27516-Long-St-48152/home/98702609",
+      "sqft": 954,
+      "baths": "1 bath",
+      "price": "$199,000",
+      "address": "27516 Long St, Livonia, MI 48152"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Livonia/15454-Golfview-St-48154/home/98718696",
+      "sqft": 1429,
+      "baths": "2.5 baths",
+      "price": "$340,000",
+      "address": "15454 Golfview St, Livonia, MI 48154 2307"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Troy/2030-Orpington-Dr-48083/home/99031882",
+      "sqft": 1363,
+      "baths": "2 baths",
+      "price": "$289,000",
+      "address": "2030 Orpington Dr, Troy, MI 48083 5671"
+    },
+    {
+      "beds": "2 beds",
+      "link": "/MI/Troy/1105-Kirts-Blvd-48084/home/181932773",
+      "sqft": 1700,
+      "baths": "2.5 baths",
+      "price": "$264,400",
+      "address": "1105 Kirts Blvd, Troy, MI 48084"
+    },
+    {
+      "beds": "2 beds",
+      "link": "/MI/Troy/1105-Kirts-Blvd-48084/unit-C/home/99213272",
+      "sqft": 1200,
+      "baths": "2.5 baths",
+      "price": "$264,400",
+      "address": "1105 Kirts Blvd Unit C, Troy, MI 48084"
+    },
+    {
+      "beds": "2 beds",
+      "link": "/MI/Troy/3285-Newbury-Pl-48084/home/99292275",
+      "sqft": 1969,
+      "baths": "2.5 baths",
+      "price": "$415,000",
+      "address": "3285 Newbury Pl, Troy, MI 48084"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Farmington/21662-Flanders-St-48335/home/99244597",
+      "sqft": 1492,
+      "baths": "2.5 baths",
+      "price": "$349,900",
+      "address": "21662 Flanders St, Farmington, MI 48335 5340"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Farmington/21370-Purdue-Ave-48336/home/99245703",
+      "sqft": 1201,
+      "baths": "2 baths",
+      "price": "$249,999",
+      "address": "21370 Purdue Ave, Farmington, MI 48336"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Farmington/28045-W-Greenmeadow-Cir-48334/home/99235457",
+      "sqft": 1450,
+      "baths": "1 bath",
+      "price": "$294,900",
+      "address": "28045 W GREENMEADOW Cir, Farmington, MI 48334 5159"
+    },
+    {
+      "beds": "3 beds",
+      "link": "/MI/Farmington/26528-Farmington-Rd-48334/home/99236334",
+      "sqft": 1887,
+      "baths": "2.5 baths",
+      "price": "$420,000",
+      "address": "26528 Farmington Dr Ave, Farmington, MI 48334"
+    }
+  ]
+}
+```
+
+### Step 3: Use the Data
+
+You can now use this structured property data for your real estate analysis, investment research, or home search. The filtered results show 28 properties under 2,000 square feet across Michigan cities, making it easier to compare smaller homes and condos.
+
+You can export the data in **JSON** or **CSV** format, or integrate it directly into your application via the MrScraper API.
+
+## Why This Is Useful
+
+By using this setup, you can:
+
+* Compare property prices across Michigan cities (Detroit, Ann Arbor, Livonia, Troy, Farmington, Novi, Northville)
+* Identify the most affordable properties in different neighborhoods
+* Analyze price per square foot to find the best value
+* Track new listings and price changes over time
+* Filter properties by size, bedrooms, bathrooms, and price range
+* Build a comprehensive database for investment analysis or personal home search
+* Discover emerging neighborhoods with good property values

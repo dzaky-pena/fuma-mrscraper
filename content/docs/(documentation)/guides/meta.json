@@ -1,4 +1,4 @@
 {
-  "title": "Guides",
-  "pages": ["ecommerce", "job-listing", "sentiment-analysis", "optimizing-cost"]
+    "title": "Guides",
+    "pages": ["ecommerce", "job-listing", "sentiment-analysis", "optimizing-cost", "real-estate", "travel-hospitality"]
 }

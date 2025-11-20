@@ -1,0 +1,184 @@
+---
+title: "Flight Price Tracking"
+description: "Learn how to use MrScraper to extract flight prices, airlines, and schedules for price monitoring and booking analysis."
+icon: "Plane"
+---
+
+Instead of manually checking flight prices across multiple platforms, you can use the **AI Scraper** to extract flight details, prices, and schedules automatically, with just a URL and a prompt.
+
+Let's walk through a **real-world example** where a travel analyst uses MrScraper to collect flight data from a live travel booking site.
+
+## Scenario
+
+Imagine you're building a flight price comparison tool or tracking flight prices for popular routes.  
+You want to **monitor flight prices from New York City to London** to help travelers find the best deals.  
+Instead of manually browsing multiple flight booking sites, you'll use MrScraper to extract flight data from [Trip.com](https://www.trip.com), one of the world's largest travel platforms.
+
+## Step 1: Create a New AI Scraper
+
+1. Go to the **Scrapers** page by clicking the **triangle icon** on the left sidebar.
+2. Click on the **Create Scraper** button.
+3. Select the **Listing Scraper** option.
+4. In the **URL** field, enter the URL of the flight search results page. For this example, we'll search for flights from New York City (NYC) to London (LON): `https://id.trip.com/m/flights/xflightfirst/?triptype=0&classtype=0&classgroupsearch=true&adult=1&child=0&infant=0&from=searchForm&stoptype=0&lowpricesource=searchForm&ddate=2025-11-22&dcitycode=NYC&acitycode=LON&locale=en-ID&curr=IDR&transactionid=20251120174344105`.
+5. Click on the **Start Scraping** button to start scraping.
+
+**Result :**
+
+```json title="Scraping Result"
+{
+  "mode": "direct",
+  "links": [
+    "flight_card_4",
+    "flight_card_3",
+    "flight_card_1",
+    "flight_card_2",
+    "flight_card_5"
+  ],
+  "flights": [
+    {
+      "price": "Rp4,960,870",
+      "airline": "Jetblue Airways",
+      "aircraft": "Airbus A321neo",
+      "duration": "7h 21m",
+      "top_label": "Cheapest nonstop",
+      "arrival_time": "09:30",
+      "price_numeric": "4960870",
+      "departure_time": "21:09",
+      "original_price": "Rp 5,097,750",
+      "arrival_airport": "LHR T2",
+      "next_day_arrival": "+1",
+      "departure_airport": "JFK T5",
+      "low_stock_warning": null,
+      "original_price_numeric": "5097750",
+      "carry_on_baggage_included": false
+    },
+    {
+      "price": "Rp5,051,840",
+      "airline": "Jetblue Airways",
+      "aircraft": "Airbus A321neo",
+      "duration": "7h 1m",
+      "top_label": null,
+      "arrival_time": "22:00",
+      "price_numeric": "5051840",
+      "departure_time": "09:59",
+      "original_price": "Rp 5,191,430",
+      "arrival_airport": "LHR T2",
+      "next_day_arrival": null,
+      "departure_airport": "JFK T5",
+      "low_stock_warning": null,
+      "original_price_numeric": "5191430",
+      "carry_on_baggage_included": false
+    },
+    {
+      "price": "Rp7,248,600",
+      "airline": "United Airlines",
+      "aircraft": "Boeing 767-300/300ER",
+      "duration": "7h 20m",
+      "top_label": null,
+      "arrival_time": "06:20",
+      "price_numeric": "7248600",
+      "departure_time": "18:00",
+      "original_price": "Rp 7,453,760",
+      "arrival_airport": "LHR T2",
+      "next_day_arrival": "+1",
+      "departure_airport": "EWR C",
+      "low_stock_warning": "<5 left",
+      "original_price_numeric": "7453760",
+      "carry_on_baggage_included": true
+    },
+    {
+      "price": "Rp7,287,450",
+      "airline": "American Airlines",
+      "aircraft": "Boeing 777-300ER",
+      "duration": "6h 50m",
+      "top_label": null,
+      "arrival_time": "09:40",
+      "price_numeric": "7287450",
+      "departure_time": "21:50",
+      "original_price": "Rp 7,493,770",
+      "arrival_airport": "LHR T3",
+      "next_day_arrival": "+1",
+      "departure_airport": "JFK T8",
+      "low_stock_warning": null,
+      "original_price_numeric": "7493770",
+      "carry_on_baggage_included": true
+    },
+    {
+      "price": "Rp7,431,410",
+      "airline": "Austrian Airlines (Codeshare)",
+      "aircraft": "Boeing 767-300/300ER",
+      "duration": "7h 20m",
+      "top_label": null,
+      "arrival_time": "06:20",
+      "price_numeric": "7431410",
+      "departure_time": "18:00",
+      "original_price": "Rp 7,642,020",
+      "arrival_airport": "LHR T2",
+      "next_day_arrival": "+1",
+      "departure_airport": "EWR C",
+      "low_stock_warning": "<5 left",
+      "original_price_numeric": "7642020",
+      "carry_on_baggage_included": true
+    }
+  ],
+  "total_flights": 5
+}
+```
+
+## Step 2: Filter Out
+
+Next, tell the AI to filter the scraped results based on specific criteria. For this example, let's filter for affordable flights under Rp 6,000,000 (approximately $380 USD). You can use the following prompt:
+
+```txt
+Get only flight with cost less than Rp 6.000.000
+```
+
+**Result :**
+
+```json title="Filtered Scraping Result"
+{
+  "mode": "direct",
+  "count": 2,
+  "flights": [
+    {
+      "price": "Rp4,960,870",
+      "airline": "Jetblue Airways",
+      "aircraft": "Airbus A321neo",
+      "duration": "7h 21m",
+      "arrival_time": "09:30",
+      "price_numeric": 4960870,
+      "departure_time": "21:09",
+      "arrival_airport": "LHR T2",
+      "departure_airport": "JFK T5"
+    },
+    {
+      "price": "Rp5,051,840",
+      "airline": "Jetblue Airways",
+      "aircraft": "Airbus A321neo",
+      "duration": "7h 1m",
+      "arrival_time": "22:00",
+      "price_numeric": 5051840,
+      "departure_time": "09:59",
+      "arrival_airport": "LHR T2",
+      "departure_airport": "JFK T5"
+    }
+  ]
+}
+```
+
+### Step 3: Use the Data
+
+You can now use this structured flight data for your travel analysis, price comparison tool, or booking application. The filtered results show only the affordable flight options, making it easier for budget-conscious travelers to make decisions.
+
+You can export the data in **JSON** or **CSV** format, or integrate it directly into your application via the MrScraper API.
+
+## Why This Is Useful
+
+By using this setup, you can:
+
+* Monitor flight price fluctuations between New York City and London
+* Track which airlines offer the best prices
+* Compare nonstop vs. connecting flights
+* Identify the best booking times based on price trends
+* Build a flight price alert system for travelers
+* Analyze seasonal pricing patterns for popular routes
