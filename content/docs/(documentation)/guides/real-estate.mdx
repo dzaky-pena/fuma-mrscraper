@@ -4,17 +4,14 @@ description: "Learn how to use MrScraper to extract property listings from real 
 icon: "House"
 ---
 
-Real estate professionals, investors, and data analysts can leverage MrScraper to collect property listings from public real estate websites.  
-Instead of manually browsing through hundreds of listings, you can use the **AI Scraper** to extract property details automatically — with just a URL and a prompt.
+Real estate professionals, investors, and analysts can use MrScraper to collect property listings from public real estate websites. Instead of checking hundreds of listings manually, the AI Scraper extracts property details for you using only a URL and a short prompt.
 
-Let's walk through a **real-world example** where a real estate investor uses MrScraper to collect data from a live property listing site.
+Let's walk through a **real-world example** where you can uses MrScraper to collect data from a live property listing site.
 
 
 ## Scenario
 
-Imagine you're considering buying property in Michigan and want to analyze the market across different cities.  
-You want to **compare property prices, sizes, and features** across Michigan to find the best value for your budget.  
-Instead of checking multiple listings sites daily, you'll use MrScraper to extract property data from [Redfin](https://www.redfin.com), one of the largest real estate platforms.
+You want to explore the Michigan housing market and compare prices, home sizes, and features across different cities. Rather than visiting multiple listing sites every day, you can use MrScraper to pull structured data directly from Redfin, making it easier to review options and find the best value.
 
 ## Step 1: Create a New AI Scraper
 
@@ -92,10 +89,13 @@ Instead of checking multiple listings sites daily, you'll use MrScraper to extra
 
 ## Step 2: Filter Out
 
-Tell the AI to filter the scraped results based on specific criteria. For this example, let's filter for smaller, more affordable properties under 2,000 square feet using the following prompt: `Get only properties with less than 2000 square feet`.
+Tell the AI to filter the scraped results based on specific criteria. For this example, let's filter for smaller, more affordable properties under 2,000 square feet using the following prompt:
+```md
+Get only properties with less than 2000 square feet
+```
 
 
-**Result :**
+Here’s a sample output:
 
 ```json title="Filtered Scraping Result"
 {

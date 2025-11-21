@@ -1,18 +1,17 @@
 ---
-title: "Flight Price Tracking"
+title: "Flight Price"
 description: "Learn how to use MrScraper to extract flight prices, airlines, and schedules for price monitoring and booking analysis."
 icon: "Plane"
 ---
 
-Instead of manually checking flight prices across multiple platforms, you can use the **AI Scraper** to extract flight details, prices, and schedules automatically, with just a URL and a prompt.
+Instead of checking flight prices across multiple websites, you can use the AI Scraper to pull flight details, prices, and schedules automatically using only a URL and a short prompt.
 
-Let's walk through a **real-world example** where a travel analyst uses MrScraper to collect flight data from a live travel booking site.
+Here’s a real-world example of how you can use MrScraper to collect live flight data from a booking site.
 
 ## Scenario
 
-Imagine you're building a flight price comparison tool or tracking flight prices for popular routes.  
-You want to **monitor flight prices from New York City to London** to help travelers find the best deals.  
-Instead of manually browsing multiple flight booking sites, you'll use MrScraper to extract flight data from [Trip.com](https://www.trip.com), one of the world's largest travel platforms.
+You’re building a flight price comparison tool or tracking prices for popular routes.
+In this example, you want to monitor flights from New York City to London so travelers can quickly find the best deals.
 
 ## Step 1: Create a New AI Scraper
 
@@ -130,9 +129,13 @@ https://id.trip.com/m/flights/xflightfirst/?triptype=0&classtype=0&classgroupsea
 
 ## Step 2: Filter Out
 
-Tell the AI to filter your scraped results based on specific rules. In this example, we filter for flights under Rp 6,000,000 using the following prompt: `Get only flight with cost less than Rp 6.000.000`.
+Tell the AI to filter your scraped results based on specific rules. In this example, we filter for flights under Rp 6,000,000 using the following prompt: 
 
-**Result :**
+```md
+Get only flight with cost less than Rp 6.000.000
+```
+
+Here’s a sample output:
 
 ```json title="Filtered Scraping Result"
 {
