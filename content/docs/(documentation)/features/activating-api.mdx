@@ -1,5 +1,22 @@
 ---
-title: "Activating API"
-description: "Learn how to use MrScraper’s AI-powered scraper to extract data effortlessly with prompts."
-icon: "Satellite"
+title: "Scraper API"
+description: "Learn how to run MrScraper’s AI-powered scraper to extract data by using API."
+icon: "SatelliteDish"
 ---
+
+MrScraper’s Scraper API lets you run any scraper you’ve created directly through an API endpoint. This is useful when you want to automate scraping, integrate it into your application, or test requests in tools like Postman.
+
+
+
+
+## How to Run a Scraper Through the API
+1. Open your dashboard and select a scraper you’ve already created.
+If you don’t have one yet, create it first.
+2. In the AI chatbox, click **Activate API**.
+3. Confirm by clicking **Activate**.
+<Callout title="Note"> This turns off the AI chat for this scraper and enables API mode. </Callout>
+4. After activation, copy the example API request shown on the page.
+5. Paste the request into Postman (or another API tool).
+<Callout title="Note"> You can replace the URL with any URL you want to scrape. </Callout>
+![Hello](/api.gif)
+6. You can also run the scraper directly from [Rerun an AI Scraper endpoint](/docs/api/ScraperAiRerun) by entering your `scraperId` and `url`.
