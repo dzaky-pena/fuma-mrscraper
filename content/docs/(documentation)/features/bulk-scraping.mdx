@@ -16,7 +16,7 @@ To perform a bulk scrape, follow these steps:
 
 1. Open a new or existing scraper in your MrScraper dashboard.  
 2. Click **Bulk Scraping** button on the top section.
-3. You can either upload an Excel file (.xlsx, .xls) containing the list of URLs or paste them directly into the provided text area (one URL per line).
+3. You can either upload an Excel file (.xlsx, .xls) containing the list of URLs or paste them directly into the provided text area (one URL per line). For example, `https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html`, `https://books.toscrape.com/catalogue/tipping-the-velvet_999/index.html`, `https://books.toscrape.com/catalogue/soumission_998/index.html`, `https://books.toscrape.com/catalogue/sharp-objects_997/index.html`
 
     <Callout title="Excel Format">
         The file should have a column with header "url" or "URL". Each row should contain one URL.
@@ -30,5 +30,99 @@ To perform a bulk scrape, follow these steps:
 
 5. Once completed, you can view and download the scraped data for each URL individually. For example:
 
+**Result :**
 
-
+<Tabs items={['Scraped Data 1', 'Scraped Data 2', 'Scraped Data 3', 'Scraped Data 4']}>
+<Tab value="Scraped Data 1">
+```json
+{
+  "1": {
+    "id": "1",
+    "name": "A Light in the Attic",
+    "rows": [
+      [
+        "A Light in the Attic",
+        "£51.77",
+        "In stock"
+      ]
+    ],
+    "source": "table",
+    "headers": [
+      "Title",
+      "Price",
+      "Availability"
+    ]
+  }
+}
+```
+</Tab>
+<Tab value="Scraped Data 2">
+```json
+{
+  "1": {
+    "id": "1",
+    "name": "Tipping the Velvet",
+    "rows": [
+      [
+        "Tipping the Velvet",
+        "£53.74",
+        "In stock"
+      ]
+    ],
+    "source": "table",
+    "headers": [
+      "Title",
+      "Price",
+      "Availability"
+    ]
+  }
+}
+```
+</Tab>
+<Tab value="Scraped Data 3">
+```json
+{
+  "1": {
+    "id": "1",
+    "name": "Soumission",
+    "rows": [
+      [
+        "Soumission",
+        "£50.10",
+        "In stock (20 available)"
+      ]
+    ],
+    "source": "product",
+    "headers": [
+      "Title",
+      "Price",
+      "Availability"
+    ]
+  }
+}
+```
+</Tab>
+<Tab value="Scraped Data 4">
+```json
+{
+  "1": {
+    "id": "1",
+    "name": "Sharp Objects",
+    "rows": [
+      [
+        "Sharp Objects",
+        "£47.82",
+        "In stock (20 available)"
+      ]
+    ],
+    "source": "product",
+    "headers": [
+      "Title",
+      "Price",
+      "Availability"
+    ]
+  }
+}
+```
+</Tab>
+</Tabs>
