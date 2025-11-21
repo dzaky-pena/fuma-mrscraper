@@ -1,4 +1,4 @@
 {
   "title": "Scrapers",
-  "pages": ["ai-mode", "manual-mode", "listing", "map", "activating-api", "proxy", "schedule"]
+  "pages": ["ai-mode", "manual-mode", "bulk-scraping", "listing", "map", "activating-api", "proxy", "schedule"]
 }

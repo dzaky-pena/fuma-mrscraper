@@ -4,7 +4,7 @@ description: "Your all-in-one guide to understanding, configuring, and using our
 icon: "TableOfContents"
 ---
 
-import { Bot, Workflow, ShoppingCart, Briefcase, Star, SlidersHorizontal, Mail, Database, Webhook, CalendarClock, Network } from 'lucide-react';
+import { Bot, Workflow, ShoppingCart, Briefcase, Star, SlidersHorizontal, Mail, Database, Webhook, CalendarClock, Network, Layers, Map, Home, Plane, DollarSign } from 'lucide-react';
 
 
 # Welcome to the MrScraper Documentation!
@@ -18,19 +18,25 @@ Discover how our powerful scraping platform can transform the way you extract da
 Explore MrScraper’s key features and tools designed to make data extraction effortless.
 
 <Cards>
-  <Card title="AI Scraper" icon={<Bot />} href="/scrapers/ai-mode">
+  <Card title="AI Scraper" icon={<Bot />} href="/docs/features/ai-mode">
     Automatically extract data with natural language instructions — no coding required.
   </Card>
-  <Card title="Manual Scraper" icon={<Workflow />} href="/scrapers/manual-mode">
+  <Card title="Manual Scraper" icon={<Workflow />} href="/docs/features/manual-mode">
     Build and customize your own scraper workflow step by step for full control.
   </Card>
-  <Card title="Listing View" icon={<Network />} href="/scrapers/listing">
+  <Card title ="Bulk Scraping" icon ={<Layers />} href="/docs/features/bulk-scraping">
+    Scrape multiple URLs in one go by uploading a list or Excel file.
+  </Card>
+  <Card title="Listing View" icon={<Network />} href="/docs/features/listing">
     Organize and view your scraping results in a clean, structured listing format.
   </Card>
-  <Card title="Proxy Management" icon={<SlidersHorizontal />} href="/scrapers/proxy">
+  <Card title="Map" icon={<Map />} href="/docs/features/map">
+    Extract all URLs from a website to understand its structure and content.
+  </Card>
+  <Card title="Proxy Management" icon={<SlidersHorizontal />} href="/docs/features/proxy">
     Configure and manage proxy settings for enhanced reliability and anonymity.
   </Card>
-  <Card title="Scheduling" icon={<CalendarClock />} href="/scrapers/schedule">
+  <Card title="Scheduling" icon={<CalendarClock />} href="/docs/features/schedule">
     Automate scraper runs on a schedule to keep your data fresh and up to date.
   </Card>
 </Cards>
@@ -40,14 +46,23 @@ Explore MrScraper’s key features and tools designed to make data extraction ef
 Discover how MrScraper can support different real-world scenarios.
 
 <Cards>
-  <Card title="E-Commerce" icon={<ShoppingCart />} href="/scrapers/use-cases/e-commerce">
+  <Card title="E-Commerce" icon={<ShoppingCart />} href="/docs/guides/ecommerce">
     Scrape product details, pricing, and availability from major e-commerce sites.
   </Card>
-  <Card title="Job Listings" icon={<Briefcase />} href="/scrapers/use-cases/job-listings">
+  <Card title="Job Listings" icon={<Briefcase />} href="/docs/guides/job-listing">
     Collect job postings and company data for recruitment or market analysis.
   </Card>
-  <Card title="Sentiment Analysis" icon={<Star />} href="/scrapers/use-cases/customer-reviews">
+  <Card title="Sentiment Analysis" icon={<Star />} href="/docs/guides/sentiment-analysis">
     Extract and analyze customer feedback to gain insights into sentiment and satisfaction.
+  </Card>
+  {/* <Card title="Optimizing Costs" icon={<DollarSign />} href="/docs/guides/cost-optimization">
+    Learn strategies to minimize token usage and maximize scraping efficiency.
+  </Card> */}
+  <Card title="Real Estate" icon={<Home />} href="/docs/guides/real-estate">
+    Gather property listings, prices, and market trends from real estate websites.
+  </Card>
+  <Card title="Travel & Hospitality" icon={<Plane />} href="/docs/guides/travel-hospitality">
+    Scrape hotel, flight, and destination data for travel planning and analysis.
   </Card>
 </Cards>
 
@@ -56,13 +71,13 @@ Discover how MrScraper can support different real-world scenarios.
 Integrate MrScraper with your favorite tools to automate your data flow.
 
 <Cards>
-  <Card title="Email" icon={<Mail />} href="/connection/email">
+  <Card title="Email" icon={<Mail />} href="/docs/integrations/email">
     Receive email notifications whenever a scraper finishes or encounters an error.
   </Card>
-  <Card title="Database" icon={<Database />} href="/connection/sql">
+  <Card title="Database" icon={<Database />} href="/docs/integrations/sql">
     Automatically store scraped data in your database for querying and analysis.
   </Card>
-  <Card title="Webhook" icon={<Webhook />} href="/connection/webhook">
+  <Card title="Webhook" icon={<Webhook />} href="/docs/integrations/webhook">
     Send scraper results directly to external services through webhooks.
   </Card>
 </Cards>
