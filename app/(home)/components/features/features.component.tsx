@@ -56,7 +56,7 @@ export const FeaturesSection = () => {
           <p className="text-cyan-400 text-xl font-medium mb-4">
             {FEATURES_SECTION_CONFIG.heading}
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white mb-4 md:mb-6">
             {FEATURES_SECTION_CONFIG.description}
           </h2>
         </motion.div>
@@ -74,13 +74,16 @@ export const FeaturesSection = () => {
                   borderColor: 'rgba(6, 182, 212, 0.5)',
                   transition: { duration: 0.2 },
                 }}
-                className="bg-black border border-gray-800 rounded-2xl p-6 md:p-8 flex flex-col items-center text-center"
+                className="rounded-2xl bg-white dark:bg-black border border-gray-200 dark:border-gray-800 p-6 md:p-8 flex flex-col items-center text-center"
               >
-                <Link href={feature.link} className="w-full h-full flex flex-col items-center">
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3">
-                    <IconComponent className="w-6 h-6 text-cyan-400" />
+                <Link
+                  href={feature.link}
+                  className="w-full h-full flex flex-col items-center"
+                >
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 bg-gray-200 dark:bg-gray-800">
+                    <IconComponent className="w-6 h-6 text-cyan-500 dark:text-cyan-400" />
                   </div>
-                  <h3 className="text-white text-lg md:text-xl font-semibold mb-3">
+                  <h3 className="dark:text-white text-lg md:text-xl font-semibold mb-3">
                     {feature.title}
                   </h3>
                 </Link>
