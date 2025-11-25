@@ -3,13 +3,13 @@ name: Fuma Docs
 on:
   push:
     branches:
-      - infra/tetsing/cicd
+      - infra/test/cicd
   workflow_dispatch:
     inputs:
       branch:
         description: "Branch to deploy"
         required: true
-        default: "infra/tetsing/cicd"
+        default: "infra/test/cicd"
 
 jobs:
   deploy:
