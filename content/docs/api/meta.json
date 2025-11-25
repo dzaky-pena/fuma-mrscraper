@@ -12,6 +12,8 @@
     "---Scraper---",
     "ScraperAiRerun",
     "ScraperManualRerun",
+    "---ShopeeScraper---",
+    "ShopeeScraper",
     "---Results---",
     "Results",
     "ResultDetail"

@@ -92,7 +92,9 @@ You can also trigger a rerun of the scraper you’ve created using the API.
 1. Ensure that you’ve generated an API Token. If not, follow the steps [here](/docs/getting-started/api-token#generating-an-api-token).
 2. Go to Settings → Enable **AI Scraper API Access**.
 3. Call the following endpoint using Postman or via our [API Reference](/docs/api/ScraperAiRerunController_rerun):
-
+<Callout title="Note">
+You can rerun the AI Scraper with a new URL.
+</Callout>
 ```shell tab="cURL"
 curl -X POST "https://api.v3.app.mrscraper.com/api/v1/scrapers-ai-rerun" \
   -H "accept: application/json" \
