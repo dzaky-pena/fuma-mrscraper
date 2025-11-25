@@ -18,43 +18,27 @@ Use the Manual Scraper when you need to:
 - Handle large-scale or repetitive scraping tasks with consistent structure.  
 - Implement custom workflows that involve multiple steps, such as navigation, data extraction, and pagination.
 
-## Step
+## Manual Scraper Features
 
-You can add multiple steps to your scraper by clicking on the "Add Step" button. Each step allows you to define specific actions such as extract, click, delay, etc. Here are the available step types:
+Below are the available step types you can add when building a manual scraper:
 
-### Extract
+| Step Type | Description |
+|-----------|-------------|
+| **Extract** | Scrape data from the webpage by setting an **Extraction Name**, choosing an **Extraction Type** (`Text`, `Inner HTML`, `Outer HTML`, or `Attribute`), and defining CSS selectors to target elements. |
+| **Click** | Simulates a click action on a specified element. |
+| **Delay** | Pauses the scraper for a set duration (in milliseconds) before moving to the next step. |
+| **Input** | Enters text into input fields on the webpage. |
+| **Scroll** | Scrolls to the end of the page, scrolls until a specific text is found, or scrolls to a specific element (or until a certain number of elements). |
+| **Inject JavaScript** | Runs custom JavaScript code on the webpage. |
+| **Paginate** | Automatically navigates through multiple pages. |
 
-The Extract step allows you to specify the data you want to scrape from the webpage. You can set `Extraction Name`, select `Extraction Type` to `Text` (ex: Hello World), `Inner HTML` (ex: \<span\>hello world\<\/span\>), `Outer HTML` (ex: \<h1 class="bold">\<span>hello world\<\/span>\<\/h1>), and `Attribute` (ex: "class": bold), and define CSS selectors to target specific elements.
-
-### Click
-
-The Click step allows you to simulate a click action on a specified element.
-
-### Delay
-
-The Delay step allows you to pause the scraper for a specified amount of time (in milliseconds) before proceeding to the next step.
-
-### Input
-
-The Input step allows you to enter text into input fields on the webpage.
-
-### Scroll
-
-The Scroll step allows you to scroll until the end, scroll until find a text scroll, or scroll to a specific element (or until the number of a specific element) on the webpage.
-
-### Inject Javascript
-
-The Inject Javascript step allows you to run custom JavaScript code on the webpage.
-
-### Paginate
-
-Set up pagination to navigate through multiple pages automatically.
+### Pagination Types
 
 | Pagination Type | Required Parameter |
-|-----------------|-------------|
-| Query pagination | Query Parameter (eg. "?page=2") |
-| Directory pagination (eg. "/list/page/2") | - |
-| Next page link | Next page selector |
+|-----------------|--------------------|
+| **Query Pagination** | Query parameter (e.g., `?page=2`) |
+| **Directory Pagination** | None (e.g., `/list/page/2`) |
+| **Next Page Link** | Next page selector |
 
 ## Usage Example
 
