@@ -79,10 +79,6 @@ body {
   display: none;
 }
 
-#landing-page > #nd-docs-layout > div {
-  width: 100%;
-}
-
 #landing-page #nd-docs-layout {
   padding-left: 0 !important;
   margin-left: 0 !important;
