@@ -17,11 +17,11 @@ export function baseOptions(): BaseLayoutProps {
     links: [
       {
         text: 'Support',
-        url: '/support',
+        url: 'https://help.mrscraper.com/',
       },
       {
         text: 'Dashboard',
-        url: '/dashboard',
+        url: 'https://v3.app.mrscraper.com/auth/login',
       },
     ],
   };

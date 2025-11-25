@@ -74,3 +74,14 @@ body {
   background: hsl(189, 85%, 70%);
   box-shadow: 0 4px 12px hsla(189, 85%, 60%, 0.4);
 }
+
+#landing-page #nd-docs-layout #nd-sidebar {
+  display: none;
+}
+
+#landing-page #nd-docs-layout {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
