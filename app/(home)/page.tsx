@@ -1,16 +1,9 @@
-import Link from 'next/link';
+import { GetStartedSection } from './components/get-started/get-started.component';
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col justify-center text-center flex-1">
-      <h1 className="text-2xl font-bold mb-4">Hello World</h1>
-      <p>
-        You can open{' '}
-        <Link href="/docs/getting-started/overview" className="font-medium underline">
-          /docs/getting-started/overview
-        </Link>{' '}
-        and see the documentation.
-      </p>
+    <div className="flex flex-col justify-center text-center">
+      <GetStartedSection/>
     </div>
   );
 }
