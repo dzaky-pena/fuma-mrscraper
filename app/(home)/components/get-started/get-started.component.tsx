@@ -50,7 +50,7 @@ export const GetStartedSection = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div className="mb-10 md:mb-16" variants={itemVariants}>
-          <p className="text-cyan-400 text-xl font-semibold mb-4">
+          <p className="text-cyan-400 text-xl font-medium mb-4">
             {GET_STARTED_SECTION_CONFIG.heading}
           </p>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
@@ -66,24 +66,28 @@ export const GetStartedSection = () => {
             return (
               <motion.div
                 key={feature.id}
-                className="border border-gray-800 rounded-2xl p-6 flex flex-col items-start w-full h-auto min-h-[150px] bg-black text-left"
                 variants={itemVariants}
                 whileHover={{
                   borderColor: 'rgba(6, 182, 212, 0.5)',
                   transition: { duration: 0.2 },
                 }}
+                className="bg-black border border-gray-800 rounded-2xl"
               >
                 <Link href={feature.link}>
-                  <div className="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center mb-6">
-                    <IconComponent className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <div className="flex flex-col">
-                    <p className="text-white text-xl font-bold mb-1">
-                      {feature.title}
-                    </p>
-                    <p className="text-gray-50 text-base leading-relaxed">
-                      {feature.description}
-                    </p>
+                  <div
+                    className="border border-gray-800 rounded-2xl p-6 flex flex-col items-start w-full h-auto min-h-[150px] bg-black text-left"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center mb-6">
+                      <IconComponent className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <div className="flex flex-col">
+                      <p className="text-white text-xl font-bold mb-1">
+                        {feature.title}
+                      </p>
+                      <p className="text-gray-50 text-base leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
                 </Link>
               </motion.div>
