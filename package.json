@@ -9,6 +9,7 @@
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
+    "framer-motion": "^12.23.24",
     "fumadocs-core": "16.0.7",
     "fumadocs-mdx": "13.0.4",
     "fumadocs-openapi": "^9.7.3",
