@@ -3,13 +3,13 @@ name: Fuma Docs
 on:
   push:
     branches:
-      - infra/test/cicd
+      - main
   workflow_dispatch:
     inputs:
       branch:
         description: "Branch to deploy"
         required: true
-        default: "infra/test/cicd"
+        default: "main"
 
 jobs:
   deploy:
