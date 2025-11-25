@@ -85,3 +85,7 @@ body {
   width: 100% !important;
   max-width: 100% !important;
 }
+
+#landing-page > #nd-subnav > div > div > div > button {
+  display: none;
+}
