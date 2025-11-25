@@ -1,5 +1,6 @@
 'use client'
 
+import { easeOut } from "framer-motion";
 import { motion } from 'framer-motion'
 import {
   Bot,
@@ -26,7 +27,7 @@ const containerVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeOut',
+      ease: easeOut,
       staggerChildren: 0.1,
     },
   },
@@ -38,7 +39,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: 'easeOut',
+      ease: easeOut,
     },
   },
 }
