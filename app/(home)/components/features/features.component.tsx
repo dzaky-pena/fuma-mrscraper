@@ -53,15 +53,15 @@ export const FeaturesSection = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div className="mb-10 md:mb-16 text-center" variants={itemVariants}>
-          <p className="text-cyan-400 text-xl font-medium mb-4">
+          <p className="text-cyan-400 text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             {FEATURES_SECTION_CONFIG.heading}
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white mb-4 md:mb-6">
+          <h2 className="text-xl font-medium dark:text-white mb-4 md:mb-6">
             {FEATURES_SECTION_CONFIG.description}
           </h2>
         </motion.div>
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 justify-center"
           variants={containerVariants}
         >
           {FEATURES_ITEMS.map((feature) => {
@@ -74,18 +74,26 @@ export const FeaturesSection = () => {
                   borderColor: 'rgba(6, 182, 212, 0.5)',
                   transition: { duration: 0.2 },
                 }}
-                className="rounded-2xl bg-white dark:bg-black border border-gray-200 dark:border-gray-800 p-6 md:p-8 flex flex-col items-center text-center"
+                className="rounded-2xl bg-white dark:bg-black border border-gray-200 dark:border-gray-800"
               >
-                <Link
-                  href={feature.link}
-                  className="w-full h-full flex flex-col items-center"
-                >
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 bg-gray-200 dark:bg-gray-800">
-                    <IconComponent className="w-6 h-6 text-cyan-500 dark:text-cyan-400" />
+                <Link href={feature.link}>
+                  <div
+                    className="rounded-2xl p-6 flex flex-col items-start w-full h-auto min-h-[150px] bg-white dark:bg-black text-left"
+                  >
+                    <div
+                      className="w-12 h-12 rounded-xl bg-gray-200 dark:bg-gray-800 flex items-center justify-center mb-6"
+                    >
+                      <IconComponent className="w-6 h-6 text-cyan-500 dark:text-cyan-400" />
+                    </div>
+                    <div className="flex flex-col">
+                      <p className="dark:text-white text-xl font-bold mb-1">
+                        {feature.title}
+                      </p>
+                      <p className="dark:text-gray-50 text-base leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="dark:text-white text-lg md:text-xl font-semibold mb-3">
-                    {feature.title}
-                  </h3>
                 </Link>
               </motion.div>
             )

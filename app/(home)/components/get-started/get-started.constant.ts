@@ -1,6 +1,6 @@
 export const GET_STARTED_SECTION_CONFIG = {
   heading: 'Get Started',
-  description: 'Kickstart your journey with MrScraper through simple, beginner-friendly guides',
+  description: 'Kickstart your journey with MrScraper.',
 }
 export const GET_STARTED_ITEMS = [
   {

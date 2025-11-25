@@ -50,10 +50,10 @@ export const GetStartedSection = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <motion.div className="mb-10 md:mb-16" variants={itemVariants}>
-          <p className="text-cyan-400 text-xl font-medium mb-4">
+          <p className="text-cyan-400 text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
             {GET_STARTED_SECTION_CONFIG.heading}
           </p>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold dark:text-white mb-4 md:mb-6">
+          <h2 className="text-xl font-medium dark:text-white mb-4 md:mb-6">
             {GET_STARTED_SECTION_CONFIG.description}
           </h2>
         </motion.div>
