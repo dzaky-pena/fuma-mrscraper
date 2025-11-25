@@ -13,7 +13,7 @@ export const GET_STARTED_ITEMS = [
   {
     id: 2,
     icon: 'currency',
-    title: 'Token Plans',
+    title: 'Token Plan',
     description: 'Learn how usage and billing work',
     link: '/docs/getting-started/api-token'
   },
