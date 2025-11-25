@@ -23,7 +23,7 @@ export const HeroSection = ({
   }, [])
   return (
     <section className={`py-12 md:py-16 lg:py-20 px-6 text-left ${className}`}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative min-h-[500px] h-auto overflow-hidden bg-black border border-gray-800 rounded-3xl">
           <img
             src="/images/bg-new-hero.webp"
