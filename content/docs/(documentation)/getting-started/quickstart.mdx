@@ -4,9 +4,11 @@ description: 'A step-by-step guide to help you scrape data quickly using MrScrap
 icon: 'Rocket'
 ---
 
+import { FileSearch, List, MapPinned } from 'lucide-react';
+
+
 This guide walks you through the essential steps to get started with MrScraper.
 Whether you’re new to web scraping or already experienced, you’ll learn how to create and run your first scraper in just a few minutes.
-
 
 ## Scenario
 
@@ -15,7 +17,7 @@ For this example, you’ll scrape data from the following category page:
 
 [https://www.walmart.com/search?q=laptop&typeahead=laptop](https://www.walmart.com/search?q=laptop&typeahead=laptop)
 
-Your goal is to extract:
+Using **General Mode**, your goal is to extract:
 
 * Product name
 * Price
@@ -28,15 +30,21 @@ This example shows how you can gather structured e-commerce data using **AI Scra
 ## How to Scrape
 ### Step 1: Create a New Scraper
 
-1. Log in to **MrScraper**, then click the **Scraper** icon (triangle) in the left sidebar.
+1. Log in to **MrScraper**, then click **Scraper** in the left sidebar.
 2. Click **New Scraper +** at the top to create a new scraper.
-3. Enter the following URL to scrape:
+3. Select **General** mode and enter the following URL to scrape:
+<Callout title="Note">
+We offer three AI Scraper modes. For details and a full comparison of each mode, see [here](/docs/features/ai-mode#ai-modes).
+</Callout>
 
    ```
    https://www.walmart.com/search?q=laptop&typeahead=laptop
    ```
-4. Select **Super** as the scraper type since this URL requires more resources to process.
-5. Click **Start Scraping →** to begin.
+4. Set the scraper type to **Super** for higher accuracy, faster scraping time and richer results.
+<Callout title="Note">
+For a detailed comparison between **Cheap** and **Super** scraper types, see [here](/docs/features/ai-mode#ai-modes).
+</Callout>
+5. Click **Submit** to begin.
 6. In the prompt box, enter the following instruction:
 
 > Scrape the top 3 laptop products on this page and return the following information in JSON format:
@@ -57,43 +65,43 @@ In this example, we select the **JSON** format, which returns results like the s
 {
   "products": [
     {
-      "price": "$325.99",
-      "rating": "4 out of 5 Stars",
-      "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=1&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FLenovo-IdeaPad-2025-15-6-FHD-Laptop-Intel-4-Core-CPU-12GB-RAM-256GB-SSD-Wi-Fi-6-Win11%2F17468167966%3FclassType%3DVARIANT%26adsRedirect%3Dtrue",
-      "product_name": "Lenovo IdeaPad 2025 15.6” FHD Laptop, Intel 4-Core CPU, 12GB RAM, 256GB SSD, Wi-Fi 6, Win11",
-      "number_of_reviews": "1 review"
+      "price": "$347.99",
+      "rating": "4334.3 out of 5 Stars",
+      "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=1&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2F2024-Newest-Laptop-15-6-Inch-FHD-Display-Laptop-Intel-Quad-Core-12th-N100-Up-3-4GHz-16GB-RAM-1TB-ROM-Business-Laptop-Computer-Fingerprint-Type-C-Wind%2F8487662020%3FclassType%3DVARIANT%26athbdg%3DL1800%26adsRedirect%3Dtrue&adUid=c657f451-02c8-42ae-b60c-62612d807f3c-0-0&mloc=sp-search-middle&pltfm=desktop&pgId=lap…",
+      "product_name": "2025 Newest Laptop, 15.6-Inch FHD Display Laptop with Intel Quad Core-12th N100(Up to 3.4GHz), 16GB RAM 1TB ROM Business Laptop Computer, Fingerprint, Type C, Windows 11 Home, Silver",
+      "number_of_reviews": "433 reviews"
     },
     {
-      "price": "$139.00",
-      "rating": "4.1 out of 5 Stars",
-      "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=2&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FASUS-CX15-Chromebook-Laptop-15-6-FHD-NanoEdge-Display-Intel-Celeron-N4500-Processor-128GB-Storage-4GB-RAM-Pure-Gray%2F13737005799%3FclassType%3DVARIANT%26athbdg%3DL1300%26adsRedirect%3Dtrue",
-      "product_name": "ASUS CX15 15.6 inch FHD IPS Chromebook Laptop Intel Celeron N4500 4GB RAM 128GB eMMC Fabric Blue",
-      "number_of_reviews": "2507 reviews"
+      "price": "$349.99",
+      "rating": "92.9 out of 5 Stars",
+      "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=2&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FLaptop-15-1-FHD-Gaming-Laptop-AMD-Ryzen-5-7430U-16GB-RAM-512GB-SSD-Windows-11-Graphite-WiFi-6-Backlit-KB-Gray%2F16677463719%3FclassType%3DREGULAR%26adsRedirect%3Dtrue&adUid=c657f451-02c8-42ae-b60c-62612d807f3c-0-0&mloc=sp-search-middle&pltfm=desktop&pgId=laptop&pt=search&spQs=qpuC0k5U2ojBlrZ7sXlStb448h8AQkDjaTdEl…",
+      "product_name": "NIPOGI LX15PRO 15.6 in FHD Laptop AMD Ryzen 5 7430U 16GB DDR4 512GB SSD with Windows 11 Pro",
+      "number_of_reviews": "9 reviews"
     },
     {
-      "price": "$599.00",
-      "rating": "4.2 out of 5 Stars",
-      "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=3&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FHP-Victus-15-6-inch-FHD-144Hz-IPS-Windows-Laptop-Intel-Core-i5-13420H-16GB-RAM-512GB-SSD-Mica-Silver%2F13987763030%3FclassType%3DREGULAR%26athbdg%3DL1300%26adsRedirect%3Dtrue",
-      "product_name": "HP Victus 15.6 inch FHD 144Hz IPS Windows Gaming Laptop Intel Core i5-13420H 16GB RAM 512GB SSD RTX 4050 Mica Silver",
-      "number_of_reviews": "208 reviews"
+      "price": "$649.00",
+      "rating": "3024.3 out of 5 Stars",
+      "product_link": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sp-search-middle~desktop~primary-exact&pos=3&tax=3944_1089430_3951_8835131_1737838&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FHP-17-3-Touchscreen-Laptop-Intel-Core-i3-32GB-RAM-128GB-eMMC-2TB-SSD-Windows-11-P-Silver%2F16981658690%3FclassType%3DVARIANT%26athbdg%3DL1800%26adsRedirect%3Dtrue&adUid=c657f451-02c8-42ae-b60c-62612d807f3c-0-0&mloc=sp-search-middle&pltfm=desktop&pgId=laptop&pt=search&spQs=CQlQPuDu_H9IH8VObMfFzVJs437mJht47--C2Rp3b…",
+      "product_name": "HP 17.3\" Touchscreen Laptop, Intel Core i3, 32GB RAM, 128GB eMMC + 2TB SSD, Windows 11 P, Silver",
+      "number_of_reviews": "302 reviews"
     }
   ]
 }
 ```
 
 <Callout title="Note">
-The actual results may vary depending on the current Amazon listings.
+The actual results may vary depending on the current Walmart listings.
 </Callout>
 
 ### Step 3: Rerun the Scraper Using the API
 
-You can also trigger a rerun of the scraper you’ve created using the API.
+You can also trigger a rerun of the scraper you’ve created using the API with a new URL to scrape.
 
 1. Ensure that you’ve generated an API Token. If not, follow the steps [here](/docs/getting-started/api-token#generating-an-api-token).
 2. Go to Settings → Enable **AI Scraper API Access**.
 3. Call the following endpoint using Postman or via our [API Reference](/docs/api/ScraperAiRerunController_rerun):
 <Callout title="Note">
-You can rerun the AI Scraper with a new URL.
+In this example, we change the URL to: `https://www.amazon.com/s?k=laptops`.
 </Callout>
 ```shell tab="cURL"
 curl -X POST "https://api.v3.app.mrscraper.com/api/v1/scrapers-ai-rerun" \
@@ -194,9 +202,9 @@ fetch("https://api.v3.app.mrscraper.com/api/v1/scrapers-ai-rerun", {
 You’ve successfully created, run, and rerun your first scraper with MrScraper!
 From here, you can explore our in-depth use case guides:
 
-- Scraping E-Commerce Data
+- [Scraping E-Commerce Data](/docs/guides/ecommerce)
 
-- Scraping Job Listings
+- [Scraping Job Listings](/docs/guides/job-listing)
 
-- Running Sentiment Analysis on Reviews
+- [Running Sentiment Analysis on Reviews](/docs/guides/sentiment-analysis)
 
