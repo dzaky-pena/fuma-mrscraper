@@ -1,7 +1,6 @@
 'use client'
 
-import { easeOut } from "framer-motion";
-import { motion } from 'framer-motion'
+import { easeOut, motion } from 'framer-motion'
 import {
   Bot,
   Map,
