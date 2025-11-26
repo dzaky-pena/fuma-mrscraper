@@ -22,15 +22,23 @@ Use the AI Scraper when you want to:
 
 For large-scale, highly structured, or repetitive tasks that require full control, consider using the **Manual Scraper** instead.
 
+## AI Scraper Mode
 
-## AI Modes
+MrScraper provides three AI Scraper modes:
 
-The AI Scraper offers two modes, allowing you to balance between cost efficiency and output quality.
+| Mode | Description | Best Used For |
+|------|-------------|----------------|
+| **General** | Extracts data from a single page using one prompt. | Product detail pages, profile pages, article pages, or any one-off page extraction. |
+| **Listing** | Scrapes multiple items from paginated or list-based content (products, categories, posts, listings). | E-commerce category pages, blog indexes, directory listings, search results, and multi-item pages. |
+| **Map** | Collects all internal and external links from the target URL. | Site structure mapping, link audits, SEO analysis, and discovering all URLs inside a page. |
+## Scraper Types
 
-| Mode |  Best For |
-|------|----------|
-| **Cheap Mode** |  Simple pages with clear structure (e.g., e-commerce listings, article summaries). |
-| **Super Mode** |  Complex pages, unstructured content, or when precision matters. |
+The AI Scraper offers two types, allowing you to balance between cost efficiency and output quality.
+
+| Mode | Description |
+|------|-------------|
+| **Cheap Mode** | More affordable and faster, but with lower accuracy and less complete data. |
+| **Super Mode** | More expensive and sometimes fast, sometimes slower, but with higher accuracy, more complete data, uses proxies to avoid bot detection, and is more stealthy. |
 
 <Callout title="Note">
 You can switch between modes at any time based on your scraping needs or token budget.
@@ -45,17 +53,18 @@ You can enable screenshot capture to get a visual snapshot of the scraped page a
 </Callout>
 
 
-## Usage Example
+## How It Works
 
 Follow these steps to use the AI Scraper from your dashboard:
 
-1. Go to your **Dashboard** → click **Create Scraper**.   
-2. Enter the **URL** you want to scrape.  
-3. Choose between **Cheap** or **Super** mode.
-4. Wait for the AI to process the provided URL.
-5. Enter your prompt describing the data you want to extract.
-6. The AI will analyze your prompt and extract the requested data.
-7. Once complete, review your results or export them as JSON or CSV.
+1. Log in to **MrScraper**, then click **Scraper** in the left sidebar.
+2. Click **New Scraper +** at the top to create a new scraper.
+3. Select the Scraper mode and enter the URL to scrape.
+4. Choose between **Cheap** or **Super** mode.
+5. Wait for the AI to process the provided URL.
+6. Enter your prompt describing the data you want to extract.
+7. The AI will analyze your prompt and extract the requested data.
+8. Once complete, review your results or export them as JSON or CSV.
 
 
 ### Example Prompts
@@ -193,7 +202,7 @@ Here are a few examples to get you started:
 * **Be Specific:** The more precise your prompt, the better your results.
   For example, “Extract product name, price, and availability” works better than “Get product info.”
 * **Use Cheap Mode for Simple Tasks:** When testing or scraping structured pages, Cheap Mode saves tokens.
-* **Switch to Super Mode for Accuracy:** For messy or dynamic pages, Super Mode ensures better parsing and extraction.
+* **Switch to Super Mode for Accuracy:** For messy or dynamic pages, Super Mode ensures better data extraction and faster scraping time.
 * **Validate Your Output:** Always review your scraped data to confirm accuracy before automating.
 * **Retry When Needed:** If results look incomplete, adjust your prompt and rerun.
 

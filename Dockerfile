@@ -8,8 +8,16 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* source.config.ts next.config.* ./
+# Copy all necessary files for fumadocs-mdx to work during postinstall
+COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
+COPY next.config.* ./
+COPY source.config.ts ./
+COPY tsconfig.json ./
+COPY content ./content
+COPY lib ./lib
+COPY mdx-components.tsx ./
+
+# Install dependencies (postinstall will run automatically)
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \

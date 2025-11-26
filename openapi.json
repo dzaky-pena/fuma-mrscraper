@@ -412,6 +412,588 @@
                     "/results"
                 ]
             }
+        },
+        "/api/shopee/sync": {
+            "post": {
+                "summary": "Scrape shoppee products syncronously",
+                "operationId": "createAndRunAShopeeScraper",
+                "description": "This endpoint allows you to scrape a shopee scraper.",
+                "parameters": [],
+                "responses": {
+                "200": {
+                    "description": "",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "example": {
+                            "success": true,
+                            "message": "URL scrapped",
+                            "data": {
+                            "bff_meta": null,
+                            "error": null,
+                            "error_msg": null,
+                            "data": {
+                                "item": {
+                                "item_id": 4420309814,
+                                "shop_id": 10115139,
+                                "item_status": "normal",
+                                "status": 1,
+                                "item_type": 0,
+                                "reference_item_id": "",
+                                "title": "瓦厝家-綠的抗菌沐浴露（洋梨與小蒼蘭）1000ml",
+                                "image": "c1e492d27fca200d8c7bb570932cc5a0",
+                                "label_ids": [
+                                    1007880, 844931064601283, 822059780857868,
+                                    844931086908638, 1400285049, 1717998011, 1818787,
+                                    1718088130, 1853606
+                                ],
+                                "is_adult": false,
+                                "is_preview": false,
+                                "flag": 196608,
+                                "is_service_by_shopee": false,
+                                "condition": 1,
+                                "cat_id": 100630,
+                                "has_low_fulfillment_rate": false,
+                                "is_live_streaming_price": null,
+                                "currency": "TWD",
+                                "brand": "GREEN 綠的",
+                                "brand_id": 1124792,
+                                "show_discount": 0,
+                                "ctime": 1584632364,
+                                "item_rating": {
+                                    "rating_star": 5
+                                },
+                                "cb_option": 0,
+                                "has_model_with_available_shopee_stock": false,
+                                "shop_location": "高雄市大樹區",
+                                "attributes": [
+                                    {
+                                    "name": "質地",
+                                    "value": "液",
+                                    "id": 100036,
+                                    "is_timestamp": false,
+                                    "brand_option": null,
+                                    "val_id": 708,
+                                    "url": null,
+                                    "brand_id": null,
+                                    "full_url": null,
+                                    "type": null
+                                    },
+                                    {
+                                    "name": "產地",
+                                    "value": "台灣",
+                                    "id": 100037,
+                                    "is_timestamp": false,
+                                    "brand_option": null,
+                                    "val_id": 112,
+                                    "url": null,
+                                    "brand_id": null,
+                                    "full_url": null,
+                                    "type": null
+                                    }
+                                ],
+                                "rich_text_description": null,
+                                "invoice_option": null,
+                                "is_category_failed": null,
+                                "is_prescription_item": false,
+                                "preview_info": null,
+                                "show_prescription_feed": false,
+                                "is_alcohol_product": false,
+                                "is_infant_milk_formula_product": false,
+                                "is_unavailable": false,
+                                "is_partial_fulfilled": false,
+                                "is_presale": false,
+                                "is_presale_deposit_item": null,
+                                "is_presale_deposit_made": null,
+                                "description": "綠的抗菌沐浴露-洋梨小蒼蘭1000ml\n*清新洋梨精華搭配小蒼蘭\n*綻放的花香,清新優雅溫暖迷人\n*溫和潔淨肌膚，洗後清新舒服\n*溫和抗菌，保護肌膚健康\n\n綠的抗菌沐浴露-蘋果玫瑰1000ml\n*萃取完熟蘋果及盛開玫瑰花精華\n*修護柔嫩肌膚,展現明亮白皙緊緻\n*溫和潔淨肌膚，洗後清新舒服\n*溫和抗菌，保護肌膚健康\n#中國化學製藥 #中化 #綠的 #抗菌 #沐浴露 #洋梨小蒼蘭 #蘋果玫瑰",
+                                "categories": [
+                                    {
+                                    "catid": 100630,
+                                    "display_name": "美妝保養",
+                                    "no_sub": false,
+                                    "is_default_subcat": false
+                                    },
+                                    {
+                                    "catid": 102002,
+                                    "display_name": "身體清潔、保養",
+                                    "no_sub": false,
+                                    "is_default_subcat": false
+                                    },
+                                    {
+                                    "catid": 102003,
+                                    "display_name": "沐浴乳、香皂、手工皂",
+                                    "no_sub": true,
+                                    "is_default_subcat": false
+                                    }
+                                ],
+                                "fe_categories": [
+                                    {
+                                    "catid": 11041691,
+                                    "display_name": "美妝保養",
+                                    "no_sub": false,
+                                    "is_default_subcat": false
+                                    },
+                                    {
+                                    "catid": 11046833,
+                                    "display_name": "身體清潔、保養",
+                                    "no_sub": false,
+                                    "is_default_subcat": false
+                                    },
+                                    {
+                                    "catid": 11046837,
+                                    "display_name": "沐浴乳",
+                                    "no_sub": true,
+                                    "is_default_subcat": false
+                                    }
+                                ],
+                                "item_has_video": false,
+                                "presale_dday_start_time": null,
+                                "is_lowest_price_at_shopee": null,
+                                "models": [
+                                    {
+                                    "item_id": 4420309814,
+                                    "status": 1,
+                                    "current_promotion_reserved_stock": null,
+                                    "name": "",
+                                    "promotion_id": 0,
+                                    "price": 16900000,
+                                    "price_stocks": [
+                                        {
+                                        "allocated_stock": 0,
+                                        "stock_breakdown_by_location": [
+                                            {
+                                            "location_id": "TWZ",
+                                            "available_stock": null,
+                                            "fulfilment_type": 2,
+                                            "address_id": 0,
+                                            "allocated_stock": null
+                                            }
+                                        ],
+                                        "promotion_type": 0
+                                        }
+                                    ],
+                                    "current_promotion_has_reserve_stock": false,
+                                    "normal_stock": null,
+                                    "extinfo": {
+                                        "tier_index": [0],
+                                        "is_pre_order": false,
+                                        "estimated_days": 2
+                                    },
+                                    "price_before_discount": 0,
+                                    "model_id": 22017999727,
+                                    "stock": null,
+                                    "has_gimmick_tag": false,
+                                    "key_measurement": null,
+                                    "sold": null,
+                                    "is_lowest_price_at_shopee": false
+                                    }
+                                ],
+                                "tier_variations": [
+                                    {
+                                    "name": "",
+                                    "options": [""],
+                                    "images": null,
+                                    "properties": null,
+                                    "type": 0,
+                                    "summed_stocks": null,
+                                    "display_indicators": [0]
+                                    }
+                                ],
+                                "size_chart": null,
+                                "size_chart_info": null,
+                                "welcome_package_type": 0,
+                                "is_free_gift": false,
+                                "deep_discount": null,
+                                "is_low_price_eligible": null,
+                                "bundle_deal_info": null,
+                                "add_on_deal_info": null,
+                                "shipping_icon_type": 0,
+                                "badge_icon_type": 0,
+                                "spl_info": {
+                                    "installment_info": null,
+                                    "user_credit_info": null,
+                                    "channel_id": null,
+                                    "show_spl": false,
+                                    "show_spl_lite": null,
+                                    "spl_xtra": null
+                                },
+                                "estimated_days": 2,
+                                "is_pre_order": false,
+                                "is_free_shipping": false,
+                                "overall_purchase_limit": null,
+                                "min_purchase_limit": 1,
+                                "is_hide_stock": false,
+                                "stock": null,
+                                "normal_stock": null,
+                                "current_promotion_reserved_stock": 0,
+                                "can_use_wholesale": false,
+                                "wholesale_tier_list": [],
+                                "price": 16900000,
+                                "raw_discount": 0,
+                                "hidden_price_display": null,
+                                "price_min": 16900000,
+                                "price_max": 16900000,
+                                "price_before_discount": 0,
+                                "price_min_before_discount": -1,
+                                "price_max_before_discount": -1,
+                                "other_stock": null,
+                                "discount_stock": 0,
+                                "current_promotion_has_reserve_stock": false,
+                                "complaint_policy": null,
+                                "show_recycling_info": false,
+                                "should_show_amp_tag": true,
+                                "all_models_has_pre_order": false,
+                                "is_item_inherited": false,
+                                "max_quantity": 995
+                                },
+                                "account": {
+                                "user_id": null,
+                                "is_new_user": null,
+                                "default_address": {
+                                    "state": "臺北市",
+                                    "city": "中正區",
+                                    "district": "",
+                                    "town": "",
+                                    "zip_code": "",
+                                    "address": null,
+                                    "region": null,
+                                    "longitude": null,
+                                    "latitude": null
+                                },
+                                "adult_consent": null,
+                                "birth_timestamp": null
+                                },
+                                "product_images": {
+                                "video": null,
+                                "images": ["c1e492d27fca200d8c7bb570932cc5a0"],
+                                "first_tier_variations": [],
+                                "sorted_variation_image_index_list": [],
+                                "overlay": null,
+                                "makeup_preview": null,
+                                "abnormal_status": "",
+                                "promotion_images": [],
+                                "long_images": null,
+                                "shopee_video_info_list": [],
+                                "shopee_video_rcmd_info": null,
+                                "shopee_video_req_id": null,
+                                "skincam": null,
+                                "pdp_top_info_list": null,
+                                "has_long_image": null
+                                },
+                                "product_price": {
+                                "discount": null,
+                                "installment_info": null,
+                                "spl_installment_info": null,
+                                "pack_size": "",
+                                "hide_price": false,
+                                "price": {
+                                    "single_value": 16900000,
+                                    "range_min": -1,
+                                    "range_max": -1,
+                                    "price_mask": null
+                                },
+                                "price_before_discount": null,
+                                "presale_price": null,
+                                "lowest_past_price": null,
+                                "labels": null,
+                                "hide_discount": false,
+                                "discount_text": null,
+                                "show_final_price_indicator": false
+                                },
+                                "flash_sale": null,
+                                "flash_sale_preview": null,
+                                "deep_discount": null,
+                                "exclusive_price": null,
+                                "exclusive_price_cta": null,
+                                "product_meta": {
+                                "show_lowest_price_guarantee": false,
+                                "show_original_guarantee": false,
+                                "show_best_price_guarantee": false,
+                                "show_official_shop_label_in_title": false,
+                                "show_shopee_verified_label": true,
+                                "show_lowest_installment_guarantee": false,
+                                "hide_sharing_button": false,
+                                "hide_sold_count": false
+                                },
+                                "product_review": {
+                                "rating_star": 5,
+                                "rating_count": [2, 0, 0, 0, 0, 2],
+                                "total_rating_count": 2,
+                                "historical_sold": null,
+                                "global_sold": null,
+                                "liked": false,
+                                "liked_count": 0,
+                                "cmt_count": 2,
+                                "should_move_ratings_above": null,
+                                "review_rcmd_exp_group": null,
+                                "display_global_sold": false,
+                                "hide_rating": false,
+                                "hide_buyer_gallery": false,
+                                "hide_reviews": false,
+                                "hide_other_product_reviews_in_shop": false
+                                },
+                                "promotion_info": {
+                                "spl": null,
+                                "spl_lite": null,
+                                "installment": null,
+                                "wholesale": null,
+                                "insurance": null,
+                                "item_installment_eligibility": {
+                                    "is_cc_installment_payment_eligible": false,
+                                    "is_non_cc_installment_payment_eligible": false
+                                }
+                                },
+                                "age_gate": {
+                                "kyc": null
+                                },
+                                "shipping_meta": null,
+                                "product_shipping": {
+                                "free_shipping": null,
+                                "shipping_fee_info": {
+                                    "ship_from_location": null,
+                                    "price": null,
+                                    "shipping_icon_type": 0,
+                                    "warning": {
+                                    "type": "no_shipping_channel",
+                                    "warning_msg": "沒有適用的物流選項, 請與賣家聯繫確認"
+                                    }
+                                },
+                                "show_shipping_to": null,
+                                "ungrouped_channel_infos": null,
+                                "grouped_channel_infos_by_service_type": null,
+                                "also_available_channel_name": null,
+                                "pre_selected_shipping_channel": null,
+                                "show_grouped_channel_first": null,
+                                "is_item_with_price_range": null,
+                                "also_available_channel_icon_type": null,
+                                "pre_order_text": null,
+                                "selected_late_delivery_compensation_for_drawer": null,
+                                "shipping_info_text": null
+                                },
+                                "shop_vouchers": [],
+                                "free_return": null,
+                                "coin_info": {
+                                "spend_cash_unit": 100000,
+                                "coin_earn_items": [],
+                                "coin_earn_label": null
+                                },
+                                "product_attributes": {
+                                "attrs": [
+                                    {
+                                    "name": "商品數量",
+                                    "value": "995",
+                                    "id": null,
+                                    "is_timestamp": null,
+                                    "brand_option": null,
+                                    "val_id": null,
+                                    "url": null,
+                                    "brand_id": null,
+                                    "full_url": null,
+                                    "type": 7
+                                    },
+                                    {
+                                    "name": "品牌",
+                                    "value": "GREEN 綠的",
+                                    "id": null,
+                                    "is_timestamp": null,
+                                    "brand_option": null,
+                                    "val_id": null,
+                                    "url": "/search?brands=1124792",
+                                    "brand_id": 1124792,
+                                    "full_url": "https://shopee.tw/search?brands=1124792",
+                                    "type": 1
+                                    },
+                                    {
+                                    "name": "質地",
+                                    "value": "液",
+                                    "id": 100036,
+                                    "is_timestamp": null,
+                                    "brand_option": null,
+                                    "val_id": null,
+                                    "url": null,
+                                    "brand_id": null,
+                                    "full_url": null,
+                                    "type": 5
+                                    },
+                                    {
+                                    "name": "產地",
+                                    "value": "台灣",
+                                    "id": 100037,
+                                    "is_timestamp": null,
+                                    "brand_option": null,
+                                    "val_id": null,
+                                    "url": null,
+                                    "brand_id": null,
+                                    "full_url": null,
+                                    "type": 5
+                                    },
+                                    {
+                                    "name": "出貨地",
+                                    "value": "高雄市大樹區",
+                                    "id": null,
+                                    "is_timestamp": null,
+                                    "brand_option": null,
+                                    "val_id": null,
+                                    "url": null,
+                                    "brand_id": null,
+                                    "full_url": null,
+                                    "type": 6
+                                    }
+                                ],
+                                "categories": [
+                                    {
+                                    "catid": 11041691,
+                                    "display_name": "美妝保養",
+                                    "no_sub": false,
+                                    "is_default_subcat": false
+                                    },
+                                    {
+                                    "catid": 11046833,
+                                    "display_name": "身體清潔、保養",
+                                    "no_sub": false,
+                                    "is_default_subcat": false
+                                    },
+                                    {
+                                    "catid": 11046837,
+                                    "display_name": "沐浴乳",
+                                    "no_sub": true,
+                                    "is_default_subcat": false
+                                    }
+                                ],
+                                "related_items": []
+                                },
+                                "shop_detailed": {
+                                "shopid": 10115139,
+                                "userid": 10116436,
+                                "last_active_time": 1732066234,
+                                "vacation": false,
+                                "place": "高雄市大樹區",
+                                "account": {
+                                    "portrait": "9dc3084bfd433e621260990bc369c4a4",
+                                    "username": "watrohouse",
+                                    "status": 1
+                                },
+                                "is_shopee_verified": true,
+                                "is_preferred_plus_seller": false,
+                                "is_official_shop": false,
+                                "shop_location": "高雄市大樹區",
+                                "item_count": 382,
+                                "rating_star": 4.968159,
+                                "response_rate": 88,
+                                "session_info": null,
+                                "name": "🏠瓦厝家柑仔店",
+                                "ctime": 1474291188,
+                                "response_time": 1774,
+                                "follower_count": 395,
+                                "show_official_shop_label": false,
+                                "rating_bad": 3,
+                                "rating_good": 4945,
+                                "rating_normal": 24,
+                                "session_infos": null,
+                                "status": 1,
+                                "is_individual_seller": null,
+                                "is_mart": false,
+                                "favorite_shop_info": null,
+                                "is_3pf": false,
+                                "sold_total": null,
+                                "is_shopee_choice": false,
+                                "is_high_end": false,
+                                "banner": {
+                                    "shopee_choice": null
+                                },
+                                "authorized_brand": null,
+                                "is_scs": false
+                                },
+                                "age_gate_control": null,
+                                "abnormal_popup": null,
+                                "return_on_spot": null,
+                                "display_sections": {
+                                "add_on_deal": null,
+                                "bundle_deal": null,
+                                "exclusive_price_label": null,
+                                "free_return": null,
+                                "coin": null,
+                                "wholesale": null
+                                },
+                                "ineligible_ep": null,
+                                "tax_disclaimer": null,
+                                "alcohol_disclaimer": null,
+                                "design_control": {
+                                "use_new_revamp_first_screen": null,
+                                "display_on_time_delivery_guarantee": false,
+                                "disable_price_with_variation": true,
+                                "display_direct_delivery": false,
+                                "use_new_featured_video_revamp": null,
+                                "first_screen_revamp_abtest_group": null,
+                                "display_choice_customised_section": false,
+                                "is_support_fbs_enabled": false,
+                                "top_section_featured_video_ab_test_group": null,
+                                "enable_ksp_config": null
+                                },
+                                "shopee_free_return": null,
+                                "detail_level": 0,
+                                "removed_fields": null,
+                                "size_guide": null,
+                                "designer_info": null,
+                                "shipping_info": null,
+                                "vehicle_compatibility_info": null,
+                                "nea": null,
+                                "button_group": {
+                                "buy_with_voucher": null
+                                },
+                                "installment_drawer": null,
+                                "ongoing_banner": null,
+                                "teaser_banner": null,
+                                "price_breakdown": null,
+                                "membership_exclusive": null,
+                                "membership_exclusive_teaser": null
+                            }
+                            }
+                        },
+                        "properties": {
+                            "status": {
+                            "type": "boolean",
+                            "example": true
+                            },
+                            "message": {
+                            "type": "string",
+                            "example": "URL Scraped"
+                            },
+                            "data": {
+                            "type": "object"
+                            }
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ],
+                "tags": ["/shopee"],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "required": ["url"],
+                                "properties": {
+                                    "url": {
+                                        "type": "string",
+                                        "description": "Shopee product api url get_pc with shop id and item id",
+                                        "example": "https://shopee.tw/api/v2/item/get?itemid=4420309814&shopid=10115139"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "info": {
@@ -424,6 +1006,10 @@
     "servers": [
         {
             "url": "https://api.v3.app.mrscraper.com",
+            "description": "Production API Server"
+        },
+        {
+            "url": "https://app.mrscraper.com",
             "description": "Production API Server"
         }
     ],
